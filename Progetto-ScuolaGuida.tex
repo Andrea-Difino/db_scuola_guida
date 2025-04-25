@@ -1,0 +1,44 @@
+\documentclass[10pt]{article}
+\author{Andrea Difino - Davide Colabove}
+\date{A.A. 2024/25 -- Corso di Laurea in Scienze e Tecnologie Informatiche\\SC1167}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tgadventor}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{array}
+\usepackage[margin=2.54cm]{geometry}
+
+\begin{document}
+\title{Progetto Basi di Dati - Scuola Guida}
+\maketitle
+
+\section{Abstract}{
+    Questo progetto si propone di sviluppare un sistema di gestione informatizzato per una scuola guida, partendo dall’analisi dei requisiti e progettando una base di dati capace di gestire utenti, lezioni teoriche e pratiche, veicoli, istruttori, esami e prenotazioni.
+
+    L'allievo è tenermente accolto nei nostri uffici dove si registra l'apertura di un nuovo fascicolo personale e l'ammissione e il salvataggio delle informazioni più importanti per ciascuno di essi, lo aiuterà nel suo percorso guida. Istruttori, identificati con dati anagrafici e patente abilitata, gestiscono lezioni teoriche e pratiche. Lezioni di diverso livello, con veicoli e istruttori assegnati li affiancano negli orari prestabiliti.
+
+    Prenotazione di lezioni, superamento degli esami di teoria e pratica, disponibilità dei veicoli e di istruttori dedicati rientrano nel sistema. Viene anche utile per recalcitranti interni raccogliere le recensioni sui corsi delle differenti sezioni della scuola corsisti di corsi su lezioni o istruttori.
+
+    Il modello relazionale viene tracciato al fine di mantenere integra e coerente l'informazione, applicando il massimo rigore nell'uso di chiavi primarie e vincoli referenziali. Per concludere, il progetto pone i presupposti per lo sviluppo di un sistema informativo per la scuola guida che è attendibile e completo.
+}
+
+\section{Analisi dei requisiti}{
+    Il sistema informativo della scuola guida deve supportare le seguenti funzionalità:
+
+    \begin{itemize}
+        \item[-] Gestione anagrafica degli iscritti, inclusi dati personali, tipo di patente e data iscrizione.
+        \item[-] Gestione dei veicoli, con targa, tipo, modello, stato (disponibile, manutenzione).
+        \item[-] Gestione degli istruttori, con abilitazioni, anni di esperienza e categorie coperte.
+        \item[-] Pianificazione e gestione delle lezioni (teoriche e pratiche), con aula/veicolo e istruttore.
+        \item[-] Sistema di prenotazione per le lezioni da parte degli iscritti.
+        \item[-] Gestione esami (teorici e pratici), con risultati, esiti e veicolo utilizzato.
+        \item[-] Sistema di feedback e recensioni sugli istruttori e sulle lezioni.
+        \item[-] Gestione della disponibilità delle aule e dei veicoli.
+        \item[-] Monitoraggio delle presenze alle lezioni e stato dei pagamenti.
+    \end{itemize}
+}
+\end{document}
