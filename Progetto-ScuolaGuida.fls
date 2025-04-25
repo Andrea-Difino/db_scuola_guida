@@ -99,6 +99,7 @@ INPUT C:\Users\adifi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-
 OUTPUT Progetto-ScuolaGuida.pdf
 INPUT C:\Users\adifi\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\adifi\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\tex-gyre\q-ec.enc
+INPUT C:\Users\adifi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\tex-gyre\ec-qagb.tfm
 INPUT Progetto-ScuolaGuida.aux
 INPUT C:\Users\adifi\AppData\Local\Programs\MiKTeX\fonts\type1\public\tex-gyre\qagb.pfb
 INPUT C:\Users\adifi\AppData\Local\Programs\MiKTeX\fonts\type1\public\tex-gyre\qagb.pfb

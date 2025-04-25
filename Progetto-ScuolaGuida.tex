@@ -16,7 +16,7 @@
 \title{Progetto Basi di Dati - Scuola Guida}
 \maketitle
 
-\section{Abstract}{
+\section{ABSTRACT}{
     Questo progetto si propone di sviluppare un sistema di gestione informatizzato per una scuola guida, partendo dall’analisi dei requisiti e progettando una base di dati capace di gestire utenti, lezioni teoriche e pratiche, veicoli, istruttori, esami e prenotazioni.
 
     L'allievo è tenermente accolto nei nostri uffici dove si registra l'apertura di un nuovo fascicolo personale e l'ammissione e il salvataggio delle informazioni più importanti per ciascuno di essi, lo aiuterà nel suo percorso guida. Istruttori, identificati con dati anagrafici e patente abilitata, gestiscono lezioni teoriche e pratiche. Lezioni di diverso livello, con veicoli e istruttori assegnati li affiancano negli orari prestabiliti.
@@ -26,7 +26,7 @@
     Il modello relazionale viene tracciato al fine di mantenere integra e coerente l'informazione, applicando il massimo rigore nell'uso di chiavi primarie e vincoli referenziali. Per concludere, il progetto pone i presupposti per lo sviluppo di un sistema informativo per la scuola guida che è attendibile e completo.
 }
 
-\section{Analisi dei requisiti}{
+\section{ANALISI DEI REQUISITI}{
     Il sistema informativo della scuola guida deve supportare le seguenti funzionalità:
 
     \begin{itemize}
@@ -40,5 +40,24 @@
         \item[-] Gestione della disponibilità delle aule e dei veicoli.
         \item[-] Monitoraggio delle presenze alle lezioni e stato dei pagamenti.
     \end{itemize}
+}
+
+\newpage
+
+\section{PROGETTAZIONE CONCETTUALE}{
+    \subsection{Lista Entità}{
+        Le principali entità identificate sono:
+        \begin{itemize}
+            \item[-] Iscritto (CF, Nome, Cognome, Telefono, Email, Residenza, TipoPatente, DataIscrizione)
+            \item[-] Istruttore (Codice, Nome, Cognome, Telefono, Email, Abilitazione, Esperienza)
+            \item[-] Veicolo (Targa, Modello, Tipo, Stato, Anno)
+            \item[-] Lezione (ID, Tipo, Data, Ora, Aula/Veicolo, Istruttore)
+            \item[-] Prenotazione (ID, Data, Stato, Iscritto, Lezione)
+            \item[-] Esame (ID, Tipo, Data, Esito, Voto, Veicolo, Iscritto)
+            \item[-] Recensione (ID, Oggetto, Iscritto, Data, Gradimento, Commento)
+            \item[-] Aula (Codice, Nome, Posti, Attrezzatura)
+            \item[-] Pagamento (ID, Iscritto, Importo, Data, Metodo, Stato)
+        \end{itemize}
+    }
 }
 \end{document}
