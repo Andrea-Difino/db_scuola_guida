@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[10pt,twoside]{article}
 \author{Andrea Difino - Davide Colabove}
 \date{A.A. 2024/25 -- Corso di Laurea in Scienze e Tecnologie Informatiche\\SC1167}
 \usepackage[T1]{fontenc}
@@ -11,53 +11,201 @@
 \usepackage{listings}
 \usepackage{array}
 \usepackage[margin=2.54cm]{geometry}
+\usepackage{fancyhdr}
+
 
 \begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[C]{\fontsize{9}{9}\selectfont Progetto di una Base di Datidi un Sist. Inf. per la Gestione Scuola Guida}
 \title{Progetto Basi di Dati - Scuola Guida}
 \maketitle
 
-\section{ABSTRACT}{
-    Questo progetto si propone di sviluppare un sistema di gestione informatizzato per una scuola guida, partendo dall’analisi dei requisiti e progettando una base di dati capace di gestire utenti, lezioni teoriche e pratiche, veicoli, istruttori, esami e prenotazioni.
+\section{Abstract}{
+    Questo lavoro sviluppa una base di dati progettata per gestire in modo strutturato e coerente le informazioni relative alle scuole guida, agli istruttori, agli iscritti ai corsi e agli esami sostenuti dagli allievi. 
+    
+    L’obiettivo principale è fornire un sistema che supporti le attività di pianificazione, monitoraggio e ottimizzazione delle risorse didattiche, garantendo un accesso organizzato ai dati e facilitando la loro analisi.
 
-    L'allievo è tenermente accolto nei nostri uffici dove si registra l'apertura di un nuovo fascicolo personale e l'ammissione e il salvataggio delle informazioni più importanti per ciascuno di essi, lo aiuterà nel suo percorso guida. Istruttori, identificati con dati anagrafici e patente abilitata, gestiscono lezioni teoriche e pratiche. Lezioni di diverso livello, con veicoli e istruttori assegnati li affiancano negli orari prestabiliti.
+    Nel contesto della formazione alla guida, la base di dati proposta distingue tra lezioni teoriche e pratiche, gestendo attributi specifici quali assegnazione di aule, veicoli disponibili e disponibilità degli istruttori. Gli iscritti sono tracciati in base ai percorsi di formazione intrapresi e ai risultati degli esami, con particolare attenzione alle performance nelle prove teoriche e pratiche. Il sistema registra anche le prenotazioni delle lezioni e i pagamenti associati ai servizi offerti.
 
-    Prenotazione di lezioni, superamento degli esami di teoria e pratica, disponibilità dei veicoli e di istruttori dedicati rientrano nel sistema. Viene anche utile per recalcitranti interni raccogliere le recensioni sui corsi delle differenti sezioni della scuola corsisti di corsi su lezioni o istruttori.
+    Questa base di dati è progettata per garantire un’archiviazione efficiente e strutturata delle informazioni formative, migliorando il recupero e l’analisi dei dati. L’organizzazione sistematica delle informazioni contribuisce a un utilizzo più efficace delle risorse didattiche, ottimizzando la gestione delle scuole guida e supportando i processi decisionali.
 
-    Il modello relazionale viene tracciato al fine di mantenere integra e coerente l'informazione, applicando il massimo rigore nell'uso di chiavi primarie e vincoli referenziali. Per concludere, il progetto pone i presupposti per lo sviluppo di un sistema informativo per la scuola guida che è attendibile e completo.
 }
 
-\section{ANALISI DEI REQUISITI}{
-    Il sistema informativo della scuola guida deve supportare le seguenti funzionalità:
+\section{Analisi dei Requisiti}{
+    Questa sezione riassume i requisiti a cui deve sottostare la base di dati.
+
+    \paragraph{Iscritti.}
+    Gli iscritti sono le persone che frequentano i corsi della scuola guida e sono identificati attraverso:
 
     \begin{itemize}
-        \item[-] Gestione anagrafica degli iscritti, inclusi dati personali, tipo di patente e data iscrizione.
-        \item[-] Gestione dei veicoli, con targa, tipo, modello, stato (disponibile, manutenzione).
-        \item[-] Gestione degli istruttori, con abilitazioni, anni di esperienza e categorie coperte.
-        \item[-] Pianificazione e gestione delle lezioni (teoriche e pratiche), con aula/veicolo e istruttore.
-        \item[-] Sistema di prenotazione per le lezioni da parte degli iscritti.
-        \item[-] Gestione esami (teorici e pratici), con risultati, esiti e veicolo utilizzato.
-        \item[-] Sistema di feedback e recensioni sugli istruttori e sulle lezioni.
-        \item[-] Gestione della disponibilità delle aule e dei veicoli.
-        \item[-] Monitoraggio delle presenze alle lezioni e stato dei pagamenti.
+        \item Codice Fiscale (identificativo univoco).
+        \item Nome.
+        \item Cognome.
+        \item Numero di telefono.
+        \item Indirizzo email.
+        \item Città e indirizzo di residenza.
+        \item Categoria di patente richiesta (A, B, C, ecc.).
+        \item Data di iscrizione.
     \end{itemize}
+    
+    Ogni iscritto può partecipare a più lezioni teoriche e pratiche, sostenere più esami, e può lasciare recensioni su lezioni o istruttori.
+    
+
+    \paragraph{Istruttori.}
+    Gli istruttori sono i docenti responsabili delle lezioni e sono descritti tramite:
+    
+    \begin{itemize}
+        \item Codice identificativo univoco.
+        \item Nome.
+        \item Cognome.
+        \item Numero di telefono.
+        \item Indirizzo email.
+        \item Anni di esperienza professionale.
+        \item Categorie di patente per cui sono abilitati all’insegnamento.
+    \end{itemize}
+
+    Un istruttore può tenere più lezioni sia teoriche che pratiche, ma non può essere assegnato contemporaneamente a due lezioni sovrapposte.
+    
+
+    \paragraph{Veicoli.}
+    I veicoli sono utilizzati per le lezioni pratiche e per gli esami pratici. Per ogni veicolo vengono registrate le seguenti informazioni:
+    
+    \begin{itemize}
+        \item Targa (identificativo univoco).
+        \item Modello.
+        \item Tipo di veicolo (Auto, Moto, ecc.).
+        \item Anno di immatricolazione.
+        \item Indirizzo email.
+        \item Stato operativo (disponibile, in manutenzione, non disponibile).
+    \end{itemize}
+
+    Ogni veicolo può essere associato a una lezione pratica o a un esame in un dato momento.
+    
+
+    \paragraph{Aule.}
+    Le aule sono gli spazi in cui si svolgono le lezioni teoriche e sono caratterizzate da:
+
+    \begin{itemize}
+        \item Codice aula (identificativo univoco).
+        \item Nome aula.
+        \item Numero di posti disponibili.
+        \item Tipologia di attrezzatura didattica disponibile (proiettore, lavagna, ecc.).
+    \end{itemize}
+
+    Un’aula può ospitare più lezioni, ma non contemporaneamente.
+    
+
+    \paragraph{Lezioni.}
+    Le lezioni rappresentano le attività formative offerte dalla scuola guida e si suddividono in:
+
+    \begin{itemize}
+        \item Lezioni teoriche:
+        \begin{itemize}
+            \item Aula assegnata.
+            \item Orario, data.
+            \item Argomento trattato.
+            \item Istruttore responsabile.
+        \end{itemize}
+        \item Lezioni pratiche:
+        \begin{itemize}
+            \item Veicolo assegnato.
+            \item Orario, data.
+            \item Istruttore responsabile.
+            \item Punto di partenza della lezione pratica.
+        \end{itemize}
+    \end{itemize}
+
+    Ogni lezione ha un solo istruttore assegnato. Le lezioni teoriche possono avere più iscritti, mentre quelle pratiche sono individuali.
+    
+
+    \paragraph{Prenotazioni.}
+    Le prenotazioni associano un iscritto a una lezione:
+
+    \begin{itemize}
+        \item Data di prenotazione.
+        \item Stato della prenotazione (confermata, annullata, in attesa).
+    \end{itemize}
+
+    Un iscritto può prenotare più lezioni, ma non può essere prenotato per lezioni sovrapposte.
+    
+
+    \paragraph{Esami.}
+    Gli esami valutano la preparazione degli iscritti e si distinguono in:
+
+    \begin{itemize}
+        \item Esami teorici:
+        \begin{itemize}
+            \item Data dell’esame.
+            \item Risultato (superato o non superato).
+            \item Punteggio.
+        \end{itemize}
+        \item Esami pratici:
+        \begin{itemize}
+            \item Data dell’esame.
+            \item Risultato.
+            \item Veicolo utilizzato durante l’esame.
+        \end{itemize}
+    \end{itemize}
+
+    Un iscritto può sostenere più tentativi di esame.
+
+
+    \paragraph{Recensioni.}
+    Gli iscritti possono lasciare recensioni relative a:
+
+    \begin{itemize}
+        \item Una lezione frequentata.
+        \item Un istruttore con cui hanno svolto lezioni.
+    \end{itemize}
+
+    \paragraph{}
+    Per ogni recensione sono registrati:
+
+    \begin{itemize}
+        \item Data della recensione.
+        \item Gradimento (da 1 a 5 stelle).
+        \item Commento testuale.
+    \end{itemize}
+
+    Un iscritto può recensire un istruttore o una lezione solo se ha effettivamente partecipato.
+
+
+    \paragraph{Pagamenti.}
+    Gli iscritti devono effettuare i pagamenti relativi ai servizi formativi:
+
+    \begin{itemize}
+        \item Data di pagamento.
+        \item Importo versato.
+        \item Metodo di pagamento (carta di credito, bonifico, contante).
+        \item Stato del pagamento (pagato, da pagare).
+    \end{itemize}
+
+    Ogni pagamento è associato a un singolo iscritto.
+
 }
 
 \newpage
 
 \section{PROGETTAZIONE CONCETTUALE}{
     \subsection{Lista Entità}{
-        Le principali entità identificate sono:
-        \begin{itemize}
-            \item[-] Iscritto (CF, Nome, Cognome, Telefono, Email, Residenza, TipoPatente, DataIscrizione)
-            \item[-] Istruttore (Codice, Nome, Cognome, Telefono, Email, Abilitazione, Esperienza)
-            \item[-] Veicolo (Targa, Modello, Tipo, Stato, Anno)
-            \item[-] Lezione (ID, Tipo, Data, Ora, Aula/Veicolo, Istruttore)
-            \item[-] Prenotazione (ID, Data, Stato, Iscritto, Lezione)
-            \item[-] Esame (ID, Tipo, Data, Esito, Voto, Veicolo, Iscritto)
-            \item[-] Recensione (ID, Oggetto, Iscritto, Data, Gradimento, Commento)
-            \item[-] Aula (Codice, Nome, Posti, Attrezzatura)
-            \item[-] Pagamento (ID, Iscritto, Importo, Data, Metodo, Stato)
-        \end{itemize}
+        Esistono esattamente due tipi di lezioni, teoriche e pratiche.
+
+        Ogni lezione pratica prevede l'assegnazione di un veicolo specifico e la partecipazione di un singolo iscritto per volta, mentre le lezioni teoriche si svolgono in un'aula e possono coinvolgere più iscritti contemporaneamente.
+
+        Gli istruttori sono responsabili della conduzione delle lezioni: ogni istruttore può tenere sia lezioni teoriche che pratiche, ma non può essere assegnato a più lezioni contemporaneamente.
+        Gli iscritti sono gli allievi della scuola guida e possono prenotare lezioni, sostenere esami, e lasciare recensioni sugli istruttori o sulle lezioni frequentate.
+
+        L’analisi dei requisiti dà particolare enfasi agli esami pratici, i quali prevedono l’uso obbligatorio di un veicolo assegnato; per questo motivo, il concetto di esame pratico viene rappresentato come un'estensione dell'esame, caso particolare dell'esame generale.
+        In particolare, si tiene traccia degli esami pratici svolti con uno specifico veicolo, registrando l’esito della prova.
+
+        Ogni prenotazione associa un iscritto a una lezione, garantendo la corretta gestione delle disponibilità di istruttori, aule e veicoli.
+        Analogamente, ogni pagamento è riferito a un iscritto e rappresenta una transazione economica per il servizio formativo ricevuto.
+
+        Tabella 1 (descritta successivamente) riassume tutte le entità e relazioni individuate dall'analisi dei requisiti e rappresentate nel diagramma E-R, con i relativi attributi rilevanti.
+        Per le entità principali viene anche fornito l'identificatore, che può includere riferimenti a relazioni nei casi di Lezione, Esame, Prenotazione e Pagamento.
+
+        Il presente schema E-R non permette di rappresentare direttamente il seguente vincolo di business:
     }
 }
 \end{document}
