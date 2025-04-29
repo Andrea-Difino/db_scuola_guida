@@ -8,6 +8,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{listings}
+\usepackage{float}
 \usepackage{array}
 \usepackage[margin=2.54cm]{geometry}
 \usepackage{fancyhdr}
@@ -221,10 +222,13 @@
 
 \section{Progettazione Concettuale}{
     
-    $$
-        \includegraphics[width=.8\linewidth]{img/ER_ScuolaGuida.drawio.png}
-    $$
+   
+    \begin{figure}[H]        
+        \includegraphics[width=1\linewidth]{img/ER_ScuolaGuida.drawio.png}\centering
+        \caption{Diagramma E-R della base di dati relativa alla gestione di una Scuola Guida}
+    \end{figure}
     
+
     \subsection{Lista Entità}{
         Esistono esattamente due tipi di lezioni, teoriche e pratiche.
 
@@ -241,10 +245,6 @@
 
         Tabella 1 (descritta successivamente) riassume tutte le entità e relazioni individuate dall'analisi dei requisiti e rappresentate nel diagramma E-R, con i relativi attributi rilevanti.
         Per le entità principali viene anche fornito l'identificatore, che può includere riferimenti a relazioni nei casi di Lezione, Esame, Prenotazione e Pagamento.
-
-        Il presente schema E-R non permette di rappresentare direttamente il seguente vincolo di business:
-
-       
     } 
     
     
