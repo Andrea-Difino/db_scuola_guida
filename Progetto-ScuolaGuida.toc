@@ -9,5 +9,5 @@
 \contentsline {paragraph}{Esame.}{4}{}%
 \contentsline {paragraph}{Recensione.}{5}{}%
 \contentsline {paragraph}{Pagamento.}{5}{}%
-\contentsline {section}{\numberline {3}PROGETTAZIONE CONCETTUALE}{6}{}%
+\contentsline {section}{\numberline {3}Progettazione Concettuale}{6}{}%
 \contentsline {subsection}{\numberline {3.1}Lista Entità}{6}{}%
