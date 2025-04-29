@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1745939111.09941 "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" "Progetto-ScuolaGuida.pdf" "Progetto-ScuolaGuida" 1745939112.64954 0
+["pdflatex"] 1745939337.45039 "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" "Progetto-ScuolaGuida.pdf" "Progetto-ScuolaGuida" 1745939339.105 0
   "C:/Users/colag/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1745937269 121708 e24d33b45c360dda1ca90255406aa401 ""
   "C:/Users/colag/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1745673108 13148213 9157dcfbe02c2ccefbd8767d59b89fff ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -126,11 +126,11 @@
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1730400552 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Progetto-ScuolaGuida.aux" 1745939112 2236 3dc381d03f83d96ac866e5efc020b832 "pdflatex"
-  "Progetto-ScuolaGuida.out" 1745939112 554 60f894b012f7bc75f6cb88c04ffa3300 "pdflatex"
-  "Progetto-ScuolaGuida.tex" 1745939110 16822 25c900a719846b41cf43d9e998342929 ""
-  "Progetto-ScuolaGuida.toc" 1745939112 766 f29901a7f8669695d6bf9e7e8ff8a06e "pdflatex"
-  "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" 1745939110 16822 25c900a719846b41cf43d9e998342929 ""
+  "Progetto-ScuolaGuida.aux" 1745939338 2236 3dc381d03f83d96ac866e5efc020b832 "pdflatex"
+  "Progetto-ScuolaGuida.out" 1745939338 554 60f894b012f7bc75f6cb88c04ffa3300 "pdflatex"
+  "Progetto-ScuolaGuida.tex" 1745939336 16822 674d29ca6b47acd1f42112f14399e87e ""
+  "Progetto-ScuolaGuida.toc" 1745939338 766 f29901a7f8669695d6bf9e7e8ff8a06e "pdflatex"
+  "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" 1745939336 16822 674d29ca6b47acd1f42112f14399e87e ""
   "img/ER_ScuolaGuida.drawio.png" 1745937024 301684 8e72ea5ef559f47f5bcbbc7bd0246e6d ""
   "img/logo.png" 1745937024 767922 2e0edd91febe2799b3427585cc4ac9af ""
   (generated)
