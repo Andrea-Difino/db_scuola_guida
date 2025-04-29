@@ -68,7 +68,7 @@
 \section{Analisi dei Requisiti}{
     Questa sezione riassume i requisiti a cui deve sottostare la base di dati.
 
-    \paragraph{Iscritti.}
+    \paragraph{Iscritto.}
     Gli iscritti sono le persone che frequentano i corsi della scuola guida e sono identificati attraverso:
 
     \begin{itemize}
@@ -85,11 +85,11 @@
     Ogni iscritto può partecipare a più lezioni teoriche e pratiche, sostenere più esami, e può lasciare recensioni su lezioni o istruttori.
     
 
-    \paragraph{Istruttori.}
+    \paragraph{Istruttore.}
     Gli istruttori sono i docenti responsabili delle lezioni e sono descritti tramite:
     
     \begin{itemize}
-        \item Codice identificativo univoco.
+        \item Codice Fiscale (identificativo univoco).
         \item Nome.
         \item Cognome.
         \item Numero di telefono.
@@ -101,7 +101,7 @@
     Un istruttore può tenere più lezioni sia teoriche che pratiche, ma non può essere assegnato contemporaneamente a due lezioni sovrapposte.
     
 
-    \paragraph{Veicoli.}
+    \paragraph{Veicolo.}
     I veicoli sono utilizzati per le lezioni pratiche e per gli esami pratici. Per ogni veicolo vengono registrate le seguenti informazioni:
     
     \begin{itemize}
@@ -109,19 +109,17 @@
         \item Modello.
         \item Tipo di veicolo (Auto, Moto, ecc.).
         \item Anno di immatricolazione.
-        \item Indirizzo email.
         \item Stato operativo (disponibile, in manutenzione, non disponibile).
     \end{itemize}
 
-    Ogni veicolo può essere associato a una lezione pratica o a un esame in un dato momento.
+    Ogni veicolo può essere utilizzato in più lezioni pratiche o esami pratici. Tuttavia, ogni lezione pratica o esame pratico è associato a un solo veicolo alla volta.
     
 
-    \paragraph{Aule.}
+    \paragraph{Aula.}
     Le aule sono gli spazi in cui si svolgono le lezioni teoriche e sono caratterizzate da:
 
     \begin{itemize}
-        \item Codice aula (identificativo univoco).
-        \item Nome aula.
+        \item Nome aula. (identificativo univoco)
         \item Numero di posti disponibili.
         \item Tipologia di attrezzatura didattica disponibile (proiettore, lavagna, ecc.).
     \end{itemize}
@@ -129,62 +127,63 @@
     Un’aula può ospitare più lezioni, ma non contemporaneamente.
     
 
-    \paragraph{Lezioni.}
-    Le lezioni rappresentano le attività formative offerte dalla scuola guida e si suddividono in:
+    \paragraph{Lezione.}
+    Le lezioni rappresentano le attività formative offerte dalla scuola guida e sono caratterizzate da: 
+    
+    \begin{itemize}
+        \item Ora inizio lezione.
+        \item Data.
+        \item Argomento lezione.
+    \end{itemize}
+    
+    si suddivide in:
 
     \begin{itemize}
-        \item Lezioni teoriche:
+        \item Lezione teorica:
+        \item Lezione pratica che aggiunge:
         \begin{itemize}
-            \item Aula assegnata.
-            \item Orario, data.
-            \item Argomento trattato.
-            \item Istruttore responsabile.
-        \end{itemize}
-        \item Lezioni pratiche:
-        \begin{itemize}
-            \item Veicolo assegnato.
-            \item Orario, data.
-            \item Istruttore responsabile.
-            \item Punto di partenza della lezione pratica.
+            \item Durata.
         \end{itemize}
     \end{itemize}
 
     Ogni lezione ha un solo istruttore assegnato. Le lezioni teoriche possono avere più iscritti, mentre quelle pratiche sono individuali.
     
 
-    \paragraph{Prenotazioni.}
+    \paragraph{Prenotazione.}
     Le prenotazioni associano un iscritto a una lezione:
 
     \begin{itemize}
-        \item Data di prenotazione.
+        \item Data di prenotazione. 
         \item Stato della prenotazione (confermata, annullata, in attesa).
     \end{itemize}
 
-    Un iscritto può prenotare più lezioni, ma non può essere prenotato per lezioni sovrapposte.
+    Un iscritto può prenotare più lezioni.
     
 
-    \paragraph{Esami.}
-    Gli esami valutano la preparazione degli iscritti e si distinguono in:
+    \paragraph{Esame.}
+    Gli esami valutano la preparazione degli iscritti e sono caratterizzati da:
 
     \begin{itemize}
-        \item Esami teorici:
-        \begin{itemize}
             \item Data dell’esame.
-            \item Risultato (superato o non superato).
-            \item Punteggio.
-        \end{itemize}
-        \item Esami pratici:
-        \begin{itemize}
-            \item Data dell’esame.
-            \item Risultato.
-            \item Veicolo utilizzato durante l’esame.
-        \end{itemize}
+            \item Esito (superato o non superato).
+            \item Durata
     \end{itemize}
 
-    Un iscritto può sostenere più tentativi di esame.
+    si suddivide in: 
+
+    \begin{itemize}
+        \item Esame teorico:
+        \begin{itemize}
+            \item Sede
+            \item Punti
+        \end{itemize}
+        \item Esame pratico
+    \end{itemize}
+
+    Un iscritto può sostenere più tentativi di esame. 
 
 
-    \paragraph{Recensioni.}
+    \paragraph{Recensione.}
     Gli iscritti possono lasciare recensioni relative a:
 
     \begin{itemize}
@@ -192,19 +191,19 @@
         \item Un istruttore con cui hanno svolto lezioni.
     \end{itemize}
 
-    \paragraph{}
     Per ogni recensione sono registrati:
 
     \begin{itemize}
         \item Data della recensione.
         \item Gradimento (da 1 a 5 stelle).
         \item Commento testuale.
+        \item Oggetto 
     \end{itemize}
 
-    Un iscritto può recensire un istruttore o una lezione solo se ha effettivamente partecipato.
+    Un iscritto può recensire un istruttore o una lezione.
 
 
-    \paragraph{Pagamenti.}
+    \paragraph{Pagamento.}
     Gli iscritti devono effettuare i pagamenti relativi ai servizi formativi:
 
     \begin{itemize}
