@@ -6,6 +6,7 @@
 \usepackage{caption}
 \captionsetup[figure]{name=Figura}
 \usepackage{tgadventor}
+\usepackage{hyperref}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -228,27 +229,25 @@
     \begin{figure}[H]        
         \includegraphics[width=1\linewidth]{img/ER_ScuolaGuida.drawio.png}\centering
         \caption{Diagramma E-R della base di dati relativa alla gestione di una Scuola Guida}
+        \label{fig:diagrammaER}
     \end{figure}
+
+    La \hyperref[fig:diagrammaER]{Figura~\ref*{fig:diagrammaER}} mostra il diagramma Entità-Relazione (E-R) che riassume i requisiti descritti in sezione 2.
     
+    Esistono esattamente due tipi di lezioni, teoriche e pratiche.
 
-    \subsection{Lista Entità}{
-        Esistono esattamente due tipi di lezioni, teoriche e pratiche.
+    Ogni lezione pratica prevede l'assegnazione di un veicolo specifico e la partecipazione di un singolo iscritto per volta, mentre le lezioni teoriche si svolgono in un'aula e possono coinvolgere più iscritti contemporaneamente.
 
-        Ogni lezione pratica prevede l'assegnazione di un veicolo specifico e la partecipazione di un singolo iscritto per volta, mentre le lezioni teoriche si svolgono in un'aula e possono coinvolgere più iscritti contemporaneamente.
+    Gli istruttori sono responsabili della conduzione delle lezioni: ogni istruttore può tenere sia lezioni teoriche che pratiche, ma non può essere assegnato a più lezioni contemporaneamente.
+    Gli iscritti sono gli allievi della scuola guida e possono prenotare lezioni, sostenere esami, e lasciare recensioni sugli istruttori o sulle lezioni frequentate.
 
-        Gli istruttori sono responsabili della conduzione delle lezioni: ogni istruttore può tenere sia lezioni teoriche che pratiche, ma non può essere assegnato a più lezioni contemporaneamente.
-        Gli iscritti sono gli allievi della scuola guida e possono prenotare lezioni, sostenere esami, e lasciare recensioni sugli istruttori o sulle lezioni frequentate.
+    L’analisi dei requisiti dà particolare enfasi agli esami pratici, i quali prevedono l’uso obbligatorio di un veicolo assegnato; per questo motivo, il concetto di esame pratico viene rappresentato come un'estensione dell'esame, caso particolare dell'esame generale.
+    In particolare, si tiene traccia degli esami pratici svolti con uno specifico veicolo, registrando l’esito della prova.
 
-        L’analisi dei requisiti dà particolare enfasi agli esami pratici, i quali prevedono l’uso obbligatorio di un veicolo assegnato; per questo motivo, il concetto di esame pratico viene rappresentato come un'estensione dell'esame, caso particolare dell'esame generale.
-        In particolare, si tiene traccia degli esami pratici svolti con uno specifico veicolo, registrando l’esito della prova.
+    Ogni prenotazione associa un iscritto a una lezione, garantendo la corretta gestione delle disponibilità di istruttori, aule e veicoli.
+    Analogamente, ogni pagamento è riferito a un iscritto e rappresenta una transazione economica per il servizio formativo ricevuto.
 
-        Ogni prenotazione associa un iscritto a una lezione, garantendo la corretta gestione delle disponibilità di istruttori, aule e veicoli.
-        Analogamente, ogni pagamento è riferito a un iscritto e rappresenta una transazione economica per il servizio formativo ricevuto.
-
-        Tabella 1 (descritta successivamente) riassume tutte le entità e relazioni individuate dall'analisi dei requisiti e rappresentate nel diagramma E-R, con i relativi attributi rilevanti.
-        Per le entità principali viene anche fornito l'identificatore, che può includere riferimenti a relazioni nei casi di Lezione, Esame, Prenotazione e Pagamento.
-    } 
-    
-    
+    Tabella 1 (descritta successivamente) riassume tutte le entità e relazioni individuate dall'analisi dei requisiti e rappresentate nel diagramma E-R, con i relativi attributi rilevanti.
+    Per le entità principali viene anche fornito l'identificatore, che può includere riferimenti a relazioni nei casi di Lezione, Esame, Prenotazione e Pagamento.
 }
 \end{document}
