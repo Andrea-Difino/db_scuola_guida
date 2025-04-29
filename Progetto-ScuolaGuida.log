@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.26)  29 APR 2025 17:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.26)  29 APR 2025 17:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -600,8 +600,15 @@ Package pdftex.def Info: img/ER_ScuolaGuida.drawio.png  used on input line 264.
 [6 <./img/ER_ScuolaGuida.drawio.png>]
 
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
 
-[8] (Progetto-ScuolaGuida.aux)
+ []
+
+
+
+[8]
+
+[9] (Progetto-ScuolaGuida.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -610,17 +617,17 @@ Package rerunfilecheck Info: File `Progetto-ScuolaGuida.out' has not changed.
 (rerunfilecheck)             Checksum: 83B3CFBD37EC919F05851DCACE67DC41;737.
  ) 
 Here is how much of TeX's memory you used:
- 14827 strings out of 469959
- 234044 string characters out of 5469834
- 637009 words of memory out of 5000000
+ 14829 strings out of 469959
+ 234065 string characters out of 5469834
+ 641009 words of memory out of 5000000
  41374 multiletter control sequences out of 15000+600000
  688637 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1243b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb>
-Output written on Progetto-ScuolaGuida.pdf (8 pages, 898121 bytes).
+Output written on Progetto-ScuolaGuida.pdf (9 pages, 901595 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
+ 131 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

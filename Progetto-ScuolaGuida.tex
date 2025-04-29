@@ -385,8 +385,10 @@
         Questo si riassume nelle seguenti due operazioni:
         \begin{itemize}
             \item \textbf{Operazione 1 (60 a settimana)} : Memorizza 60 nuove recensioni nella tabella Recensione.
-            \item \textbf{Operazione 2 (200 a settimana)} : Visualizza le recensioni attualmente presenti per Istruttori e Lezioni.
+            \item \textbf{Operazione 2 (200 a settimana)} : Visualizza l’indirizzo email associato a una determinata recensione (ad esempio in fase di moderazione o gestione del feedback da parte dell'amministrazione).
         \end{itemize}
+
+        Assumendo i seguenti volumi nella base di dati:
 
         \begin{table}[H]
             \centering
@@ -396,17 +398,43 @@
                 \textbf{Concetto} & \textbf{Costrutto} & \textbf{Volume} \\
                 \hline
                 \rowcolor{white!40}
-                Iscritto & E & Iscritto\\
+                Iscritto & E & 1000\\
                 \hline
                 \rowcolor{white!40}
-                Feedback & R & Recensione\\
+                Feedback & R & 3000\\
                 \hline
                 \rowcolor{white!40}
-                Recensione & E & Recensione\\
+                Recensione & E & 3000\\
                 \hline
             \end{tabular}
         \end{table}
-    
+        
+        la seguente analisi serve per stabilire se sia utile o meno tenere l’attributo ridondante
+        \textit{Email} in Recensioni. \\
+
+        \textbf{CON RIDONDANZA}: Analizziamo prima il costo totale con ridondanza:
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{2cm}|}
+                \hline
+                \rowcolor{lightgray!40}
+                \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
+                \hline
+                \rowcolor{white!40}
+                Iscritto & E & 1000 & S\\
+                \hline
+                \rowcolor{white!40}
+                Feedback & R & 3000 & S\\
+                \hline
+                \rowcolor{white!40}
+                Recensione & E & 3000 & L\\
+                \hline
+                \rowcolor{white!40}
+                Recensione & E & 3000 & S\\
+                \hline
+            \end{tabular}
+        \end{table}
     }
 }
 
