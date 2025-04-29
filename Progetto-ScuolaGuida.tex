@@ -7,7 +7,14 @@
 \captionsetup[figure]{name=Figura}
 \captionsetup[table]{name=Tabella}
 \usepackage{tgadventor}
-\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,0.6}
+\usepackage[
+  colorlinks=true,      % usa il colore invece dei box
+  linkcolor=darkblue,   % colore dei riferimenti interni (figure, sezioni…)
+  citecolor=darkblue,   % colore delle citazioni bibliografiche
+  urlcolor=darkblue     % colore degli URL
+]{hyperref}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tabularx}
@@ -84,12 +91,13 @@
         \item Cognome.
         \item Numero di telefono.
         \item Indirizzo email.
-        \item Città e indirizzo di residenza.
+        \item Città (CAP, Nome, Provincia) e indirizzo di residenza.
         \item Categoria di patente richiesta (A, B, C, ecc.).
         \item Data di iscrizione.
     \end{itemize}
     
-    Ogni iscritto può partecipare a più lezioni teoriche e pratiche, sostenere più esami, e può lasciare recensioni su lezioni o istruttori.
+    Ogni iscritto può partecipare a più lezioni teoriche e pratiche, sostenere più esami, e può lasciare recensioni su lezioni o istruttori. \\
+    Abbiamo scelto di implementare l'attributo CAP perché esistono cittá distinte ma con lo stesso CAP (es. Terrassa Padovana, Pernumia, Albignasego, Pozzonovo che ricadono tutte sotto il CAP 35020) ma al contempo anche cittá (es. Padova, Roma, Milano) con piu' CAP al loro interno.
     
 
     \paragraph{Istruttore.}
@@ -243,7 +251,7 @@
     Ogni prenotazione associa un iscritto a una lezione, garantendo la corretta gestione delle disponibilità di istruttori, aule e veicoli.
     Analogamente, ogni pagamento è riferito a un iscritto e rappresenta una transazione economica per il servizio formativo ricevuto.
 
-    Tabella 1 (descritta successivamente) riassume tutte le entità e relazioni individuate dall'analisi dei requisiti e rappresentate nel diagramma E-R, con i relativi attributi rilevanti.
+    \hyperref[fig:tabellaEntita]{Tabella~\ref*{fig:tabellaEntita}} (descritta successivamente) riassume tutte le entità e \hyperref[fig:tabellaRelazioni]{Tabella~\ref*{fig:tabellaRelazioni}} (descritta successivamente) le relazioni individuate dall'analisi dei requisiti e rappresentate nel diagramma E-R, con i relativi attributi rilevanti.
     Per le entità principali viene anche fornito l'identificatore, che può includere riferimenti a relazioni nei casi di Lezione, Esame, Prenotazione e Pagamento.
 
 }
@@ -257,7 +265,16 @@
 \newpage
 
 \section{Progettazione Logica}{
-    In questa sezione viene presentato lo schema logico relazionale derivato dal modello concettuale. Ciascuna entità concettuale è trasformata in una tabella, definendo attributi, chiavi primarie e chiavi esterne per rappresentare i legami. Gli attributi ridondanti verranno rimossi per migliorare l’efficienza di archiviazione e accesso. Le generalizzazioni concettuali sono risolte mediante l’introduzione di un attributo discriminante che distingue i tipi di istanza, con i campi specifici resi NULLABLE.
+    In questa sezione viene presentato lo schema logico relazionale derivato dal modello concettuale;
+    
+    Ciascuna entità concettuale è trasformata in una tabella, definendo attributi, chiavi primarie e chiavi esterne per rappresentare i legami. \\
+    Verrà effettuata una analisi degli attributi ridondanti per determinare la loro rimozione o mantenimento al fine per migliorare l’efficienza di archiviazione e accesso.
+    
+    Le due generalizzazioni concettuali verranno risolte mediante l’introduzione di un attributo discriminante che distingue i tipi di istanza, con i campi specifici resi NULLABLE.
+    L'attributo composto "Città" viene reso una tabella a se stante e suddiviso in tre attributi distinti: CAP, Provincia e Nome, per facilitare la gestione dei dati.
+
+    Infine viene riportato il diagramma Entità-Relazione (E-R) ristrutturato, che riporta le modifiche apportate in questa sezione al fine di avere un modello logico completo e coerente.
+
      \begin{table}[H]
         \centering
         \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2.6cm}|X|p{4.85cm}|X|}
