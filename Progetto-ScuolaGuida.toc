@@ -10,3 +10,4 @@
 \contentsline {paragraph}{Recensione.}{5}{section.2}%
 \contentsline {paragraph}{Pagamento.}{5}{section.2}%
 \contentsline {section}{\numberline {3}Progettazione Concettuale}{5}{section.3}%
+\contentsline {section}{\numberline {4}Progettazione Logica}{7}{section.4}%

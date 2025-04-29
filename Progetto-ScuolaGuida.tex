@@ -5,13 +5,16 @@
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{caption}
 \captionsetup[figure]{name=Figura}
+\captionsetup[table]{name=Tabella}
 \usepackage{tgadventor}
 \usepackage{hyperref}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{tabularx}
 \usepackage{amsmath}
 \usepackage{listings}
 \usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{array}
 \usepackage[margin=2.54cm]{geometry}
 \usepackage{fancyhdr}
@@ -26,7 +29,7 @@
 
 \begin{titlepage}
     \centering
-    \includegraphics{logo.png}\par\vspace{1cm}
+    \includegraphics{img/logo.png}\par\vspace{1cm}
     {\scshape\Large Università degli Studi di Padova \par}
     \vspace{1.5cm}
     {\scshape\large Dipartimento di Matematica\par}
@@ -158,7 +161,7 @@
 
     \begin{itemize}
         \item Data di prenotazione. 
-        \item Stato della prenotazione (confermata, annullata, in attesa).
+        \item Ora della prenotazione.
     \end{itemize}
 
     Un iscritto può prenotare più lezioni.
@@ -171,6 +174,7 @@
             \item Data dell’esame.
             \item Esito (superato o non superato).
             \item Durata
+            \item CFIscritto (codice fiscale dell'iscritto)
     \end{itemize}
 
     si suddivide in: 
@@ -202,6 +206,7 @@
         \item Gradimento (da 1 a 5 stelle).
         \item Commento testuale.
         \item Oggetto 
+        \item Email
     \end{itemize}
 
     Un iscritto può recensire un istruttore o una lezione.
@@ -249,5 +254,107 @@
     \label{fig:diagrammaER}
 \end{figure}
 
+\newpage
+
+\section{Progettazione Logica}{
+    In questa sezione viene presentato lo schema logico relazionale derivato dal modello concettuale. Ciascuna entità concettuale è trasformata in una tabella, definendo attributi, chiavi primarie e chiavi esterne per rappresentare i legami. Gli attributi ridondanti verranno rimossi per migliorare l’efficienza di archiviazione e accesso. Le generalizzazioni concettuali sono risolte mediante l’introduzione di un attributo discriminante che distingue i tipi di istanza, con i campi specifici resi NULLABLE.
+     \begin{table}[H]
+        \centering
+        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2.6cm}|X|p{4.85cm}|X|}
+            \hline
+            \rowcolor{lightgray!40}
+            \textbf{Entità} & \textbf{Descrizione} & \textbf{Attributi} & \textbf{Identificatore} \\
+            \hline
+            \rowcolor{white!40}
+            Iscritto & Iscritto alla scuola guida & \textit{CF, DataIscrizione, TipoPatente, Città(CAP, Provincia, Nome), Numero, Email, Indirizzo, Cognome, Nome} & \textit{CF}\\
+            \hline
+            \rowcolor{white!40}
+            Istruttore & Istruttore pratico e teorico della scuola guida & \textit{CF, Nome, Cognome, Numero, Email, Abilitazione, AnniEsperienza} & \textit{CF} \\
+            \hline
+            \rowcolor{white!40}
+            Veicolo & Veicolo utilizzato per esami pratici e lezioni pratiche & \textit{Targa, Modello, Tipo, Stato, AnnoImmatricolazione} & \textit{Targa}\\
+            \hline
+            \rowcolor{white!40}
+            Aula & Aula per le lezioni teoriche & \textit{Nome, Attrezzatura, Posti} & \textit{Nome}\\
+            \hline
+            \rowcolor{white!40}
+            Lezione & Lezione generica & \textit{ArgomentoLezione, Data, OraInizio} & \textit{Data, ArgomentoLezione}\\
+            \hline
+            \rowcolor{white!40}
+            Lezione Teorica & Lezione teorica scuola guida & & \\
+            \hline
+            \rowcolor{white!40}
+            Lezione Pratica & Lezione pratica scuola guida & \textit{Durata} & \\
+            \hline
+            \rowcolor{white!40}
+            Prenotazione & Prenotazione lezioni & \textit{Ora, DataPrenotazione} & \textit{DataPrenotazione}, relazione "Richiesta"\\
+            \hline
+            \rowcolor{white!40}
+            Esame & Esame generico & \textit{Data, Esito, Durata, CFIscritto} & \textit{Data}, relazione "Partecipazione"\\
+            \hline
+            \rowcolor{white!40}
+            Esame Teorico & Esame teorico con quiz & \textit{Sede, Punti} & \\
+            \hline
+            \rowcolor{white!40}
+            Esame Pratico & Esame pratico con prova di guida & & \\
+            \hline
+            \rowcolor{white!40}
+            Recensione & Recensione istruttori e lezioni & \textit{Oggetto, Email, Commento, Data, Gradimento} & \textit{Oggetto}, relazione "Feedback"\\
+            \hline
+            \rowcolor{white!40}
+            Pagamento & Pagamenti associati ai servizi offerti & \textit{Importo, Data, Stato, Metodo} & \textit{Importo, Data}, relazione "Quota"\\
+            \hline
+        \end{tabularx}
+        \caption{Entità}
+        \label{fig:tabellaEntita}
+    \end{table}
+
+    \newpage
+
+    \begin{table}[H]
+        \centering
+        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2.6cm}|X|p{4.85cm}|X|}
+            \hline
+            \rowcolor{lightgray!40}
+            \textbf{Relazione} & \textbf{Descrizione} & \textbf{Componente} & \textbf{Attributi} \\
+            \hline
+            \rowcolor{white!40}
+            Feedback & Feedback di un iscritto & Iscritto, Recensione & \\
+            \hline
+            \rowcolor{white!40}
+            Valutazione & Recensione di un iscrittore & Recensione, Istruttore & \\
+            \hline
+            \rowcolor{white!40}
+            Giudizio & Recensione di una lezione & Recensione, Lezione & \\
+            \hline
+            \rowcolor{white!40}
+            Insegnamento & Svolgimento della lezione da parte di un istruttore & Istruttore, Lezione & \\
+            \hline
+            \rowcolor{white!40}
+            Appuntamento & Prenotazione di una lezione & Prenotazione, Lezione & \\
+            \hline
+            \rowcolor{white!40}
+            Richiesta & Richiesta di un iscritto per una prenotazione & Iscritto, Prenotazione & \textit{stato}\\
+            \hline
+            \rowcolor{white!40}
+            Partecipazione & Iscrizione ad un esame di un iscritto & Esame, Iscritto & \\
+            \hline
+            \rowcolor{white!40}
+            Quota & Versamento di una quota da parte di un iscritto & Iscritto, Pagamento & \\
+            \hline
+            \rowcolor{white!40}
+            Uso & Utilizzo di un veicolo per un esame pratico & Esame Pratico, Veicolo& \\
+            \hline
+            \rowcolor{white!40}
+            Utilizzo & Utilizzo di un veicolo per una lezione pratica & Veicolo, Lezione Pratica & \\
+            \hline
+            \rowcolor{white!40}
+            Assegnazione & Aula usata per una lezione teorica & Aula, Lezione Teorica & \\
+            \hline
+        \end{tabularx}
+        \caption{Relazioni}
+        \label{fig:tabellaRelazioni}
+    \end{table}
+}
 
 \end{document}
