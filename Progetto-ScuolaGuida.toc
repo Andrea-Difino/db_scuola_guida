@@ -11,3 +11,4 @@
 \contentsline {paragraph}{Pagamento.}{5}{section.2}%
 \contentsline {section}{\numberline {3}Progettazione Concettuale}{5}{section.3}%
 \contentsline {section}{\numberline {4}Progettazione Logica}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Analisi delle ridondanze}{8}{subsection.4.1}%

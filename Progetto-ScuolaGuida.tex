@@ -35,6 +35,7 @@
 \usepackage{lmodern}
 
 
+
 \begin{document}
 
 \begin{titlepage}
@@ -280,7 +281,7 @@
 
      \begin{table}[H]
         \centering
-        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2.6cm}|X|p{4.85cm}|X|}
+        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2.6cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}p{4.85cm}|>{\centering\arraybackslash}X|}
             \hline
             \rowcolor{lightgray!40}
             \textbf{Entità} & \textbf{Descrizione} & \textbf{Attributi} & \textbf{Identificatore} \\
@@ -333,7 +334,7 @@
 
     \begin{table}[H]
         \centering
-        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2.6cm}|X|p{4.85cm}|X|}
+        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2.6cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}p{4.85cm}|>{\centering\arraybackslash}X|}
             \hline
             \rowcolor{lightgray!40}
             \textbf{Relazione} & \textbf{Descrizione} & \textbf{Componente} & \textbf{Attributi} \\
@@ -375,6 +376,38 @@
         \caption{Relazioni}
         \label{fig:tabellaRelazioni}
     \end{table}
+
+    \subsection{Analisi delle ridondanze}{
+        L’attributo \textit{Email} presente in Recensione, che memorizza l’indirizzo email dell’iscritto autore della recensione, presenta una ridondanza. Questo valore può infatti essere ottenuto tramite la relazione con l’entità Iscritto, accedendo all’attributo Email già presente lì.
+
+        Questo attributo viene modificato ogni volta che un iscritto aggiorna i propri dati anagrafici (evento poco frequente), ma viene visualizzato frequentemente, ad esempio ogni volta che un amministratore consulta le recensioni lasciate dagli utenti.
+        Si stima che vengano inserite circa 60 recensioni nuove a settimana, mentre la lettura delle recensioni avviene in media 200 volte al giorno da parte del personale o dei sistemi di report.
+        Questo si riassume nelle seguenti due operazioni:
+        \begin{itemize}
+            \item \textbf{Operazione 1 (60 a settimana)} : Memorizza 60 nuove recensioni nella tabella Recensione.
+            \item \textbf{Operazione 2 (200 a settimana)} : Visualizza le recensioni attualmente presenti per Istruttori e Lezioni.
+        \end{itemize}
+
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{3cm}|}
+                \hline
+                \rowcolor{lightgray!40}
+                \textbf{Concetto} & \textbf{Costrutto} & \textbf{Volume} \\
+                \hline
+                \rowcolor{white!40}
+                Iscritto & E & Iscritto\\
+                \hline
+                \rowcolor{white!40}
+                Feedback & R & Recensione\\
+                \hline
+                \rowcolor{white!40}
+                Recensione & E & Recensione\\
+                \hline
+            \end{tabular}
+        \end{table}
+    
+    }
 }
 
 \end{document}
