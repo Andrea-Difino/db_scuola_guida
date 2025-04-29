@@ -9,12 +9,15 @@
 \usepackage{tgadventor}
 \usepackage{xcolor}
 \definecolor{darkblue}{rgb}{0,0,0.6}
-\usepackage[
-  colorlinks=true,      % usa il colore invece dei box
-  linkcolor=darkblue,   % colore dei riferimenti interni (figure, sezioni…)
-  citecolor=darkblue,   % colore delle citazioni bibliografiche
-  urlcolor=darkblue     % colore degli URL
-]{hyperref}
+\usepackage[ocgcolorlinks]{hyperref}
+\hypersetup{
+  colorlinks=true,      % usa il colore invece delle cornici
+  linkcolor=darkblue,       % colore dei link interni
+  citecolor=darkblue,       % colore delle citazioni
+  urlcolor=darkblue,        % colore degli URL
+  pdfborder={0 0 0},    % niente cornici
+  pdfhighlight=/I       % inverti al rollover (schiarisce leggermente)
+}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tabularx}

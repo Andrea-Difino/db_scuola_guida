@@ -84,6 +84,7 @@ INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\hpdftex.de
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\tex\latex\atveryend\atveryend.sty
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\tex\latex\base\atveryend-ltx.sty
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\tex\latex\base\atveryend-ltx.sty
+OUTPUT Progetto-ScuolaGuida.pdf
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
@@ -170,7 +171,6 @@ INPUT .\Progetto-ScuolaGuida.out
 INPUT .\Progetto-ScuolaGuida.out
 INPUT Progetto-ScuolaGuida.out
 INPUT Progetto-ScuolaGuida.out
-OUTPUT Progetto-ScuolaGuida.pdf
 INPUT .\Progetto-ScuolaGuida.out
 INPUT .\Progetto-ScuolaGuida.out
 OUTPUT Progetto-ScuolaGuida.out
