@@ -1,44 +1,44 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.26)  26 APR 2025 22:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.12)  29 APR 2025 11:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex
-(c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-03-26>
-(C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+**c:/Users/adifi/Desktop/db_scuola_guida/Progetto-ScuolaGuida.tex
+(c:/Users/adifi/Desktop/db_scuola_guida/Progetto-ScuolaGuida.tex
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-25>
+(C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
-(C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+(C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
 File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count197
-\c@section=\count198
-\c@subsection=\count199
-\c@subsubsection=\count266
-\c@paragraph=\count267
-\c@subparagraph=\count268
-\c@figure=\count269
-\c@table=\count270
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen146
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+\bibindent=\dimen141
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/arial\uarial.sty
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/arial\uarial.sty
 Package: uarial 2006/03/21 1.0 (WaS)
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-)) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/tex-gyre\tgadventor.sty
+)) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/tex-gyre\tgadventor.sty
 Package: tgadventor 2009/09/10 v1.2 TeX Gyre Adventor as default sans serif family
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+))) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks18
 \symAMSa=\mathgroup4
@@ -46,125 +46,125 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
-\ex@=\dimen147
-)) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+\ex@=\dimen142
+)) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen148
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+\pmbraise@=\dimen143
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count271
+\inf@bad=\count270
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count272
-\leftroot@=\count273
+\uproot@=\count271
+\leftroot@=\count272
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count274
-\DOTSCASE@=\count275
+\classnum@=\count273
+\DOTSCASE@=\count274
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box53
-\strutbox@=\box54
+\Mathstrutbox@=\box52
+\strutbox@=\box53
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen149
+\big@size=\dimen144
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count276
+\macc@depth=\count275
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count277
+\c@MaxMatrixCols=\count276
 \dotsspace@=\muskip17
-\c@parentequation=\count278
-\dspbrk@lvl=\count279
+\c@parentequation=\count277
+\dspbrk@lvl=\count278
 \tag@help=\toks20
-\row@=\count280
-\column@=\count281
-\maxfields@=\count282
+\row@=\count279
+\column@=\count280
+\maxfields@=\count281
 \andhelp@=\toks21
-\eqnshift@=\dimen150
-\alignsep@=\dimen151
-\tagshift@=\dimen152
-\tagwidth@=\dimen153
-\totwidth@=\dimen154
-\lineht@=\dimen155
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
 \@envbody=\toks22
 \multlinegap=\skip52
 \multlinetaggap=\skip53
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count283
-\lst@gtempboxa=\box55
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count282
+\lst@gtempboxa=\box54
 \lst@token=\toks24
-\lst@length=\count284
-\lst@currlwidth=\dimen156
-\lst@column=\count285
-\lst@pos=\count286
-\lst@lostspace=\dimen157
-\lst@width=\dimen158
-\lst@newlines=\count287
-\lst@lineno=\count288
-\lst@maxwidth=\dimen159
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+\lst@length=\count283
+\lst@currlwidth=\dimen151
+\lst@column=\count284
+\lst@pos=\count285
+\lst@lostspace=\dimen152
+\lst@width=\dimen153
+\lst@newlines=\count286
+\lst@lineno=\count287
+\lst@maxwidth=\dimen154
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count289
-\lst@skipnumbers=\count290
-\lst@framebox=\box56
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+\c@lstnumber=\count288
+\lst@skipnumbers=\count289
+\lst@framebox=\box55
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
-\col@sep=\dimen160
-\ar@mcellbox=\box57
-\extrarowheight=\dimen161
+\col@sep=\dimen155
+\ar@mcellbox=\box56
+\extrarowheight=\dimen156
 \NC@list=\toks25
 \extratabsurround=\skip54
 \backup@length=\skip55
-\ar@cellbox=\box58
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+\ar@cellbox=\box57
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count291
-\Gm@cntv=\count292
-\c@Gm@tempcnt=\count293
-\Gm@bindingoffset=\dimen162
-\Gm@wd@mp=\dimen163
-\Gm@odd@mp=\dimen164
-\Gm@even@mp=\dimen165
-\Gm@layoutwidth=\dimen166
-\Gm@layoutheight=\dimen167
-\Gm@layouthoffset=\dimen168
-\Gm@layoutvoffset=\dimen169
+\Gm@cnth=\count290
+\Gm@cntv=\count291
+\c@Gm@tempcnt=\count292
+\Gm@bindingoffset=\dimen157
+\Gm@wd@mp=\dimen158
+\Gm@odd@mp=\dimen159
+\Gm@even@mp=\dimen160
+\Gm@layoutwidth=\dimen161
+\Gm@layoutheight=\dimen162
+\Gm@layouthoffset=\dimen163
+\Gm@layoutvoffset=\dimen164
 \Gm@dimlist=\toks26
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@headwidth=\skip56
 \f@nch@offset@elh=\skip57
@@ -181,40 +181,40 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip68
 \f@nch@widthR=\skip69
 \@temptokenb=\toks27
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen170
-\Gin@req@width=\dimen171
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+\Gin@req@height=\dimen165
+\Gin@req@width=\dimen166
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box59
+\ttl@box=\box58
 \beforetitleunit=\skip70
 \aftertitleunit=\skip71
-\ttl@plus=\dimen172
-\ttl@minus=\dimen173
+\ttl@plus=\dimen167
+\ttl@minus=\dimen168
 \ttl@toksa=\toks28
-\titlewidth=\dimen174
-\titlewidthlast=\dimen175
-\titlewidthfirst=\dimen176
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+\titlewidth=\dimen169
+\titlewidthlast=\dimen170
+\titlewidthfirst=\dimen171
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count294
-)) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count293
+)) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -250,11 +250,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 22.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-03-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count295
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count294
+\l__pdf_internal_box=\box59
 ) (Progetto-ScuolaGuida.aux)
 \openout1 = `Progetto-ScuolaGuida.aux'.
 
@@ -272,7 +273,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
-\c@lstlisting=\count296
+\c@lstlisting=\count295
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -308,23 +309,23 @@ LaTeX Font Info:    ... okay on input line 22.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
-\scratchdimen=\dimen177
+\scratchcounter=\count296
+\scratchdimen=\dimen172
 \scratchbox=\box60
-\nofMPsegments=\count298
-\nofMParguments=\count299
+\nofMPsegments=\count297
+\nofMParguments=\count298
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count300
-\MPscratchDim=\dimen178
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
+\MPscratchCnt=\count299
+\MPscratchDim=\dimen173
+\MPnumerator=\count300
+\makeMPintoPDFobject=\count301
 \everyMPtoPDFconversion=\toks30
-) (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 <logo.png, id=1, 416.757pt x 241.8636pt>
@@ -333,7 +334,7 @@ File: logo.png Graphic file (type png)
 Package pdftex.def Info: logo.png  used on input line 26.
 (pdftex.def)             Requested size: 416.75598pt x 241.863pt.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 27.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
@@ -354,21 +355,21 @@ LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <12> not available
 
 [1
 
-{C:/Users/colag/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>]
+{C:/Users/adifi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./logo.png>]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 50.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 50.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 50.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 50.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -378,46 +379,60 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 50.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <14.4> not available
 (Font)              Font shape `T1/lmss/bx/n' tried instead on input line 52.
+ (Progetto-ScuolaGuida.toc
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 66.
-LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 70.
- (C:\Users\colag\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmss.fd
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 14.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 14.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 14.
+)
+\tf@toc=\write3
+\openout3 = `Progetto-ScuolaGuida.toc'.
+
+
+
+[2]
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 74.
+ (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmss.fd
 File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[2{C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-
-[3]
+[3{C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 [4]
 
-[5] (Progetto-ScuolaGuida.aux)
+[5]
+
+[6] (Progetto-ScuolaGuida.aux)
  ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-03-26>
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6435 strings out of 469959
- 97969 string characters out of 5469834
- 489750 words of memory out of 5000000
- 33123 multiletter control sequences out of 15000+600000
- 673801 words of font info for 70 fonts, out of 8000000 for 9000
+ 6485 strings out of 473535
+ 98869 string characters out of 5714935
+ 500887 words of memory out of 5000000
+ 29590 multiletter control sequences out of 15000+600000
+ 617844 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,1243b,446s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on Progetto-ScuolaGuida.pdf (5 pages, 818733 bytes).
+ 57i,11n,65p,1248b,461s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
+Output written on Progetto-ScuolaGuida.pdf (6 pages, 820258 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
