@@ -381,7 +381,7 @@
         L’attributo \textit{Email} presente in Recensione, che memorizza l’indirizzo email dell’iscritto autore della recensione, presenta una ridondanza. Questo valore può infatti essere ottenuto tramite la relazione con l’entità Iscritto, accedendo all’attributo Email già presente lì.
 
         Questo attributo viene modificato ogni volta che un iscritto aggiorna i propri dati anagrafici (evento poco frequente), ma viene visualizzato frequentemente, ad esempio ogni volta che un amministratore consulta le recensioni lasciate dagli utenti.
-        Si stima che vengano inserite circa 60 recensioni nuove a settimana, mentre la lettura delle recensioni avviene in media 200 volte al giorno da parte del personale o dei sistemi di report.
+        Si stima che vengano inserite circa 60 recensioni nuove a settimana, mentre la lettura delle recensioni avviene in media 200 volte a settimana da parte del personale o dei sistemi di report.
         Questo si riassume nelle seguenti due operazioni:
         \begin{itemize}
             \item \textbf{Operazione 1 (60 a settimana)} : Memorizza 60 nuove recensioni nella tabella Recensione.
@@ -472,7 +472,7 @@
         
         Assumendo \textit{costo doppio per gli accessi in scrittura}, il costo totale è:
         \[
-            \text{Costo Totale} = 60 \times 3 \times 2 + 60 + 200 = \boxed{620}
+            \text{Costo Totale} = 60 \times 2 + 200 = \boxed{320}
         \]
         
         \textbf{SENZA RIDONDANZA}: Analizziamo il costo totale senza ridondanza:
@@ -493,29 +493,21 @@
                     \rowcolor{white!40}
                     Recensione & E & 1 & S \\
                     \hline
-                    \rowcolor{white!40}
-                    Feedback & R & 1 & L \\
-                    \hline
-                    \rowcolor{white!40}
-                    Iscritto & E & 1 & L \\
-                    \hline
                 \end{tabular}
             \end{minipage}%
             \begin{minipage}[t]{0.4\textwidth}
                 \vspace{3.5ex} % allineamento verticale alla prima riga della tabella
                 \begin{flushleft}
                     $\times\ 60$ \\
-                    $\times\ 60$ \\
-                    $\times\ 60$ \\
                 \end{flushleft}
             \end{minipage}
 
             Nessun accesso aggiuntivo per aggiornare \textit{Email}, in quanto non viene salvato. \\
-        
+            
             \vspace{1em}
         
-            \item \textbf{Operazione 2}:  (con circa 3000/1000 = 3 recensioni per iscritto):
-        
+            \item \textbf{Operazione 2}:
+                    
             \noindent
             \begin{minipage}[t]{0.7\textwidth}
                 \vspace{0pt}
@@ -528,12 +520,9 @@
                     \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
                     \hline
                     \rowcolor{white!40}
-                    Recensione & E & 3 & L \\
+                    Recensione & E & 1 & L \\
                     \hline
-                    \rowcolor{white!40}
-                    Feedback & R & 1 & L \\
-                    \hline
-                    \rowcolor{white!40}
+                    \rowcolor{white!40} 
                     Iscritto & E & 1 & L \\
                     \hline
                 \end{tabular}
@@ -543,7 +532,6 @@
                 \begin{flushleft}
                     $\times\ 200$ \\
                     $\times\ 200$ \\
-                    $\times\ 200$
                 \end{flushleft}
             \end{minipage}
         \end{itemize}
@@ -552,7 +540,7 @@
         
         Assumendo \textit{costo doppio per gli accessi in scrittura}, il costo totale è:
         \[
-            \text{Costo Totale} = 60 \times 3 \times 2 + (200 \times 3) + (200 \times 2) = \boxed{1.360}
+            \text{Costo Totale} = 60 \times 2 + 200 \times 2 = \boxed{520}
         \]
 
         L’analisi suggerisce quindi di tenere l’attributo ridondante, ottimizzando cos` ı il
