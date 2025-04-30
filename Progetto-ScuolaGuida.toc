@@ -12,3 +12,4 @@
 \contentsline {section}{\numberline {3}Progettazione Concettuale}{3}{section.3}%
 \contentsline {section}{\numberline {4}Progettazione Logica}{5}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Analisi delle ridondanze}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Eliminazione delle generalizzazioni}{7}{subsection.4.2}%

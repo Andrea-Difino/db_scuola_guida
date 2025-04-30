@@ -86,6 +86,7 @@
 }
 
 \section{Analisi dei Requisiti}{
+    \label{sec:analisiRequisiti}
     Questa sezione riassume i requisiti a cui deve sottostare la base di dati.
 
     \paragraph{Iscritto.}
@@ -241,8 +242,8 @@
 }
 
 \section{Progettazione Concettuale}{
-
-    La \hyperref[fig:diagrammaER]{Figura~\ref*{fig:diagrammaER}} mostra il diagramma Entità-Relazione (E-R) che riassume i requisiti descritti in sezione 2.
+    \label{sec:progettazioneConcettuale}
+    La \hyperref[fig:diagrammaER]{Figura~\ref*{fig:diagrammaER}} mostra il diagramma Entità-Relazione (E-R) che riassume i requisiti descritti in \hyperref[sec:analisiRequisiti]{Sezione~\ref*{sec:analisiRequisiti}}.
     
     Esistono esattamente due tipi di lezioni, teoriche e pratiche.
 
@@ -547,6 +548,48 @@
 
         L’analisi suggerisce quindi di tenere l’attributo ridondante, ottimizzando cosi' il
         numero di accessi.
+    }
+    \subsection{Eliminazione delle generalizzazioni}{
+        Le generalizzazioni descritte in \hyperref[sec:progettazioneConcettuale]{Sezione~\ref*{sec:progettazioneConcettuale}} vengono 
+        eliminate attraverso una ristrutturazione dello schema concettuale, 
+        con l’obiettivo di semplificare la successiva implementazione del modello relazionale 
+        e ridurre la presenza di valori NULL. \\
+        Le modifiche vengono applicate come segue:
+        \begin{itemize}
+            \item \textbf{Lezione} \\ La generalizzazione totale di LEZIONE viene rimossa 
+            accorpando le entità figlie Lezione Teorica e Lezione Pratica all'interno dell'entità 
+            padre, come mostrato in \hyperref[sec:progettazioneConcettuale]{Figura~\ref*{sec:progettazioneConcettuale}}. %% sostituire link con immmagine er ristrutturato
+            Questa scelta semplifica la struttura del modello 
+            e permette di distinguere i due tipi di lezione attraverso un apposito attributo 
+            discriminante Tipo, che ne indica la natura teorica o pratica. \\
+            Inoltre, l’attributo proprio \textit{Durata}, specifico delle sole lezioni pratiche, 
+            viene incluso direttamente in 
+            Lezione come campo NULLABLE, evitando così la creazione di entità separate. \\
+            Se si fosse mantenuta un’unica entità Lezione con tutti gli attributi relativi a 
+            entrambe le sottoclassi senza distinguere i casi, le lezioni teoriche avrebbero 
+            presentato campi nulli come \textit{Durata}, mentre le lezioni pratiche non avrebbero 
+            utilizzato altri attributi eventualmente specifici delle lezioni teoriche (come \textit{Aula}). \\
+            Separando logicamente i due casi tramite l’attributo \textit{Tipo} e rendendo \textit{Durata} 
+            facoltativo, si garantisce che ogni istanza contenga solo le informazioni rilevanti.
+            In questa soluzione, coerentemente con la metodologia vista a lezione, 
+            non sono presenti entità figlie autonome e l’identificazione avviene direttamente 
+            tramite i campi della superclasse. \\
+            Sarebbe stato possibile mantenere le entità figlie,
+            spostando in esse gli attributi specifici, ma ciò avrebbe comportato la duplicazione 
+            delle relazioni comuni come Prenotazione e Recensione verso entrambe
+            le sottoclassi.
+            \item \textbf{Esame} \\In maniera simile, la generalizzazione totale ESAME viene sostituita 
+            accorpando le entità figlie all’interno della superclasse, come mostrato in \hyperref[sec:progettazioneConcettuale]{Figura~\ref*{sec:progettazioneConcettuale}}. \\ %% sostituire link con immmagine er ristrutturato
+            Anche in questo caso, seguendo un ragionamento simile a quello fatto per la 
+            generalizzazione precedente, questo cambiamento consente la riduzione di valori nulli.
+            Essendo la generalizzazione totale (ogni esame è necessariamente teorico o pratico), 
+            la soluzione di eliminare l’entità padre Esame non sarebbe corretta. \\
+            L'integrazione avviene mediante l'inclusione degli attributi propri delle sottoclassi,
+            come ad esempio \textit{Punti} e \textit{Sede} dell'esame teorico, direttamente in Esame come campi 
+            NULLABLE, distinguendo i due casi attraverso un attributo discriminante \textit{Tipo}. \\
+            Questo consente di rappresentare le informazioni in modo compatto e coerente, 
+            evitando la duplicazione di relazioni comuni come quella con Iscritto.
+        \end{itemize}
     }
 }
 
