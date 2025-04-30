@@ -401,9 +401,6 @@
                 Iscritto & E & 1000\\
                 \hline
                 \rowcolor{white!40}
-                Feedback & R & 3000\\
-                \hline
-                \rowcolor{white!40}
                 Recensione & E & 3000\\
                 \hline
             \end{tabular}
@@ -413,28 +410,153 @@
         \textit{Email} in Recensioni. \\
 
         \textbf{CON RIDONDANZA}: Analizziamo prima il costo totale con ridondanza:
+        \begin{itemize}
+            \item \textbf{Operazione 1}:
+        
+            \noindent
+            \begin{minipage}[t]{0.7\textwidth}
+                \vspace{0pt}
+                \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|
+                                >{\centering\arraybackslash}p{2cm}|
+                                >{\centering\arraybackslash}p{3cm}|
+                                >{\centering\arraybackslash}p{2cm}|}
+                    \hline
+                    \rowcolor{lightgray!40}
+                    \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
+                    \hline
+                    \rowcolor{white!40}
+                    Recensione & E & 1 & S \\
+                    \hline
+                    \rowcolor{white!40}
+                    Iscritto & E & 1 & L \\
+                    \hline
+                \end{tabular}
+            \end{minipage}%
+            \begin{minipage}[t]{0.4\textwidth}
+                \vspace{3.5ex} % allineamento verticale alla prima riga della tabella
+                \begin{flushleft}
+                    $\times\ 60$ \\
+                    $\times\ 60$ \\
+                \end{flushleft}
+            \end{minipage}
+        
+            \vspace{1em}
+        
+            \item \textbf{Operazione 2}:
+        
+            \noindent
+            \begin{minipage}[t]{0.7\textwidth}
+                \vspace{0pt}
+                \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|
+                                >{\centering\arraybackslash}p{2cm}|
+                                >{\centering\arraybackslash}p{3cm}|
+                                >{\centering\arraybackslash}p{2cm}|}
+                    \hline
+                    \rowcolor{lightgray!40}
+                    \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
+                    \hline
+                    \rowcolor{white!40}
+                    Recensione & E & 1 & L \\
+                    \hline
+                \end{tabular}
+            \end{minipage}%
+            \begin{minipage}[t]{0.2\textwidth}
+                \vspace{3.5ex}
+                \begin{flushleft}
+                    $\times\ 200$
+                \end{flushleft}
+            \end{minipage}
+        \end{itemize}
+        
+        \vspace{1em}
+        
+        Assumendo \textit{costo doppio per gli accessi in scrittura}, il costo totale è:
+        \[
+            \text{Costo Totale} = 60 \times 3 \times 2 + 60 + 200 = \boxed{620}
+        \]
+        
+        \textbf{SENZA RIDONDANZA}: Analizziamo il costo totale senza ridondanza:
+        \begin{itemize}
+            \item \textbf{Operazione 1}:
+        
+            \noindent
+            \begin{minipage}[t]{0.7\textwidth}
+                \vspace{0pt}
+                \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|
+                                >{\centering\arraybackslash}p{2cm}|
+                                >{\centering\arraybackslash}p{3cm}|
+                                >{\centering\arraybackslash}p{2cm}|}
+                    \hline
+                    \rowcolor{lightgray!40}
+                    \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
+                    \hline
+                    \rowcolor{white!40}
+                    Recensione & E & 1 & S \\
+                    \hline
+                    \rowcolor{white!40}
+                    Feedback & R & 1 & L \\
+                    \hline
+                    \rowcolor{white!40}
+                    Iscritto & E & 1 & L \\
+                    \hline
+                \end{tabular}
+            \end{minipage}%
+            \begin{minipage}[t]{0.4\textwidth}
+                \vspace{3.5ex} % allineamento verticale alla prima riga della tabella
+                \begin{flushleft}
+                    $\times\ 60$ \\
+                    $\times\ 60$ \\
+                    $\times\ 60$ \\
+                \end{flushleft}
+            \end{minipage}
 
-        \begin{table}[H]
-            \centering
-            \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{2cm}|}
-                \hline
-                \rowcolor{lightgray!40}
-                \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
-                \hline
-                \rowcolor{white!40}
-                Iscritto & E & 1000 & S\\
-                \hline
-                \rowcolor{white!40}
-                Feedback & R & 3000 & S\\
-                \hline
-                \rowcolor{white!40}
-                Recensione & E & 3000 & L\\
-                \hline
-                \rowcolor{white!40}
-                Recensione & E & 3000 & S\\
-                \hline
-            \end{tabular}
-        \end{table}
+            Nessun accesso aggiuntivo per aggiornare \textit{Email}, in quanto non viene salvato. \\
+        
+            \vspace{1em}
+        
+            \item \textbf{Operazione 2}:  (con circa 3000/1000 = 3 recensioni per iscritto):
+        
+            \noindent
+            \begin{minipage}[t]{0.7\textwidth}
+                \vspace{0pt}
+                \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|
+                                >{\centering\arraybackslash}p{2cm}|
+                                >{\centering\arraybackslash}p{3cm}|
+                                >{\centering\arraybackslash}p{2cm}|}
+                    \hline
+                    \rowcolor{lightgray!40}
+                    \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
+                    \hline
+                    \rowcolor{white!40}
+                    Recensione & E & 3 & L \\
+                    \hline
+                    \rowcolor{white!40}
+                    Feedback & R & 1 & L \\
+                    \hline
+                    \rowcolor{white!40}
+                    Iscritto & E & 1 & L \\
+                    \hline
+                \end{tabular}
+            \end{minipage}%
+            \begin{minipage}[t]{0.2\textwidth}
+                \vspace{3.5ex}
+                \begin{flushleft}
+                    $\times\ 200$ \\
+                    $\times\ 200$ \\
+                    $\times\ 200$
+                \end{flushleft}
+            \end{minipage}
+        \end{itemize}
+        
+        \vspace{1em}
+        
+        Assumendo \textit{costo doppio per gli accessi in scrittura}, il costo totale è:
+        \[
+            \text{Costo Totale} = 60 \times 3 \times 2 + (200 \times 3) + (200 \times 2) = \boxed{1.360}
+        \]
+
+        L’analisi suggerisce quindi di tenere l’attributo ridondante, ottimizzando cos` ı il
+        numero di accessi.
     }
 }
 

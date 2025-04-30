@@ -263,11 +263,18 @@ INPUT .\img\ER_ScuolaGuida.drawio.png
 INPUT .\img\ER_ScuolaGuida.drawio.png
 INPUT .\img\ER_ScuolaGuida.drawio.png
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmsso10.tfm
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmss8.tfm
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmss8.tfm
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT Progetto-ScuolaGuida.aux
 INPUT .\Progetto-ScuolaGuida.out
 INPUT .\Progetto-ScuolaGuida.out
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmcsc10.pfb
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmcsc10.pfb
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmss10.pfb
@@ -280,3 +287,5 @@ INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmssbx1
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmssbx10.pfb
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsso10.pfb
 INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsso10.pfb
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
+INPUT C:\Users\colag\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
