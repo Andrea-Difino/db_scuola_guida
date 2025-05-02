@@ -13,3 +13,4 @@
 \contentsline {section}{\numberline {4}Progettazione Logica}{5}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Analisi delle ridondanze}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Eliminazione delle generalizzazioni}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Schema Relazionale}{8}{subsection.4.3}%

@@ -591,6 +591,22 @@
             evitando la duplicazione di relazioni comuni come quella con Iscritto.
         \end{itemize}
     }
+    
+    \subsection{Schema Relazionale}{
+        Lo schema ristrutturato in \hyperref[sec:progettazioneConcettuale]{Figura~\ref*{sec:progettazioneConcettuale}} contiene solamente costrutti mappabili in corrispettivi dello schema relazionale - detto anche schema logico. Lo schema logico è rappresentato a seguire, dove l’asterisco dopo il nome degli attributi indica quelli che ammettono valori nulli.
+
+        \begin{itemize}
+            \item \textbf{Lezione}(\underline{ArgomentoLezione, Data}, OraInizio, Tipo, Durata*)
+            \item \textbf{Iscritto}(\underline{CF}, DataIscrizione, TipoPatente, Città(CAP, Provincia, Nome), Numero, Email, Indirizzo, Cognome, Nome)
+            \item \textbf{Istruttore}(\underline{Nome}, Attrezzatura, Posti)
+            \item \textbf{Veicolo}(\underline{Targa}, Modello, Tipo, Stato, AnnoImmatricolazione)
+            \item \textbf{Aula}(\underline{Nome}, Attrezzatura, Posti)
+            \item \textbf{Prenotazione}(\underline{Ora}, \underline{DataPrenotazione})
+            \item \textbf{Esame}(\underline{Data}, Esito, Durata, CFIscritto, Tipo, Sede*, Punti*)
+            \item \textbf{Recensione}(\underline{Oggetto}, Email, Commento, Data, Gradimento)
+            \item \textbf{Pagamento}(\underline{Importo}, Data, Stato, Metodo)
+        \end{itemize}
+    }
 }
 
 \end{document}
