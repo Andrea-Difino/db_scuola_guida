@@ -627,10 +627,25 @@
             \item \textbf{Istruttore}(\underline{Nome}, Attrezzatura, Posti)
             \item \textbf{Veicolo}(\underline{Targa}, Modello, Tipo, Stato, AnnoImmatricolazione)
             \item \textbf{Aula}(\underline{Nome}, Attrezzatura, Posti)
-            \item \textbf{Prenotazione}(\underline{Ora}, \underline{DataPrenotazione})
+            \item \textbf{Prenotazione}(\underline{DataPrenotazione, Iscritto}, Email)
+            \begin{itemize}
+                \item Prenotazione.Iscritto → Iscritto.CF
+                \item Prenotazione.IDLezione → Lezione.(ArgomentoLezione, Data)
+            \end{itemize}
             \item \textbf{Esame}(\underline{Data}, Esito, Durata, CFIscritto, Tipo, Sede*, Punti*)
-            \item \textbf{Recensione}(\underline{Oggetto}, Email, Commento, Data, Gradimento)
-            \item \textbf{Pagamento}(\underline{Importo}, Data, Stato, Metodo)
+            \item \textbf{Recensione}(\underline{Oggetto}, Email, Commento, Data, Gradimento, Iscritto)
+            \begin{itemize}
+                \item Recensione.Iscritto $\rightarrow$ Iscritto.CF
+            \end{itemize}
+            \item \textbf{Pagamento}(\underline{Importo}, Data, Stato, Metodo, Iscritto)
+            \begin{itemize}
+                \item Pagamento.Iscritto $\rightarrow$ Iscritto.CF
+            \end{itemize}
+            \item \textbf{Partecipazione}(\underline{PersonaCF, DataEsame})
+            \begin{itemize}
+                \item Partecipazione.PersonaCF $\rightarrow$ Iscritto.CF
+                \item Partecipazione.DataEsame $\rightarrow$ Esame.Data
+            \end{itemize}
         \end{itemize}
     }
 
