@@ -555,9 +555,9 @@
         e ridurre la presenza di valori NULL. \\
         Le modifiche vengono applicate come segue:
         \begin{itemize}
-            \item \textbf{Lezione} \\ La generalizzazione totale di LEZIONE viene rimossa 
+            \item \textbf{Lezione} \\ La generalizzazione totale ed esclusiva di LEZIONE viene rimossa 
             accorpando le entità figlie Lezione Teorica e Lezione Pratica all'interno dell'entità 
-            padre, come mostrato in \hyperref[sec:progettazioneConcettuale]{Figura~\ref*{sec:progettazioneConcettuale}}. %% sostituire link con immmagine er ristrutturato
+            padre, come mostrato in \hyperref[fig:diagrammaERristrutturato]{Figura~\ref*{fig:diagrammaERristrutturato}}.
             Questa scelta semplifica la struttura del modello 
             e permette di distinguere i due tipi di lezione attraverso un apposito attributo 
             discriminante Tipo, che ne indica la natura teorica o pratica. \\
@@ -568,7 +568,7 @@
             entrambe le sottoclassi senza distinguere i casi, le lezioni teoriche avrebbero 
             presentato campi nulli come \textit{Durata}, mentre le lezioni pratiche non avrebbero 
             utilizzato altri attributi eventualmente specifici delle lezioni teoriche (come \textit{Aula}). \\
-            Separando logicamente i due casi tramite l’attributo \textit{Tipo} e rendendo \textit{Durata} 
+            Separando logicamente i due casi tramite l’attributo \textit{TipoLezione} e rendendo \textit{Durata} 
             facoltativo, si garantisce che ogni istanza contenga solo le informazioni rilevanti.
             In questa soluzione, coerentemente con la metodologia vista a lezione, 
             non sono presenti entità figlie autonome e l’identificazione avviene direttamente 
@@ -577,20 +577,39 @@
             spostando in esse gli attributi specifici, ma ciò avrebbe comportato la duplicazione 
             delle relazioni comuni come Prenotazione e Recensione verso entrambe
             le sottoclassi.
-            \item \textbf{Esame} \\In maniera simile, la generalizzazione totale ESAME viene sostituita 
-            accorpando le entità figlie all’interno della superclasse, come mostrato in \hyperref[sec:progettazioneConcettuale]{Figura~\ref*{sec:progettazioneConcettuale}}. \\ %% sostituire link con immmagine er ristrutturato
+            \item \textbf{Esame} \\In maniera simile, la generalizzazione totale ed esclusiva di ESAME viene sostituita 
+            accorpando le entità figlie all’interno dell'entità padre, come mostrato in \hyperref[fig:diagrammaERristrutturato]{Figura~\ref*{fig:diagrammaERristrutturato}}. \\ 
             Anche in questo caso, seguendo un ragionamento simile a quello fatto per la 
             generalizzazione precedente, questo cambiamento consente la riduzione di valori nulli.
             Essendo la generalizzazione totale (ogni esame è necessariamente teorico o pratico), 
             la soluzione di eliminare l’entità padre Esame non sarebbe corretta. \\
             L'integrazione avviene mediante l'inclusione degli attributi propri delle sottoclassi,
             come ad esempio \textit{Punti} e \textit{Sede} dell'esame teorico, direttamente in Esame come campi 
-            NULLABLE, distinguendo i due casi attraverso un attributo discriminante \textit{Tipo}. \\
+            NULLABLE, distinguendo i due casi attraverso un attributo discriminante \textit{TipoEsame}. \\
             Questo consente di rappresentare le informazioni in modo compatto e coerente, 
             evitando la duplicazione di relazioni comuni come quella con Iscritto.
         \end{itemize}
     }
-    
+
+    \subsection{Scelta di identificatori primari}{
+        In questa sezione si analizzano le entità e le relazioni per determinare se sia opportuno partizionare o accorpare alcune di esse:\\
+        \\ \textbf{Città.} \\ 
+        Creiamo quindi una ulteriore entità Città partendo dall'attributo composto \textit{Città} che contiene gli attributi: \textit{CAP, Provincia e NomeCittà}.
+    }
+
+    \subsection{Partizionamento/Accorpamento di Entitá e Relationships}{
+        Alla nuova entitá cittá viene aggiunto l’attributo \textit{CodiceCatastale} anche noto come “codice
+        Belfiore” che identifica univocamente ogni comune nei registri catastali.
+    }
+
+    \newpage
+
+    \begin{figure}[H]        
+        \includegraphics[width=1\linewidth]{img/ER_ScuolaGuidaRistrutturato.drawio}\centering
+        \caption{Diagramma E-R Ristrutturato}
+        \label{fig:diagrammaERristrutturato}
+    \end{figure}
+
     \subsection{Schema Relazionale}{
         Lo schema ristrutturato in \hyperref[sec:progettazioneConcettuale]{Figura~\ref*{sec:progettazioneConcettuale}} contiene solamente costrutti mappabili in corrispettivi dello schema relazionale - detto anche schema logico. Lo schema logico è rappresentato a seguire, dove l’asterisco dopo il nome degli attributi indica quelli che ammettono valori nulli.
 
@@ -606,6 +625,7 @@
             \item \textbf{Pagamento}(\underline{Importo}, Data, Stato, Metodo)
         \end{itemize}
     }
+
 }
 
 \end{document}

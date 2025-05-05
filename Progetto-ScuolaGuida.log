@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.26)  5 MAY 2025 15:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.26)  5 MAY 2025 16:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -501,7 +501,7 @@ Package hyperref Info: Link coloring ON on input line 40.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<img/logo.png, id=34, 416.757pt x 241.8636pt>
+<img/logo.png, id=42, 416.757pt x 241.8636pt>
 File: img/logo.png Graphic file (type png)
 <use img/logo.png>
 Package pdftex.def Info: img/logo.png  used on input line 44.
@@ -597,7 +597,7 @@ File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [2]
 
 [3]
-<img/ER_ScuolaGuida.drawio.png, id=76, 1178.4025pt x 1220.56pt>
+<img/ER_ScuolaGuida.drawio.png, id=86, 1178.4025pt x 1220.56pt>
 File: img/ER_ScuolaGuida.drawio.png Graphic file (type png)
 <use img/ER_ScuolaGuida.drawio.png>
 Package pdftex.def Info: img/ER_ScuolaGuida.drawio.png  used on input line 266.
@@ -631,27 +631,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 507--508
 
 
 [7{C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 595--599
 
-[8] (Progetto-ScuolaGuida.aux)
+ []
+
+
+
+[8]
+<img/ER_ScuolaGuidaRistrutturato.drawio.png, id=119, 1065.9825pt x 1148.29pt>
+File: img/ER_ScuolaGuidaRistrutturato.drawio.png Graphic file (type png)
+<use img/ER_ScuolaGuidaRistrutturato.drawio.png>
+Package pdftex.def Info: img/ER_ScuolaGuidaRistrutturato.drawio.png  used on input line 608.
+(pdftex.def)             Requested size: 469.75539pt x 506.0201pt.
+
+
+[9 <./img/ER_ScuolaGuidaRistrutturato.drawio.png>]
+
+[10] (Progetto-ScuolaGuida.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
 Package rerunfilecheck Info: File `Progetto-ScuolaGuida.out' has not changed.
-(rerunfilecheck)             Checksum: E998DD308A6EFC67B8192851C85C347C;1125.
+(rerunfilecheck)             Checksum: 18257612CF9BDFF8BF9D94C409E06A11;1693.
  ) 
 Here is how much of TeX's memory you used:
- 14846 strings out of 469959
- 234412 string characters out of 5469834
- 640104 words of memory out of 5000000
- 41387 multiletter control sequences out of 15000+600000
+ 14865 strings out of 469959
+ 235057 string characters out of 5469834
+ 640161 words of memory out of 5000000
+ 41401 multiletter control sequences out of 15000+600000
  694179 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1243b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Progetto-ScuolaGuida.pdf (10 pages, 914392 bytes).
+Output written on Progetto-ScuolaGuida.pdf (12 pages, 971254 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 100 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1746450665.12339 "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" "Progetto-ScuolaGuida.pdf" "Progetto-ScuolaGuida" 1746450666.7356 0
+["pdflatex"] 1746453662.7683 "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" "Progetto-ScuolaGuida.pdf" "Progetto-ScuolaGuida" 1746453664.58556 0
   "C:/Users/colag/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1745937269 121708 e24d33b45c360dda1ca90255406aa401 ""
   "C:/Users/colag/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1745673108 13148213 9157dcfbe02c2ccefbd8767d59b89fff ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -130,12 +130,13 @@
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1730400552 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Progetto-ScuolaGuida.aux" 1746450666 2799 82d79e3705b097ff5b7cbaf574b109e1 "pdflatex"
-  "Progetto-ScuolaGuida.out" 1746450666 1125 e998dd308a6efc67b8192851c85c347c "pdflatex"
-  "Progetto-ScuolaGuida.tex" 1746450664 29840 4df318027509050faeb56022dd6cc4e0 ""
-  "Progetto-ScuolaGuida.toc" 1746450666 1041 2974d6119ff8692ba1e711460babf013 "pdflatex"
-  "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" 1746450664 29840 4df318027509050faeb56022dd6cc4e0 ""
+  "Progetto-ScuolaGuida.aux" 1746453664 3343 a854c592411b91d3d5df26fd1655fdee "pdflatex"
+  "Progetto-ScuolaGuida.out" 1746453664 1693 18257612cf9bdff8bf9d94c409e06a11 "pdflatex"
+  "Progetto-ScuolaGuida.tex" 1746453662 30725 84f26519f1f16998a26a74d491af116e ""
+  "Progetto-ScuolaGuida.toc" 1746453664 1260 73bda07d3a592cd8a9c8264fa90a54ca "pdflatex"
+  "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" 1746453662 30725 84f26519f1f16998a26a74d491af116e ""
   "img/ER_ScuolaGuida.drawio.png" 1745937024 301684 8e72ea5ef559f47f5bcbbc7bd0246e6d ""
+  "img/ER_ScuolaGuidaRistrutturato.drawio.png" 1746453281 296368 c4db09ec5d694d6437b4b1bc0db0d55b ""
   "img/logo.png" 1745937024 767922 2e0edd91febe2799b3427585cc4ac9af ""
   (generated)
   "Progetto-ScuolaGuida.aux"
