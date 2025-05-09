@@ -444,7 +444,6 @@ INSERT INTO Patente (TipoPatente, Descrizione) VALUES
 ('D1E', 'Minibus con rimorchio'),
 ('M', 'Macchine operatrici');
 
--- Populate Abilitazione
 INSERT INTO Abilitazione (IstruttoreCF, TipoPatente) VALUES
 ('BNCMRA70A01H501X', 'B'),
 ('BNCMRA70A01H501X', 'A'),
@@ -466,3 +465,84 @@ INSERT INTO Abilitazione (IstruttoreCF, TipoPatente) VALUES
 ('BNCFBA90I09H501R', 'DE'),
 ('RSSSFN75L10H501Q', 'B96'),
 ('RSSSFN75L10H501Q', 'M');
+
+--Query 1
+SELECT 
+    i.TipoPatente,
+    COUNT(*) as NumeroEsami,
+    AVG(e.Punti) as MediaPunti,
+    COUNT(e.Esito) as NumeroPromossi
+FROM Iscritto i
+JOIN Esame e ON i.CodiceFiscale = e.CodiceFiscale
+WHERE e.TipoEsame = 'Teorico'
+GROUP BY i.TipoPatente
+HAVING AVG(e.Punti) > 20
+ORDER BY MediaPunti DESC;
+
+--Query 2
+SELECT 
+    v.TipoVeicolo,
+    COUNT(*) as NumeroVeicoli,
+    COUNT(CASE WHEN v.Stato = 'Disponibile' THEN 1 END) as VeicoliDisponibili,
+    COUNT(DISTINCT i.TipoPatente) as TipiPatentiNecessarie,
+    COUNT(DISTINCT p.DataPrenotazione) as NumeroPrenotazioni
+FROM Veicolo v
+JOIN Iscritto i ON (
+    (v.TipoVeicolo = 'Auto' AND i.TipoPatente = 'B') OR
+    (v.TipoVeicolo = 'Moto' AND i.TipoPatente = 'A') OR
+    (v.TipoVeicolo = 'Camion' AND i.TipoPatente = 'C')
+)
+LEFT JOIN Prenotazione p ON i.CodiceFiscale = p.CodiceFiscale
+GROUP BY v.TipoVeicolo
+ORDER BY NumeroVeicoli DESC;
+
+--Query 3
+SELECT 
+    v.TipoVeicolo,
+    v.Modello,
+    v.Stato,
+    p.DataPrenotazione,
+    p.Ora,
+    i.Nome,
+    i.Cognome
+FROM Veicolo v
+JOIN Prenotazione p ON v.Stato = 'Disponibile'
+JOIN Iscritto i ON p.CodiceFiscale = i.CodiceFiscale
+WHERE v.Stato = 'Disponibile'
+    AND p.Stato = 'Accettata'
+ORDER BY p.DataPrenotazione, p.Ora;
+
+
+--Query 4
+SELECT 
+    a.NomeAula,
+    a.Posti,
+    a.Attrezzatura,
+    COUNT(DISTINCT r.CodiceFiscale) as NumeroStudenti,
+    COUNT(DISTINCT l.ArgomentoLezione) as ArgomentiDiversi,
+    MIN(l.Data) as PrimaLezione,
+    MAX(l.Data) as UltimaLezione
+FROM Aula a
+JOIN Lezione l ON l.TipoLezione = 'Teorico' 
+JOIN ValutazioneLezione vl ON l.Data = vl.DataLezione 
+    AND l.ArgomentoLezione = vl.ArgomentoLezione
+JOIN Recensione r ON vl.CodiceFiscale = r.CodiceFiscale 
+    AND vl.Oggetto = r.Oggetto
+WHERE a.Attrezzatura IN ('Proiettore', 'LIM')
+GROUP BY a.NomeAula, a.Posti, a.Attrezzatura
+HAVING COUNT(DISTINCT r.CodiceFiscale) > 0
+ORDER BY NumeroStudenti DESC;
+
+--Query 5
+SELECT 
+    i.Nome,
+    i.Cognome,
+    AVG(r.Gradimento) as MediaGradimento,
+    COUNT(DISTINCT r.CodiceFiscale) as NumeroRecensioni
+FROM Istruttore i
+JOIN ValutazioneIstruttore vi ON i.CodiceFiscale = vi.CodiceFiscaleIstruttore
+JOIN Recensione r ON vi.CodiceFiscale = r.CodiceFiscale 
+    AND r.CodiceFiscale IN (SELECT CodiceFiscale FROM Iscritto)
+GROUP BY i.CodiceFiscale, i.Nome, i.Cognome
+HAVING AVG(r.Gradimento) > 4.0
+ORDER BY MediaGradimento DESC;
