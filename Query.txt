@@ -1,162 +1,102 @@
 CREATE TABLE Iscritto (
-    id INTEGER PRIMARY KEY,
-    nome TEXT,
-    cognome TEXT,
-    data_nascita DATE,
-    email TEXT UNIQUE
+    CodiceFiscale CHAR(16) PRIMARY KEY,
+    DataIscrizione DATE,
+    TipoPatente TEXT CHECK(TipoPatente IN ('A', 'A1', 'A2', 'AM', 'B', 'B1', 'BE', 'B96', 'C', 'C1', 'CE', 'C1E', 'D', 'D1', 'DE',  'D1E', 'M')),
+    Nome VARCHAR(20),
+    Cognome VARCHAR(20),
+    Indirizzo VARCHAR(20),
+    Email VARCHAR(25),
+    Numero VARCHAR(25)
 );
-
--- Esempi di popolamento:
-INSERT INTO Iscritto VALUES (1, 'Fulvio', 'Lerner', '1975-03-10', 'fausto53@libero.it');
-INSERT INTO Iscritto VALUES (2, 'Evangelista', 'Casellati', '1964-08-30', 'drighi@tele2.it');
--- (continua per un totale di circa 30 tuple)
-
-
 
 CREATE TABLE Esame (
-    id INTEGER PRIMARY KEY,
-    tipo TEXT CHECK(tipo IN ('teorico', 'pratico')),
-    data DATE,
-    ora TIME
+    Data DATE,
+    CodiceFiscale CHAR(16),
+    TipoEsame TEXT CHECK(TipoEsame IN ('Teorico', 'Pratico')),
+    Durata INTEGER,
+    Esito BOOLEAN,
+    Sede VARCHAR(30) NULL,
+    Punti INTEGER NULL,
+    PRIMARY KEY (Data, CodiceFiscale),
+    FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale)
 );
-
--- Esempi di popolamento:
-INSERT INTO Esame VALUES (1, 'pratico', '2025-03-19', '00:05:16');
-INSERT INTO Esame VALUES (2, 'teorico', '2025-04-01', '23:55:15');
--- (continua per circa 30 tuple)
-
-
 
 CREATE TABLE Partecipazione (
-    id_iscritto INTEGER,
-    id_esame INTEGER,
-    risultato TEXT CHECK(risultato IN ('idoneo', 'non idoneo')),
-    PRIMARY KEY (id_iscritto, id_esame),
-    FOREIGN KEY (id_iscritto) REFERENCES Iscritto(id),
-    FOREIGN KEY (id_esame) REFERENCES Esame(id)
+    CodiceFiscale CHAR(16),
+    Data DATE,
+    PRIMARY KEY (CodiceFiscale, Data),
+    FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale),
+    FOREIGN KEY (Data, CodiceFiscale) REFERENCES Esame(Data, CodiceFiscale)
 );
-
--- Esempi di popolamento:
-INSERT INTO Partecipazione VALUES (30, 2, 'idoneo');
-INSERT INTO Partecipazione VALUES (10, 7, 'non idoneo');
--- (continua fino a circa 30 tuple)
-
-
-
-CREATE TABLE Istruttore (
-    id INTEGER PRIMARY KEY,
-    nome TEXT,
-    cognome TEXT,
-    patente TEXT,
-    email TEXT UNIQUE
-);
-
--- Esempi di popolamento:
-INSERT INTO Istruttore VALUES (1, 'Leonardo', 'Capuana', '043-EPEI', 'rosina88@fastwebnet.it');
-INSERT INTO Istruttore VALUES (2, 'Michelangelo', 'Simeoni', 'LTI 750', 'foarenata@libero.it');
--- (continua fino a circa 30)
-
-
-
-CREATE TABLE Veicolo (
-    id INTEGER PRIMARY KEY,
-    modello TEXT,
-    targa TEXT UNIQUE,
-    tipo TEXT
-);
-
--- Esempi di popolamento:
-INSERT INTO Veicolo VALUES (1, 'accusamus', 'HAS7509', 'auto');
-INSERT INTO Veicolo VALUES (2, 'reiciendis', '085 APG', 'auto');
--- (continua fino a circa 30)
-
-
-
-CREATE TABLE Aula (
-    id INTEGER PRIMARY KEY,
-    codice TEXT,
-    capienza INTEGER
-);
-
--- Esempi di popolamento:
-INSERT INTO Aula VALUES (1, 'A-20', 24);
-INSERT INTO Aula VALUES (2, 'A-73', 26);
--- (continua fino a 10 aule)
-
-
-
-CREATE TABLE Lezione (
-    id INTEGER PRIMARY KEY,
-    data DATE,
-    ora TIME,
-    id_istruttore INTEGER,
-    id_aula INTEGER,
-    id_veicolo INTEGER,
-    FOREIGN KEY (id_istruttore) REFERENCES Istruttore(id),
-    FOREIGN KEY (id_aula) REFERENCES Aula(id),
-    FOREIGN KEY (id_veicolo) REFERENCES Veicolo(id)
-);
-
--- Esempi:
-INSERT INTO Lezione VALUES (1, '2025-03-03', '23:54:54', 3, 10, 7);
-INSERT INTO Lezione VALUES (2, '2025-01-10', '08:45:44', 17, 5, 13);
--- (continua fino a 30 lezioni)
-
-
-
-CREATE TABLE Prenotazione (
-    id INTEGER PRIMARY KEY,
-    id_iscritto INTEGER,
-    id_lezione INTEGER,
-    FOREIGN KEY (id_iscritto) REFERENCES Iscritto(id),
-    FOREIGN KEY (id_lezione) REFERENCES Lezione(id)
-);
-
--- Esempi:
-INSERT INTO Prenotazione VALUES (1, 8, 12);
-INSERT INTO Prenotazione VALUES (2, 10, 7);
--- (continua fino a 30 prenotazioni)
-
-
-
-CREATE TABLE Pagamento (
-    id INTEGER PRIMARY KEY,
-    importo REAL,
-    data DATE,
-    id_iscritto INTEGER,
-    FOREIGN KEY (id_iscritto) REFERENCES Iscritto(id)
-);
-
--- Esempi:
-INSERT INTO Pagamento VALUES (1, 97.17, '2025-02-03', 20);
-INSERT INTO Pagamento VALUES (2, 66.69, '2025-05-01', 26);
--- (continua fino a 30 pagamenti)
-
-
-
-CREATE TABLE Città (
-    id INTEGER PRIMARY KEY,
-    nome TEXT
-);
-
--- Esempi:
-INSERT INTO Città VALUES (1, 'Desio umbro');
-INSERT INTO Città VALUES (2, 'Quarto Stella');
--- (continua fino a 10 città)
 
 
 
 CREATE TABLE Recensione (
-    id INTEGER PRIMARY KEY,
-    testo TEXT,
-    valutazione INTEGER,
-    id_iscritto INTEGER,
-    id_istruttore INTEGER,
-    FOREIGN KEY (id_iscritto) REFERENCES Iscritto(id),
-    FOREIGN KEY (id_istruttore) REFERENCES Istruttore(id)
+    CodiceFiscale CHAR(16),
+    Oggetto VARCHAR(50),
+    Commento TEXT,
+    Email VARCHAR(30),
+    Data DATE,
+    Gradimento INTEGER CHECK(Gradimento BETWEEN 1 AND 5),
+    PRIMARY KEY (CodiceFiscale, Oggetto),
+    FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale)
 );
 
--- Esempi:
-INSERT INTO Recensione VALUES (1, 'Delectus ea ratione tempora.', 2, 8, 7);
-INSERT INTO Recensione VALUES (2, 'Consequatur ad molestias pariatur.', 4, 3, 27);
--- (continua fino a 30 recensioni)
+CREATE TABLE Lezione (
+    Data DATE,
+    ArgomentoLezione VARCHAR(50),
+    TipoLezione TEXT CHECK(TipoLezione IN ('Teorico', 'Pratico')),
+    OraInizio TIME,
+    Durata INTEGER NULL,
+    PRIMARY KEY (Data, ArgomentoLezione)
+);
+
+CREATE TABLE Prenotazione (
+    DataPrenotazione DATE,
+    CodiceFiscale CHAR(16),
+    Ora TIME,
+    Stato TEXT CHECK(Stato IN ('Accetta', 'Rifiutata', 'In attesa')),
+    PRIMARY KEY (DataPrenotazione, CodiceFiscale),
+    FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale)
+);
+
+CREATE TABLE Pagamento (
+    Importo DECIMAL(10, 2),
+    Data DATE,
+    CodiceFiscale CHAR(16),
+    Stato TEXT CHECK(Stato IN ('Accetta', 'Rifiutata', 'In attesa')),
+    MetodoPagamento TEXT CHECK(MetodoPagamento IN ('carta', 'contanti', 'bonifico')),
+    PRIMARY KEY (Importo, Data, CodiceFiscale),
+    FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale)
+);
+
+CREATE TABLE Veicolo (
+    Targa CHAR(7) PRIMARY KEY,
+    Modello VARCHAR(30),
+    AnnoImmatricolazione YEAR,
+    Stato TEXT CHECK(Stato IN ('Disponibile', 'In Manutenzione', 'Non Disponibile')),
+    TipoVeicolo TEXT CHECK(TipoVeicolo IN ('Auto', 'Moto', 'Camion'))
+);
+
+CREATE TABLE Citta (
+    CodiceCatastale VARCHAR(4) PRIMARY KEY,
+    NomeCitta VARCHAR(30),
+    CAP VARCHAR(5),
+    Provincia VARCHAR(2)
+);
+
+CREATE TABLE Aula (
+    NomeAula VARCHAR(20) PRIMARY KEY,
+    Posti INTEGER,
+    Attrezzatura TEXT CHECK(Attrezzatura IN ('Proiettore', 'Lavagna', 'LIM', 'Impianto Audio'))
+);
+
+CREATE TABLE Istruttore (
+    CodiceFiscale CHAR(16) PRIMARY KEY,
+    Nome VARCHAR(20),
+    Cognome VARCHAR(20),
+    AnniEsperienza INTEGER,
+    Abilitazione VARCHAR(4),
+    Numero VARCHAR(12),
+    Email VARCHAR (30)
+);
