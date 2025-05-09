@@ -140,7 +140,6 @@ CREATE TABLE Abilitazione (
     FOREIGN KEY (TipoPatente) REFERENCES Patente(TipoPatente)
 );
 
--- Populate Iscritto
 INSERT INTO Iscritto (CodiceFiscale, DataIscrizione, TipoPatente, Nome, Cognome, Indirizzo, Email, Numero) VALUES
 ('RSSMRA80A01H501A', '2025-01-01', 'B', 'Mario', 'Rossi', 'Via Roma 1', 'mario.rossi@email.it', '3331234567'),
 ('VRDLCA81B02H501B', '2025-01-02', 'A', 'Luca', 'Verdi', 'Via Milano 2', 'luca.verdi@email.it', '3331234568'),
@@ -163,7 +162,6 @@ INSERT INTO Iscritto (CodiceFiscale, DataIscrizione, TipoPatente, Nome, Cognome,
 ('FRRSRA98V19H501V', '2025-01-19', 'A2', 'Sara', 'Ferrari', 'Via Latina 19', 'sara.f@email.it', '3331234585'),
 ('MTTPLA99Z20H501Z', '2025-01-20', 'B', 'Paolo', 'Motti', 'Via Siena 20', 'paolo.m@email.it', '3331234586');
 
--- Populate Esame
 INSERT INTO Esame (Data, CodiceFiscale, TipoEsame, Durata, Esito, Sede, Punti) VALUES
 ('2025-02-01', 'RSSMRA80A01H501A', 'Teorico', 60, TRUE, 'Sede Roma Centro', 28),
 ('2025-02-02', 'VRDLCA81B02H501B', 'Pratico', 45, TRUE, NULL, NULL),
@@ -186,7 +184,7 @@ INSERT INTO Esame (Data, CodiceFiscale, TipoEsame, Durata, Esito, Sede, Punti) V
 ('2025-02-19', 'FRRSRA98V19H501V', 'Teorico', 60, TRUE, 'Sede Roma Centro', 28),
 ('2025-02-20', 'MTTPLA99Z20H501Z', 'Pratico', 45, TRUE, NULL, NULL);
 
--- Populate Partecipazione
+
 INSERT INTO Partecipazione (CodiceFiscale, Data) VALUES
 ('RSSMRA80A01H501A', '2025-02-01'),
 ('VRDLCA81B02H501B', '2025-02-02'),
@@ -209,7 +207,6 @@ INSERT INTO Partecipazione (CodiceFiscale, Data) VALUES
 ('FRRSRA98V19H501V', '2025-02-19'),
 ('MTTPLA99Z20H501Z', '2025-02-20');
 
--- Populate Recensione
 INSERT INTO Recensione (CodiceFiscale, Oggetto, Commento, Email, Data, Gradimento) VALUES
 ('RSSMRA80A01H501A', 'Ottimo corso', 'Istruttori molto preparati', 'mario.rossi@email.it', '2025-03-01', 5),
 ('VRDLCA81B02H501B', 'Buona esperienza', 'Corso ben strutturato', 'luca.verdi@email.it', '2025-03-02', 4),
@@ -232,7 +229,6 @@ INSERT INTO Recensione (CodiceFiscale, Oggetto, Commento, Email, Data, Gradiment
 ('FRRSRA98V19H501V', 'Ottima scelta', 'Preparazione eccellente', 'sara.f@email.it', '2025-03-19', 5),
 ('MTTPLA99Z20H501Z', 'Corso consigliato', 'Esperienza positiva', 'paolo.m@email.it', '2025-03-20', 4);
 
--- Populate Prenotazione
 INSERT INTO Prenotazione (DataPrenotazione, CodiceFiscale, Ora, Stato) VALUES
 ('2025-05-01', 'RSSMRA80A01H501A', '09:00:00', 'Accettata'),
 ('2025-05-02', 'VRDLCA81B02H501B', '10:00:00', 'In attesa'),
@@ -255,7 +251,6 @@ INSERT INTO Prenotazione (DataPrenotazione, CodiceFiscale, Ora, Stato) VALUES
 ('2025-05-19', 'FRRSRA98V19H501V', '09:00:00', 'Accettata'),
 ('2025-05-20', 'MTTPLA99Z20H501Z', '10:00:00', 'In attesa');
 
--- Populate Pagamento
 INSERT INTO Pagamento (Importo, Data, CodiceFiscale, Stato, MetodoPagamento) VALUES
 (500.00, '2025-05-01', 'RSSMRA80A01H501A', 'Accettata', 'carta'),
 (600.00, '2025-05-02', 'VRDLCA81B02H501B', 'In attesa', 'bonifico'),
@@ -278,7 +273,7 @@ INSERT INTO Pagamento (Importo, Data, CodiceFiscale, Stato, MetodoPagamento) VAL
 (550.00, '2025-05-19', 'FRRSRA98V19H501V', 'Accettata', 'carta'),
 (500.00, '2025-05-20', 'MTTPLA99Z20H501Z', 'In attesa', 'bonifico');
 
--- Populate Veicolo
+
 INSERT INTO Veicolo (Targa, Modello, AnnoImmatricolazione, Stato, TipoVeicolo) VALUES
 ('AA111BB', 'Fiat Panda', 2023, 'Disponibile', 'Auto'),
 ('BB222CC', 'Honda CBR', 2023, 'Disponibile', 'Moto'),
@@ -301,7 +296,7 @@ INSERT INTO Veicolo (Targa, Modello, AnnoImmatricolazione, Stato, TipoVeicolo) V
 ('VV999ZZ', 'Peugeot 208', 2023, 'Non Disponibile', 'Auto'),
 ('ZZ000AA', 'Aprilia RSV4', 2023, 'Disponibile', 'Moto');
 
--- Populate Citta
+
 INSERT INTO Citta (CodiceCatastale, NomeCitta, CAP, Provincia) VALUES
 ('H501', 'Roma', '00100', 'RM'),
 ('F205', 'Milano', '20100', 'MI'),
@@ -309,11 +304,7 @@ INSERT INTO Citta (CodiceCatastale, NomeCitta, CAP, Provincia) VALUES
 ('F839', 'Napoli', '80100', 'NA'),
 ('L219', 'Torino', '10100', 'TO'),
 ('D612', 'Firenze', '50100', 'FI'),
-<<<<<<< HEAD
 ('A662', 'Bari', '70100', 'BA'),
-=======
-('A622', 'Bari', '70100', 'BA'),
->>>>>>> b229d04dfc6167f63f52be9f20b10bac2ccf6828
 ('C351', 'Catania', '95100', 'CT'),
 ('G273', 'Palermo', '90100', 'PA'),
 ('L781', 'Venezia', '30100', 'VE'),
@@ -328,7 +319,6 @@ INSERT INTO Citta (CodiceCatastale, NomeCitta, CAP, Provincia) VALUES
 ('H163', 'Ravenna', '48100', 'RA'),
 ('D548', 'Ferrara', '44100', 'FE');
 
--- Populate Aula
 INSERT INTO Aula (NomeAula, Posti, Attrezzatura) VALUES
 ('Aula Magna', 100, 'Proiettore'),
 ('Aula 1A', 30, 'LIM'),
@@ -351,7 +341,7 @@ INSERT INTO Aula (NomeAula, Posti, Attrezzatura) VALUES
 ('Aula 9B', 25, 'Lavagna'),
 ('Aula 10A', 40, 'Proiettore');
 
--- Populate Istruttore
+
 INSERT INTO Istruttore (CodiceFiscale, Nome, Cognome, AnniEsperienza, Abilitazione, Numero, Email) VALUES
 ('BNCMRA70A01H501X', 'Mario', 'Bianchi', 15, 'ABCD', '321234567890', 'mario.bianchi@scuola.it'),
 ('RSSGVN75B02H501Y', 'Giovanni', 'Rossi', 12, 'EFGH', '322234567890', 'giovanni.rossi@scuola.it'),
@@ -365,7 +355,51 @@ INSERT INTO Istruttore (CodiceFiscale, Nome, Cognome, AnniEsperienza, Abilitazio
 ('RSSSFN75L10H501Q', 'Stefano', 'Rossi', 14, 'RSTU', '330234567890', 'stefano.rossi@scuola.it'),
 ('VRDMRC80M11H501P', 'Marco', 'Verdi', 12, 'VWXY', '331234567890', 'marco.verdi@scuola.it');
 
--- Populate Lezione
+-- Populate ValutazioneIstruttore
+INSERT INTO ValutazioneLezione (CodiceFiscale, Oggetto, DataLezione, ArgomentoLezione) VALUES
+('RSSMRA80A01H501A', 'Ottimo corso', '2025-04-01', 'Segnaletica stradale'),
+('VRDLCA81B02H501B', 'Buona esperienza', '2025-04-02', 'Precedenze'),
+('BNCGPP82C03H501C', 'Soddisfatto', '2025-04-03', 'Parcheggio'),
+('NRENNA83D04H501D', 'Esperienza positiva', '2025-04-04', 'Codice della strada'),
+('GLLMRC84E05H501E', 'Da migliorare', '2025-04-05', 'Guida in città'),
+('VLNSFN85F06H501F', 'Molto professionale', '2025-04-06', 'Sicurezza stradale'),
+('RSSMRA86G07H501G', 'Corso eccellente', '2025-04-07', 'Manovre base'),
+('CNTLCA87H08H501H', 'Buon corso', '2025-04-08', 'Limiti di velocità'),
+('FRRPLA88I09H501I', 'Esperienza ok', '2025-04-09', 'Guida notturna'),
+('MRTGNN89L10H501L', 'Molto soddisfatta', '2025-04-10', 'Emergenze'),
+('BRNGPP90M11H501M', 'Corso completo', '2025-04-11', 'Autostrada'),
+('RMNNNA91N12H501N', 'Esperienza positiva', '2025-04-12', 'Meccanica base'),
+('GLLCRL92P13H501P', 'Ottimo servizio', '2025-04-13', 'Parcheggio parallelo'),
+('RSSLRA93Q14H501Q', 'Corso efficace', '2025-04-14', 'Primo soccorso'),
+('BNCFBA94R15H501R', 'Buona scuola', '2025-04-15', 'Guida eco'),
+('VLNLSA95S16H501S', 'Esperienza positiva', '2025-04-16', 'Meteo e guida'),
+('RSSMTA96T17H501T', 'Corso valido', '2025-04-17', 'Rotatorie'),
+('CNTDVD97U18H501U', 'Soddisfatto', '2025-04-18', 'Documenti auto'),
+('FRRSRA98V19H501V', 'Ottima scelta', '2025-04-19', 'Guida sportiva'),
+('MTTPLA99Z20H501Z', 'Corso consigliato', '2025-04-20', 'Manutenzione');
+
+INSERT INTO ValutazioneIstruttore (CodiceFiscale, Oggetto, CodiceFiscaleIstruttore) VALUES
+('RSSMRA80A01H501A', 'Ottimo corso', 'BNCMRA70A01H501X'),
+('VRDLCA81B02H501B', 'Buona esperienza', 'RSSGVN75B02H501Y'),
+('BNCGPP82C03H501C', 'Soddisfatto', 'VRDLCA80C03H501Z'),
+('NRENNA83D04H501D', 'Esperienza positiva', 'NRIGPP85D04H501W'),
+('GLLMRC84E05H501E', 'Da migliorare', 'BNCNNA90E05H501V'),
+('VLNSFN85F06H501F', 'Molto professionale', 'RSSMRA75F06H501U'),
+('RSSMRA86G07H501G', 'Corso eccellente', 'VRDPLA80G07H501T'),
+('CNTLCA87H08H501H', 'Buon corso', 'NRILCU85H08H501S'),
+('FRRPLA88I09H501I', 'Esperienza ok', 'BNCFBA90I09H501R'),
+('MRTGNN89L10H501L', 'Molto soddisfatta', 'RSSSFN75L10H501Q'),
+('BRNGPP90M11H501M', 'Corso completo', 'BNCMRA70A01H501X'),
+('RMNNNA91N12H501N', 'Esperienza positiva', 'RSSGVN75B02H501Y'),
+('GLLCRL92P13H501P', 'Ottimo servizio', 'VRDLCA80C03H501Z'),
+('RSSLRA93Q14H501Q', 'Corso efficace', 'NRIGPP85D04H501W'),
+('BNCFBA94R15H501R', 'Buona scuola', 'BNCNNA90E05H501V'),
+('VLNLSA95S16H501S', 'Esperienza positiva', 'RSSMRA75F06H501U'),
+('RSSMTA96T17H501T', 'Corso valido', 'VRDPLA80G07H501T'),
+('CNTDVD97U18H501U', 'Soddisfatto', 'NRILCU85H08H501S'),
+('FRRSRA98V19H501V', 'Ottima scelta', 'BNCFBA90I09H501R'),
+('MTTPLA99Z20H501Z', 'Corso consigliato', 'RSSSFN75L10H501Q');
+
 INSERT INTO Lezione (Data, ArgomentoLezione, TipoLezione, OraInizio, Durata) VALUES
 ('2025-04-01', 'Segnaletica stradale', 'Teorico', '09:00:00', NULL),
 ('2025-04-02', 'Precedenze', 'Teorico', '11:00:00', NULL),
@@ -387,6 +421,8 @@ INSERT INTO Lezione (Data, ArgomentoLezione, TipoLezione, OraInizio, Durata) VAL
 ('2025-04-18', 'Documenti auto', 'Teorico', '14:00:00', NULL),
 ('2025-04-19', 'Guida sportiva', 'Pratico', '09:00:00', 60),
 ('2025-04-20', 'Manutenzione', 'Teorico', '11:00:00', NULL);
+
+
 
 -- Populate Patente
 INSERT INTO Patente (TipoPatente, Descrizione) VALUES
