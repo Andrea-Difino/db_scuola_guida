@@ -123,6 +123,15 @@
     Un istruttore può tenere più lezioni sia teoriche che pratiche, ma non può essere assegnato contemporaneamente a due lezioni sovrapposte.
     
 
+    \paragraph{Patente.}
+    Le Patenti determinano per cosa gli istruttori sono abilitati ad insegnare:
+    
+    \begin{itemize}
+        \item TipoPatente.
+    \end{itemize}
+
+    Un istruttore può essere abilitato ad insegnare più patenti, ma una patente può non essere insegnata da nessun istruttore.
+
     \paragraph{Veicolo.}
     I veicoli sono utilizzati per le lezioni pratiche e per gli esami pratici. Per ogni veicolo vengono registrate le seguenti informazioni:
     
@@ -263,12 +272,12 @@
 }
 
 \begin{figure}[H]        
-    \includegraphics[width=1\linewidth]{img/ER_ScuolaGuida.drawio.png}\centering
+    \includegraphics[width=.88\linewidth]{img/ER_ScuolaGuida.drawio.png}\centering
     \caption{Diagramma E-R della base di dati relativa alla gestione di una Scuola Guida}
     \label{fig:diagrammaER}
 \end{figure}
 
-\newpage
+
 
 \section{Progettazione Logica}{
     In questa sezione viene presentato lo schema logico relazionale derivato dal modello concettuale;
@@ -293,6 +302,9 @@
             \hline
             \rowcolor{white!40}
             Istruttore & Istruttore pratico e teorico della scuola guida & \textit{CF, Nome, Cognome, Numero, Email, Abilitazione, AnniEsperienza} & \textit{CF} \\
+            \hline
+            \rowcolor{white!40}
+            Patente & Patente per l'abilitazione & \textit{TipoPatente} & \textit{TipoPatente}, relazione "Abilitazione"\\
             \hline
             \rowcolor{white!40}
             Veicolo & Veicolo utilizzato per esami pratici e lezioni pratiche & \textit{Targa, Modello, Tipo, Stato, AnnoImmatricolazione} & \textit{Targa}\\
@@ -349,6 +361,9 @@
             \hline
             \rowcolor{white!40}
             Giudizio & Recensione di una lezione & Recensione, Lezione & \\
+            \hline
+            \rowcolor{white!40}
+            Abilitazione & Abilitazione di un istruttore per una patente & Istruttore, Patente & \\
             \hline
             \rowcolor{white!40}
             Insegnamento & Svolgimento della lezione da parte di un istruttore & Istruttore, Lezione & \\
@@ -605,7 +620,7 @@
     \newpage
 
     \begin{figure}[H]        
-        \includegraphics[width=1\linewidth]{img/ER_ScuolaGuidaRistrutturato.drawio}\centering
+        \includegraphics[width=1\linewidth]{img/ER_ScuolaGuidaRistrutturato.drawio.png}\centering
         \caption{Diagramma E-R Ristrutturato}
         \label{fig:diagrammaERristrutturato}
     \end{figure}
@@ -625,6 +640,10 @@
             \end{itemize}
             \item \textbf{Città}(\underline{CodiceCatastale}, NomeCittà, Provincia, CAP)
             \item \textbf{Istruttore}(\underline{Nome}, Attrezzatura, Posti)
+            \item \textbf{Patente}(\underline{TipoPatente, Istruttore})
+            \begin{itemize}
+                \item Patente.Istruttore → Istruttore.CF
+            \end{itemize}
             \item \textbf{Veicolo}(\underline{Targa}, Modello, Tipo, Stato, AnnoImmatricolazione)
             \item \textbf{Aula}(\underline{Nome}, Attrezzatura, Posti)
             \item \textbf{Prenotazione}(\underline{DataPrenotazione, Iscritto}, Email)
@@ -648,6 +667,11 @@
             \begin{itemize}
                 \item Partecipazione.PersonaCF $\rightarrow$ Iscritto.CF
                 \item Partecipazione.DataEsame $\rightarrow$ Esame.Data
+            \end{itemize}
+            \item \textbf{Abilitazione}(\underline{IstruttoreCF, TipoPatente})
+            \begin{itemize}
+                \item Abilitazione.IstruttoreCF $\rightarrow$ Istruttore.CF
+                \item Abilitazione.TipoPatente $\rightarrow$ Patente.TipoPatente
             \end{itemize}
         \end{itemize}
     }

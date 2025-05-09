@@ -1,12 +1,16 @@
 CREATE TABLE Iscritto (
     CodiceFiscale CHAR(16) PRIMARY KEY,
     DataIscrizione DATE,
-    TipoPatente TEXT CHECK(TipoPatente IN ('A', 'A1', 'A2', 'AM', 'B', 'B1', 'BE', 'B96', 'C', 'C1', 'CE', 'C1E', 'D', 'D1', 'DE',  'D1E', 'M')),
+    TipoPatente TEXT CHECK(TipoPatente IN
+    (
+        'A', 'A1', 'A2', 'AM', 'B', 'B1', 'BE', 'B96',
+        'C', 'C1', 'CE', 'C1E', 'D', 'D1', 'DE', 'D1E', 'M'
+    )),
     Nome VARCHAR(20),
     Cognome VARCHAR(20),
     Indirizzo VARCHAR(20),
-    Email VARCHAR(25),
-    Numero VARCHAR(25)
+    Email VARCHAR(25) UNIQUE,
+    Numero VARCHAR(25) UNIQUE
 );
 
 CREATE TABLE Esame (
@@ -97,6 +101,21 @@ CREATE TABLE Istruttore (
     Cognome VARCHAR(20),
     AnniEsperienza INTEGER,
     Abilitazione VARCHAR(4),
-    Numero VARCHAR(12),
-    Email VARCHAR (30)
+    Numero VARCHAR(12) UNIQUE,
+    Email VARCHAR (30) UNIQUE
+);
+
+CREATE TABLE Patente (
+    Tipo TEXT PRIMARY KEY CHECK (Tipo IN (
+        'A', 'A1', 'A2', 'AM', 'B', 'B1', 'BE', 'B96',
+        'C', 'C1', 'CE', 'C1E', 'D', 'D1', 'DE', 'D1E', 'M'
+    ))
+);
+
+CREATE TABLE Abilitazione (
+    IstruttoreCF CHAR(16),
+    TipoPatente TEXT,
+    PRIMARY KEY (IstruttoreCF, TipoPatente),
+    FOREIGN KEY (IstruttoreCF) REFERENCES Istruttore(CodiceFiscale),
+    FOREIGN KEY (TipoPatente) REFERENCES Patente(TipoPatente)
 );
