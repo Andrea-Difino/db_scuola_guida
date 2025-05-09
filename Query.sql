@@ -290,7 +290,7 @@ INSERT INTO Citta (CodiceCatastale, NomeCitta, CAP, Provincia) VALUES
 ('F839', 'Napoli', '80100', 'NA'),
 ('L219', 'Torino', '10100', 'TO'),
 ('D612', 'Firenze', '50100', 'FI'),
-('A944', 'Bari', '70100', 'BA'),
+('A662', 'Bari', '70100', 'BA'),
 ('C351', 'Catania', '95100', 'CT'),
 ('G273', 'Palermo', '90100', 'PA'),
 ('L781', 'Venezia', '30100', 'VE'),
