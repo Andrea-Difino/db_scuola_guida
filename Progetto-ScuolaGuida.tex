@@ -632,8 +632,11 @@
                 \item Prenotazione.Iscritto → Iscritto.CF
                 \item Prenotazione.IDLezione → Lezione.(ArgomentoLezione, Data)
             \end{itemize}
-            \item \textbf{Esame}(\underline{Data}, Esito, Durata, CFIscritto, Tipo, Sede*, Punti*)
-            \item \textbf{Recensione}(\underline{Oggetto}, Email, Commento, Data, Gradimento, Iscritto)
+            \item \textbf{Esame}(\underline{Data, Iscritto}, Esito, Durata, Tipo, Sede*, Punti*)
+            \begin{itemize}
+                \item Esame.Iscritto → Iscritto.CF
+            \end{itemize}
+            \item \textbf{Recensione}(\underline{Oggetto, Iscritto}, Email, Commento, Data, Gradimento)
             \begin{itemize}
                 \item Recensione.Iscritto $\rightarrow$ Iscritto.CF
             \end{itemize}
