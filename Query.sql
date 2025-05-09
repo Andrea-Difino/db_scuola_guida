@@ -466,23 +466,3 @@ INSERT INTO Abilitazione (IstruttoreCF, TipoPatente) VALUES
 ('BNCFBA90I09H501R', 'DE'),
 ('RSSSFN75L10H501Q', 'B96'),
 ('RSSSFN75L10H501Q', 'M');
-
-SELECT 
-    a.NomeAula,
-    a.Posti,
-    a.Attrezzatura,
-    COUNT(DISTINCT r.CodiceFiscale) as NumeroStudenti,
-    COUNT(DISTINCT l.ArgomentoLezione) as ArgomentiDiversi,
-    MIN(l.Data) as PrimaLezione,
-    MAX(l.Data) as UltimaLezione,
-    AVG(l.Durata) as DurataMediaMinuti
-FROM Aula a
-JOIN Lezione l ON l.TipoLezione = 'Teorico' 
-JOIN ValutazioneLezione vl ON l.Data = vl.DataLezione 
-    AND l.ArgomentoLezione = vl.ArgomentoLezione
-JOIN Recensione r ON vl.CodiceFiscale = r.CodiceFiscale 
-    AND vl.Oggetto = r.Oggetto
-WHERE a.Attrezzatura IN ('Proiettore', 'LIM')
-GROUP BY a.NomeAula, a.Posti, a.Attrezzatura
-HAVING COUNT(DISTINCT r.CodiceFiscale) > 0
-ORDER BY NumeroStudenti DESC;
