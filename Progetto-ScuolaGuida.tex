@@ -128,6 +128,7 @@
     
     \begin{itemize}
         \item TipoPatente.
+        \item Descrizione.
     \end{itemize}
 
     Un istruttore può essere abilitato ad insegnare più patenti, ma una patente può non essere insegnata da nessun istruttore.
@@ -304,7 +305,7 @@
             Istruttore & Istruttore pratico e teorico della scuola guida & \textit{CF, Nome, Cognome, Numero, Email, Abilitazione, AnniEsperienza} & \textit{CF} \\
             \hline
             \rowcolor{white!40}
-            Patente & Patente per l'abilitazione & \textit{TipoPatente} & \textit{TipoPatente}, relazione "Abilitazione"\\
+            Patente & Patente per l'abilitazione & \textit{TipoPatente, Descrizione} & \textit{TipoPatente}, relazione "Abilitazione"\\
             \hline
             \rowcolor{white!40}
             Veicolo & Veicolo utilizzato per esami pratici e lezioni pratiche & \textit{Targa, Modello, Tipo, Stato, AnnoImmatricolazione} & \textit{Targa}\\
@@ -640,7 +641,7 @@
             \end{itemize}
             \item \textbf{Città}(\underline{CodiceCatastale}, NomeCittà, Provincia, CAP)
             \item \textbf{Istruttore}(\underline{Nome}, Attrezzatura, Posti)
-            \item \textbf{Patente}(\underline{TipoPatente, Istruttore})
+            \item \textbf{Patente}(\underline{TipoPatente, Istruttore}, Descrizione)
             \begin{itemize}
                 \item Patente.Istruttore → Istruttore.CF
             \end{itemize}

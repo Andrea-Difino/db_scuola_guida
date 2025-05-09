@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.12)  9 MAY 2025 12:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.12)  9 MAY 2025 14:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,41 +598,41 @@ File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [2]
 
 [3]
-<img/ER_ScuolaGuida.drawio.png, id=86, 1257.69875pt x 1209.51875pt>
+<img/ER_ScuolaGuida.drawio.png, id=86, 1256.695pt x 1209.51875pt>
 File: img/ER_ScuolaGuida.drawio.png Graphic file (type png)
 <use img/ER_ScuolaGuida.drawio.png>
-Package pdftex.def Info: img/ER_ScuolaGuida.drawio.png  used on input line 275.
-(pdftex.def)             Requested size: 413.38702pt x 397.53677pt.
+Package pdftex.def Info: img/ER_ScuolaGuida.drawio.png  used on input line 276.
+(pdftex.def)             Requested size: 413.38702pt x 397.86897pt.
 
 
 [4 <./img/ER_ScuolaGuida.drawio.png>]
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 426--428
+Underfull \hbox (badness 10000) in paragraph at lines 427--429
 
  []
 
 
 
 [6]
-Overfull \hbox (71.97125pt too wide) in paragraph at lines 433--459
+Overfull \hbox (71.97125pt too wide) in paragraph at lines 434--460
 [][] 
  []
 
 
-Overfull \hbox (71.97125pt too wide) in paragraph at lines 499--521
+Overfull \hbox (71.97125pt too wide) in paragraph at lines 500--522
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
 
  []
 
 
 
 [7{C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 610--614
+Underfull \hbox (badness 10000) in paragraph at lines 611--615
 
  []
 
@@ -642,7 +642,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 610--614
 <img/ER_ScuolaGuidaRistrutturato.drawio.png, id=120, 1139.25626pt x 1148.29pt>
 File: img/ER_ScuolaGuidaRistrutturato.drawio.png Graphic file (type png)
 <use img/ER_ScuolaGuidaRistrutturato.drawio.png>
-Package pdftex.def Info: img/ER_ScuolaGuidaRistrutturato.drawio.png  used on input line 623.
+Package pdftex.def Info: img/ER_ScuolaGuidaRistrutturato.drawio.png  used on input line 624.
 (pdftex.def)             Requested size: 469.75539pt x 473.46521pt.
 
 
@@ -665,7 +665,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1248b,653s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Progetto-ScuolaGuida.pdf (12 pages, 1009138 bytes).
+Output written on Progetto-ScuolaGuida.pdf (12 pages, 1009513 bytes).
 PDF statistics:
  181 PDF objects out of 1000 (max. 8388607)
  26 named destinations out of 1000 (max. 500000)
