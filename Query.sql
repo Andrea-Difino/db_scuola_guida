@@ -77,7 +77,7 @@ CREATE TABLE Pagamento (
 CREATE TABLE Veicolo (
     Targa CHAR(7) PRIMARY KEY,
     Modello VARCHAR(30),
-    AnnoImmatricolazione YEAR,
+    AnnoImmatricolazione INTEGER CHECK (AnnoImmatricolazione BETWEEN 1980 AND EXTRACT(YEAR FROM CURRENT_DATE)),
     Stato TEXT CHECK(Stato IN ('Disponibile', 'In Manutenzione', 'Non Disponibile')),
     TipoVeicolo TEXT CHECK(TipoVeicolo IN ('Auto', 'Moto', 'Camion'))
 );
@@ -290,7 +290,7 @@ INSERT INTO Citta (CodiceCatastale, NomeCitta, CAP, Provincia) VALUES
 ('F839', 'Napoli', '80100', 'NA'),
 ('L219', 'Torino', '10100', 'TO'),
 ('D612', 'Firenze', '50100', 'FI'),
-('A944', 'Bari', '70100', 'BA'),
+('A622', 'Bari', '70100', 'BA'),
 ('C351', 'Catania', '95100', 'CT'),
 ('G273', 'Palermo', '90100', 'PA'),
 ('L781', 'Venezia', '30100', 'VE'),

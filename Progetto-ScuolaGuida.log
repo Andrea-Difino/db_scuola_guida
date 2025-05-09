@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.12)  9 MAY 2025 14:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.12)  9 MAY 2025 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -639,11 +639,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 611--615
 
 
 [8]
-<img/ER_ScuolaGuidaRistrutturato.drawio.png, id=120, 1139.25626pt x 1148.29pt>
+<img/ER_ScuolaGuidaRistrutturato.drawio.png, id=120, 1140.26pt x 1148.29pt>
 File: img/ER_ScuolaGuidaRistrutturato.drawio.png Graphic file (type png)
 <use img/ER_ScuolaGuidaRistrutturato.drawio.png>
 Package pdftex.def Info: img/ER_ScuolaGuidaRistrutturato.drawio.png  used on input line 624.
-(pdftex.def)             Requested size: 469.75539pt x 473.46521pt.
+(pdftex.def)             Requested size: 469.75539pt x 473.06221pt.
 
 
 [9 <./img/ER_ScuolaGuidaRistrutturato.drawio.png>]
@@ -665,7 +665,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1248b,653s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Progetto-ScuolaGuida.pdf (12 pages, 1009580 bytes).
+Output written on Progetto-ScuolaGuida.pdf (12 pages, 1009254 bytes).
 PDF statistics:
  181 PDF objects out of 1000 (max. 8388607)
  26 named destinations out of 1000 (max. 500000)
