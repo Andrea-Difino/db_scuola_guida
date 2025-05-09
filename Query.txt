@@ -1,0 +1,162 @@
+CREATE TABLE Iscritto (
+    id INTEGER PRIMARY KEY,
+    nome TEXT,
+    cognome TEXT,
+    data_nascita DATE,
+    email TEXT UNIQUE
+);
+
+-- Esempi di popolamento:
+INSERT INTO Iscritto VALUES (1, 'Fulvio', 'Lerner', '1975-03-10', 'fausto53@libero.it');
+INSERT INTO Iscritto VALUES (2, 'Evangelista', 'Casellati', '1964-08-30', 'drighi@tele2.it');
+-- (continua per un totale di circa 30 tuple)
+
+
+
+CREATE TABLE Esame (
+    id INTEGER PRIMARY KEY,
+    tipo TEXT CHECK(tipo IN ('teorico', 'pratico')),
+    data DATE,
+    ora TIME
+);
+
+-- Esempi di popolamento:
+INSERT INTO Esame VALUES (1, 'pratico', '2025-03-19', '00:05:16');
+INSERT INTO Esame VALUES (2, 'teorico', '2025-04-01', '23:55:15');
+-- (continua per circa 30 tuple)
+
+
+
+CREATE TABLE Partecipazione (
+    id_iscritto INTEGER,
+    id_esame INTEGER,
+    risultato TEXT CHECK(risultato IN ('idoneo', 'non idoneo')),
+    PRIMARY KEY (id_iscritto, id_esame),
+    FOREIGN KEY (id_iscritto) REFERENCES Iscritto(id),
+    FOREIGN KEY (id_esame) REFERENCES Esame(id)
+);
+
+-- Esempi di popolamento:
+INSERT INTO Partecipazione VALUES (30, 2, 'idoneo');
+INSERT INTO Partecipazione VALUES (10, 7, 'non idoneo');
+-- (continua fino a circa 30 tuple)
+
+
+
+CREATE TABLE Istruttore (
+    id INTEGER PRIMARY KEY,
+    nome TEXT,
+    cognome TEXT,
+    patente TEXT,
+    email TEXT UNIQUE
+);
+
+-- Esempi di popolamento:
+INSERT INTO Istruttore VALUES (1, 'Leonardo', 'Capuana', '043-EPEI', 'rosina88@fastwebnet.it');
+INSERT INTO Istruttore VALUES (2, 'Michelangelo', 'Simeoni', 'LTI 750', 'foarenata@libero.it');
+-- (continua fino a circa 30)
+
+
+
+CREATE TABLE Veicolo (
+    id INTEGER PRIMARY KEY,
+    modello TEXT,
+    targa TEXT UNIQUE,
+    tipo TEXT
+);
+
+-- Esempi di popolamento:
+INSERT INTO Veicolo VALUES (1, 'accusamus', 'HAS7509', 'auto');
+INSERT INTO Veicolo VALUES (2, 'reiciendis', '085 APG', 'auto');
+-- (continua fino a circa 30)
+
+
+
+CREATE TABLE Aula (
+    id INTEGER PRIMARY KEY,
+    codice TEXT,
+    capienza INTEGER
+);
+
+-- Esempi di popolamento:
+INSERT INTO Aula VALUES (1, 'A-20', 24);
+INSERT INTO Aula VALUES (2, 'A-73', 26);
+-- (continua fino a 10 aule)
+
+
+
+CREATE TABLE Lezione (
+    id INTEGER PRIMARY KEY,
+    data DATE,
+    ora TIME,
+    id_istruttore INTEGER,
+    id_aula INTEGER,
+    id_veicolo INTEGER,
+    FOREIGN KEY (id_istruttore) REFERENCES Istruttore(id),
+    FOREIGN KEY (id_aula) REFERENCES Aula(id),
+    FOREIGN KEY (id_veicolo) REFERENCES Veicolo(id)
+);
+
+-- Esempi:
+INSERT INTO Lezione VALUES (1, '2025-03-03', '23:54:54', 3, 10, 7);
+INSERT INTO Lezione VALUES (2, '2025-01-10', '08:45:44', 17, 5, 13);
+-- (continua fino a 30 lezioni)
+
+
+
+CREATE TABLE Prenotazione (
+    id INTEGER PRIMARY KEY,
+    id_iscritto INTEGER,
+    id_lezione INTEGER,
+    FOREIGN KEY (id_iscritto) REFERENCES Iscritto(id),
+    FOREIGN KEY (id_lezione) REFERENCES Lezione(id)
+);
+
+-- Esempi:
+INSERT INTO Prenotazione VALUES (1, 8, 12);
+INSERT INTO Prenotazione VALUES (2, 10, 7);
+-- (continua fino a 30 prenotazioni)
+
+
+
+CREATE TABLE Pagamento (
+    id INTEGER PRIMARY KEY,
+    importo REAL,
+    data DATE,
+    id_iscritto INTEGER,
+    FOREIGN KEY (id_iscritto) REFERENCES Iscritto(id)
+);
+
+-- Esempi:
+INSERT INTO Pagamento VALUES (1, 97.17, '2025-02-03', 20);
+INSERT INTO Pagamento VALUES (2, 66.69, '2025-05-01', 26);
+-- (continua fino a 30 pagamenti)
+
+
+
+CREATE TABLE Città (
+    id INTEGER PRIMARY KEY,
+    nome TEXT
+);
+
+-- Esempi:
+INSERT INTO Città VALUES (1, 'Desio umbro');
+INSERT INTO Città VALUES (2, 'Quarto Stella');
+-- (continua fino a 10 città)
+
+
+
+CREATE TABLE Recensione (
+    id INTEGER PRIMARY KEY,
+    testo TEXT,
+    valutazione INTEGER,
+    id_iscritto INTEGER,
+    id_istruttore INTEGER,
+    FOREIGN KEY (id_iscritto) REFERENCES Iscritto(id),
+    FOREIGN KEY (id_istruttore) REFERENCES Istruttore(id)
+);
+
+-- Esempi:
+INSERT INTO Recensione VALUES (1, 'Delectus ea ratione tempora.', 2, 8, 7);
+INSERT INTO Recensione VALUES (2, 'Consequatur ad molestias pariatur.', 4, 3, 27);
+-- (continua fino a 30 recensioni)
