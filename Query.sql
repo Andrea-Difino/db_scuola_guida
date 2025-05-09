@@ -55,6 +55,16 @@ CREATE TABLE Lezione (
     PRIMARY KEY (Data, ArgomentoLezione)
 );
 
+CREATE TABLE ValutazioneLezione (
+    CodiceFiscale CHAR(16),
+    Oggetto VARCHAR(50),
+    DataLezione DATE,
+    ArgomentoLezione VARCHAR(50),
+    PRIMARY KEY (CodiceFiscale, Oggetto, DataLezione, ArgomentoLezione),
+    FOREIGN KEY (CodiceFiscale, Oggetto) REFERENCES Recensione(CodiceFiscale, Oggetto),
+    FOREIGN KEY (DataLezione, ArgomentoLezione) REFERENCES Lezione(Data, ArgomentoLezione)
+);
+
 CREATE TABLE Prenotazione (
     DataPrenotazione DATE,
     CodiceFiscale CHAR(16),
@@ -103,6 +113,15 @@ CREATE TABLE Istruttore (
     Abilitazione VARCHAR(4),
     Numero VARCHAR(12) UNIQUE,
     Email VARCHAR (30) UNIQUE
+);
+
+CREATE TABLE ValutazioneIstruttore (
+    CodiceFiscale CHAR(16),               
+    Oggetto VARCHAR(50),
+    CodiceFiscaleIstruttore CHAR(16),    
+    PRIMARY KEY (CodiceFiscale, Oggetto, CodiceFiscaleIstruttore),
+    FOREIGN KEY (CodiceFiscale, Oggetto) REFERENCES Recensione(CodiceFiscale, Oggetto),
+    FOREIGN KEY (CodiceFiscaleIstruttore) REFERENCES Istruttore(CodiceFiscale)
 );
 
 CREATE TABLE Patente (
