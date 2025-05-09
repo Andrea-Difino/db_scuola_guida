@@ -466,3 +466,20 @@ INSERT INTO Abilitazione (IstruttoreCF, TipoPatente) VALUES
 ('BNCFBA90I09H501R', 'DE'),
 ('RSSSFN75L10H501Q', 'B96'),
 ('RSSSFN75L10H501Q', 'M');
+
+SELECT 
+    a.NomeAula,
+    a.Posti,
+    l.TipoLezione,
+    COUNT(*) as NumeroLezioni,
+    COUNT(DISTINCT l.ArgomentoLezione) as ArgomentiDiversi,
+    MIN(l.Data) as PrimaLezione,
+    MAX(l.Data) as UltimaLezione,
+    AVG(l.Durata) as DurataMediaMinuti
+FROM Aula a
+JOIN ValutazioneLezione vl ON a.NomeAula = vl.Oggetto
+JOIN Lezione l ON vl.DataLezione = l.Data AND vl.ArgomentoLezione = l.ArgomentoLezione
+WHERE l.TipoLezione = 'Teorico'
+GROUP BY a.NomeAula, a.Posti, l.TipoLezione
+HAVING COUNT(*) > 0
+ORDER BY NumeroLezioni DESC;
