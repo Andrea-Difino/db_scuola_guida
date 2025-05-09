@@ -470,16 +470,19 @@ INSERT INTO Abilitazione (IstruttoreCF, TipoPatente) VALUES
 SELECT 
     a.NomeAula,
     a.Posti,
-    l.TipoLezione,
-    COUNT(*) as NumeroLezioni,
+    a.Attrezzatura,
+    COUNT(DISTINCT r.CodiceFiscale) as NumeroStudenti,
     COUNT(DISTINCT l.ArgomentoLezione) as ArgomentiDiversi,
     MIN(l.Data) as PrimaLezione,
     MAX(l.Data) as UltimaLezione,
     AVG(l.Durata) as DurataMediaMinuti
 FROM Aula a
-JOIN ValutazioneLezione vl ON a.NomeAula = vl.Oggetto
-JOIN Lezione l ON vl.DataLezione = l.Data AND vl.ArgomentoLezione = l.ArgomentoLezione
-WHERE l.TipoLezione = 'Teorico'
-GROUP BY a.NomeAula, a.Posti, l.TipoLezione
-HAVING COUNT(*) > 0
-ORDER BY NumeroLezioni DESC;
+JOIN Lezione l ON l.TipoLezione = 'Teorico' 
+JOIN ValutazioneLezione vl ON l.Data = vl.DataLezione 
+    AND l.ArgomentoLezione = vl.ArgomentoLezione
+JOIN Recensione r ON vl.CodiceFiscale = r.CodiceFiscale 
+    AND vl.Oggetto = r.Oggetto
+WHERE a.Attrezzatura IN ('Proiettore', 'LIM')
+GROUP BY a.NomeAula, a.Posti, a.Attrezzatura
+HAVING COUNT(DISTINCT r.CodiceFiscale) > 0
+ORDER BY NumeroStudenti DESC;
