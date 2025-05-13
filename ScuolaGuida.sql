@@ -546,3 +546,10 @@ JOIN Recensione r ON vi.CodiceFiscale = r.CodiceFiscale
 GROUP BY i.CodiceFiscale, i.Nome, i.Cognome
 HAVING AVG(r.Gradimento) > 4.0
 ORDER BY MediaGradimento DESC;
+
+--Indici
+CREATE INDEX idx_veicolo_stato 
+ON Veicolo USING hash(stato);
+
+CREATE INDEX idx_prenotazione_cf_stato_data_ora 
+ON Prenotazione(CodiceFiscale, Stato, DataPrenotazione, Ora);
