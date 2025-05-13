@@ -680,6 +680,7 @@
 
 \section{Implementazione in PostgreSQL e Definizione
 delle Query}{
+    \label{sec:ImplementazionePostreSQL}
     Il file ScuolaGuida.sql contiene il codice SQL necessario per la creazione e il popolamento delle tabelle del database. Questo file include inoltre una serie di query per l’estrazione dei dati e un indice creato specificamente per migliorare le prestazioni
     di una di queste interrogazioni.
 
@@ -745,7 +746,7 @@ delle Query}{
         $$
             \includegraphics[width=.6\linewidth]{img/risultati5.png}
         $$
-    }
+    } \\
 
     \subsection{Creazione degli indici}{
         Si suppone di voler ottimizzare la query 3, per la quale occorre considerare:
@@ -774,6 +775,24 @@ delle Query}{
 
         L'indice \textbf{idx\_prenotazione\_cf\_stato\_data\_ora}, invece, migliora l'accesso alla tabella Prenotazione in fase di join con la tabella Iscritto (tramite CodiceFiscale) e consente un accesso ordinato sui campi DataPrenotazione e Ora, riducendo i costi di ordinamento nel risultato finale.
     }
+
+    \newpage
+
+    \section{Applicazione Software}{
+        Il file ScuolaGuidaQuery.c contiene il codice C necessario per connettersi al database e 
+        visualizzare a schermo i risultati delle query presentate nella \hyperref[sec:ImplementazionePostreSQL]{Sezione~\ref*{sec:ImplementazionePostreSQL}}. \\
+        
+        Una volta compilato ed eseguito il programma, verrà mostrato all’utente un menu con la seguente lista di interrogazioni disponibili:
+        \begin{itemize}
+            \item 1. Numero di esami teorici sostenuti per ogni tipo di patente, media punti e promossi (media >20 punti).
+            \item 2. Analisi dei veicoli per tipo, conteggiando il numero totale, quelli disponibili, i tipi di patente necessari e le prenotazioni effettuate.
+            \item 3. Visualizzazione delle prenotazioni accettate per veicoli disponibili, mostrando data, ora, modello, stato del veicolo e dati dell’iscritto.
+            \item 4. Elenco delle aule dotate di attrezzatura moderna (Proiettore o LIM), indicando numero di studenti, argomenti trattati, prima e ultima lezione teorica.
+            \item 5. Calcolo della media di gradimento ricevuta e del numero di recensioni scritte da iscritti per ogni istruttore.
+        \end{itemize}
+         L’utente potrà selezionare la query da eseguire digitando il numero corrispondente.
+    }
+        
 
 }
 

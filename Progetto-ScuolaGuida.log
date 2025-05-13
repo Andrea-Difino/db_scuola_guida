@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.1.12)  13 MAY 2025 11:34
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.26)  9 MAY 2025 16:30
->>>>>>> d3bba4d80de828d9e9b3edb59fbcad042f4b86d8
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.4.26)  13 MAY 2025 12:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -505,7 +501,7 @@ Package hyperref Info: Link coloring ON on input line 40.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<img/logo.png, id=54, 416.757pt x 241.8636pt>
+<img/logo.png, id=58, 416.757pt x 241.8636pt>
 File: img/logo.png Graphic file (type png)
 <use img/logo.png>
 Package pdftex.def Info: img/logo.png  used on input line 44.
@@ -601,7 +597,7 @@ File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [2]
 
 [3]
-<img/ER_ScuolaGuida.drawio.png, id=101, 1256.695pt x 1209.51875pt>
+<img/ER_ScuolaGuida.drawio.png, id=106, 1256.695pt x 1209.51875pt>
 File: img/ER_ScuolaGuida.drawio.png Graphic file (type png)
 <use img/ER_ScuolaGuida.drawio.png>
 Package pdftex.def Info: img/ER_ScuolaGuida.drawio.png  used on input line 276.
@@ -647,7 +643,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 611--615
 
 
 [8]
-<img/ER_ScuolaGuidaRistrutturato.drawio.png, id=135, 1139.25626pt x 1148.29pt>
+<img/ER_ScuolaGuidaRistrutturato.drawio.png, id=140, 1139.25626pt x 1148.29pt>
 File: img/ER_ScuolaGuidaRistrutturato.drawio.png Graphic file (type png)
 <use img/ER_ScuolaGuidaRistrutturato.drawio.png>
 Package pdftex.def Info: img/ER_ScuolaGuidaRistrutturato.drawio.png  used on input line 624.
@@ -655,37 +651,33 @@ Package pdftex.def Info: img/ER_ScuolaGuidaRistrutturato.drawio.png  used on inp
 
 
 [9 <./img/ER_ScuolaGuidaRistrutturato.drawio.png>]
-<img/query1.png, id=142, 362.85562pt x 167.12437pt>
+<img/query1.png, id=147, 362.85562pt x 167.12437pt>
 File: img/query1.png Graphic file (type png)
 <use img/query1.png>
-Package pdftex.def Info: img/query1.png  used on input line 692.
+Package pdftex.def Info: img/query1.png  used on input line 693.
 (pdftex.def)             Requested size: 234.87769pt x 108.18327pt.
 
 
 [10]
-<img/risultati1.png, id=147, 387.69844pt x 103.88812pt>
+<img/risultati1.png, id=152, 387.69844pt x 103.88812pt>
 File: img/risultati1.png Graphic file (type png)
 <use img/risultati1.png>
-Package pdftex.def Info: img/risultati1.png  used on input line 698.
+Package pdftex.def Info: img/risultati1.png  used on input line 699.
 (pdftex.def)             Requested size: 281.8561pt x 75.527pt.
-<img/query2.png, id=148, 539.01375pt x 228.10219pt>
+<img/query2.png, id=153, 539.01375pt x 228.10219pt>
 File: img/query2.png Graphic file (type png)
 <use img/query2.png>
-Package pdftex.def Info: img/query2.png  used on input line 704.
+Package pdftex.def Info: img/query2.png  used on input line 705.
 (pdftex.def)             Requested size: 258.36688pt x 109.33812pt.
-<<<<<<< HEAD
-<img/risultati2.png, id=149, 490.83376pt x 86.57344pt>
-=======
-<img/risultati2.png, id=144, 490.83376pt x 86.57344pt>
->>>>>>> d3bba4d80de828d9e9b3edb59fbcad042f4b86d8
+<img/risultati2.png, id=154, 490.83376pt x 86.57344pt>
 File: img/risultati2.png Graphic file (type png)
 <use img/risultati2.png>
-Package pdftex.def Info: img/risultati2.png  used on input line 710.
+Package pdftex.def Info: img/risultati2.png  used on input line 711.
 (pdftex.def)             Requested size: 281.8561pt x 49.7146pt.
-<img/query3.png, id=150, 384.6872pt x 212.29312pt>
+<img/query3.png, id=155, 384.6872pt x 212.29312pt>
 File: img/query3.png Graphic file (type png)
 <use img/query3.png>
-Package pdftex.def Info: img/query3.png  used on input line 716.
+Package pdftex.def Info: img/query3.png  used on input line 717.
 (pdftex.def)             Requested size: 258.36688pt x 142.59198pt.
 
 Underfull \vbox (badness 3118) has occurred while \output is active []
@@ -693,73 +685,73 @@ Underfull \vbox (badness 3118) has occurred while \output is active []
 
 
 [11 <./img/query1.png> <./img/risultati1.png> <./img/query2.png> <./img/risultati2.png>]
-<img/risultati3.png, id=160, 713.66624pt x 176.15813pt>
+<img/risultati3.png, id=165, 713.66624pt x 176.15813pt>
 File: img/risultati3.png Graphic file (type png)
 <use img/risultati3.png>
-Package pdftex.def Info: img/risultati3.png  used on input line 722.
+Package pdftex.def Info: img/risultati3.png  used on input line 723.
 (pdftex.def)             Requested size: 305.33812pt x 75.36751pt.
-<img/query4.png, id=161, 418.56375pt x 268.75406pt>
+<img/query4.png, id=166, 418.56375pt x 268.75406pt>
 File: img/query4.png Graphic file (type png)
 <use img/query4.png>
-Package pdftex.def Info: img/query4.png  used on input line 728.
+Package pdftex.def Info: img/query4.png  used on input line 729.
 (pdftex.def)             Requested size: 234.87769pt x 150.8088pt.
-<img/risultati4.png, id=162, 624.83438pt x 176.91093pt>
+<img/risultati4.png, id=167, 624.83438pt x 176.91093pt>
 File: img/risultati4.png Graphic file (type png)
 <use img/risultati4.png>
-Package pdftex.def Info: img/risultati4.png  used on input line 734.
+Package pdftex.def Info: img/risultati4.png  used on input line 735.
 (pdftex.def)             Requested size: 305.33812pt x 86.45226pt.
-<img/query5.png, id=163, 536.75531pt x 177.66376pt>
+<img/query5.png, id=168, 536.75531pt x 177.66376pt>
 File: img/query5.png Graphic file (type png)
 <use img/query5.png>
-Package pdftex.def Info: img/query5.png  used on input line 740.
+Package pdftex.def Info: img/query5.png  used on input line 741.
 (pdftex.def)             Requested size: 281.8561pt x 93.29384pt.
 
 
 [12 <./img/query3.png> <./img/risultati3.png> <./img/query4.png> <./img/risultati4.png>]
-<img/risultati5.png, id=172, 462.22687pt x 123.46124pt>
+<img/risultati5.png, id=177, 462.22687pt x 123.46124pt>
 File: img/risultati5.png Graphic file (type png)
 <use img/risultati5.png>
-Package pdftex.def Info: img/risultati5.png  used on input line 746.
+Package pdftex.def Info: img/risultati5.png  used on input line 747.
 (pdftex.def)             Requested size: 281.8561pt x 75.28485pt.
-<img/indici.png, id=173, 751.30687pt x 51.19125pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--750
+
+ []
+
+<img/indici.png, id=178, 751.30687pt x 51.19125pt>
 File: img/indici.png Graphic file (type png)
 <use img/indici.png>
-Package pdftex.def Info: img/indici.png  used on input line 770.
+Package pdftex.def Info: img/indici.png  used on input line 771.
 (pdftex.def)             Requested size: 469.75539pt x 32.00772pt.
 
 
-[13 <./img/query5.png> <./img/risultati5.png> <./img/indici.png>] (Progetto-ScuolaGuida.aux)
+[13 <./img/query5.png> <./img/risultati5.png> <./img/indici.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 782--784
+
+ []
+
+
+
+[14] (Progetto-ScuolaGuida.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
 Package rerunfilecheck Info: File `Progetto-ScuolaGuida.out' has not changed.
-(rerunfilecheck)             Checksum: 1556AB02E06756835CCBC6D375F29614;2383.
+(rerunfilecheck)             Checksum: 7792ED036636B9667B30EE9A21375D9A;2535.
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 14968 strings out of 473535
- 237243 string characters out of 5714935
- 649266 words of memory out of 5000000
- 37925 multiletter control sequences out of 15000+600000
- 626191 words of font info for 84 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 69i,12n,79p,1248b,653s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Progetto-ScuolaGuida.pdf (15 pages, 1217206 bytes).
-=======
- 14939 strings out of 469959
- 236561 string characters out of 5469834
- 638164 words of memory out of 5000000
- 41470 multiletter control sequences out of 15000+600000
+ 14957 strings out of 469959
+ 236874 string characters out of 5469834
+ 638243 words of memory out of 5000000
+ 41482 multiletter control sequences out of 15000+600000
  694179 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,12n,79p,1243b,653s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Progetto-ScuolaGuida.pdf (15 pages, 1205892 bytes).
->>>>>>> d3bba4d80de828d9e9b3edb59fbcad042f4b86d8
+Output written on Progetto-ScuolaGuida.pdf (16 pages, 1220224 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
- 179 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 248 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 
