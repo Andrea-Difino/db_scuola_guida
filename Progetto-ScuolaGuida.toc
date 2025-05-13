@@ -11,7 +11,7 @@
 \contentsline {paragraph}{Recensione.}{4}{section.2}%
 \contentsline {paragraph}{Pagamento.}{4}{section.2}%
 \contentsline {section}{\numberline {3}Progettazione Concettuale}{4}{section.3}%
-\contentsline {section}{\numberline {4}Progettazione Logica}{5}{section.4}%
+\contentsline {section}{\numberline {4}Progettazione Logica}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Analisi delle ridondanze}{7}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Eliminazione delle generalizzazioni}{8}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Scelta di identificatori primari}{9}{subsection.4.3}%

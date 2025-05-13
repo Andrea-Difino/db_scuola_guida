@@ -33,8 +33,6 @@ CREATE TABLE Partecipazione (
     FOREIGN KEY (Data, CodiceFiscale) REFERENCES Esame(Data, CodiceFiscale)
 );
 
-
-
 CREATE TABLE Recensione (
     CodiceFiscale CHAR(16),
     Oggetto VARCHAR(50),
@@ -77,10 +75,11 @@ CREATE TABLE Prenotazione (
 CREATE TABLE Pagamento (
     Importo DECIMAL(10, 2),
     Data DATE,
+    OraPagamento TIME,
     CodiceFiscale CHAR(16),
     Stato TEXT CHECK(Stato IN ('Accettata', 'Rifiutata', 'In attesa')),
     MetodoPagamento TEXT CHECK(MetodoPagamento IN ('carta', 'contanti', 'bonifico')),
-    PRIMARY KEY (Importo, Data, CodiceFiscale),
+    PRIMARY KEY (Data, OraPagamento, CodiceFiscale),
     FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale)
 );
 
@@ -251,27 +250,27 @@ INSERT INTO Prenotazione (DataPrenotazione, CodiceFiscale, Ora, Stato) VALUES
 ('2025-05-19', 'FRRSRA98V19H501V', '09:00:00', 'Accettata'),
 ('2025-05-20', 'MTTPLA99Z20H501Z', '10:00:00', 'In attesa');
 
-INSERT INTO Pagamento (Importo, Data, CodiceFiscale, Stato, MetodoPagamento) VALUES
-(500.00, '2025-05-01', 'RSSMRA80A01H501A', 'Accettata', 'carta'),
-(600.00, '2025-05-02', 'VRDLCA81B02H501B', 'In attesa', 'bonifico'),
-(550.00, '2025-05-03', 'BNCGPP82C03H501C', 'Accettata', 'contanti'),
-(500.00, '2025-05-04', 'NRENNA83D04H501D', 'Rifiutata', 'carta'),
-(700.00, '2025-05-05', 'GLLMRC84E05H501E', 'Accettata', 'bonifico'),
-(600.00, '2025-05-06', 'VLNSFN85F06H501F', 'In attesa', 'contanti'),
-(550.00, '2025-05-07', 'RSSMRA86G07H501G', 'Accettata', 'carta'),
-(500.00, '2025-05-08', 'CNTLCA87H08H501H', 'Accettata', 'bonifico'),
-(700.00, '2025-05-09', 'FRRPLA88I09H501I', 'In attesa', 'contanti'),
-(600.00, '2025-05-10', 'MRTGNN89L10H501L', 'Rifiutata', 'carta'),
-(550.00, '2025-05-11', 'BRNGPP90M11H501M', 'Accettata', 'bonifico'),
-(500.00, '2025-05-12', 'RMNNNA91N12H501N', 'In attesa', 'contanti'),
-(700.00, '2025-05-13', 'GLLCRL92P13H501P', 'Accettata', 'carta'),
-(600.00, '2025-05-14', 'RSSLRA93Q14H501Q', 'Accettata', 'bonifico'),
-(550.00, '2025-05-15', 'BNCFBA94R15H501R', 'In attesa', 'contanti'),
-(500.00, '2025-05-16', 'VLNLSA95S16H501S', 'Rifiutata', 'carta'),
-(700.00, '2025-05-17', 'RSSMTA96T17H501T', 'Accettata', 'bonifico'),
-(600.00, '2025-05-18', 'CNTDVD97U18H501U', 'In attesa', 'contanti'),
-(550.00, '2025-05-19', 'FRRSRA98V19H501V', 'Accettata', 'carta'),
-(500.00, '2025-05-20', 'MTTPLA99Z20H501Z', 'In attesa', 'bonifico');
+INSERT INTO Pagamento (Importo, Data, OraPagamento, CodiceFiscale, Stato, MetodoPagamento) VALUES
+(500.00, '2025-05-01', '09:00:00', 'RSSMRA80A01H501A', 'Accettata', 'carta'),
+(600.00, '2025-05-02', '10:15:00', 'VRDLCA81B02H501B', 'In attesa', 'bonifico'),
+(550.00, '2025-05-03', '11:30:00', 'BNCGPP82C03H501C', 'Accettata', 'contanti'),
+(500.00, '2025-05-04', '09:45:00', 'NRENNA83D04H501D', 'Rifiutata', 'carta'),
+(700.00, '2025-05-05', '14:00:00', 'GLLMRC84E05H501E', 'Accettata', 'bonifico'),
+(600.00, '2025-05-06', '15:30:00', 'VLNSFN85F06H501F', 'In attesa', 'contanti'),
+(550.00, '2025-05-07', '16:45:00', 'RSSMRA86G07H501G', 'Accettata', 'carta'),
+(500.00, '2025-05-08', '17:15:00', 'CNTLCA87H08H501H', 'Accettata', 'bonifico'),
+(700.00, '2025-05-09', '10:00:00', 'FRRPLA88I09H501I', 'In attesa', 'contanti'),
+(600.00, '2025-05-10', '11:00:00', 'MRTGNN89L10H501L', 'Rifiutata', 'carta'),
+(550.00, '2025-05-11', '12:30:00', 'BRNGPP90M11H501M', 'Accettata', 'bonifico'),
+(500.00, '2025-05-12', '13:45:00', 'RMNNNA91N12H501N', 'In attesa', 'contanti'),
+(700.00, '2025-05-13', '14:30:00', 'GLLCRL92P13H501P', 'Accettata', 'carta'),
+(600.00, '2025-05-14', '15:00:00', 'RSSLRA93Q14H501Q', 'Accettata', 'bonifico'),
+(550.00, '2025-05-15', '16:00:00', 'BNCFBA94R15H501R', 'In attesa', 'contanti'),
+(500.00, '2025-05-16', '17:00:00', 'VLNLSA95S16H501S', 'Rifiutata', 'carta'),
+(700.00, '2025-05-17', '09:30:00', 'RSSMTA96T17H501T', 'Accettata', 'bonifico'),
+(600.00, '2025-05-18', '10:30:00', 'CNTDVD97U18H501U', 'In attesa', 'contanti'),
+(550.00, '2025-05-19', '11:15:00', 'FRRSRA98V19H501V', 'Accettata', 'carta'),
+(500.00, '2025-05-20', '12:00:00', 'MTTPLA99Z20H501Z', 'In attesa', 'bonifico');
 
 
 INSERT INTO Veicolo (Targa, Modello, AnnoImmatricolazione, Stato, TipoVeicolo) VALUES
@@ -355,7 +354,6 @@ INSERT INTO Istruttore (CodiceFiscale, Nome, Cognome, AnniEsperienza, Abilitazio
 ('RSSSFN75L10H501Q', 'Stefano', 'Rossi', 14, 'RSTU', '330234567890', 'stefano.rossi@scuola.it'),
 ('VRDMRC80M11H501P', 'Marco', 'Verdi', 12, 'VWXY', '331234567890', 'marco.verdi@scuola.it');
 
--- Populate ValutazioneIstruttore
 INSERT INTO ValutazioneLezione (CodiceFiscale, Oggetto, DataLezione, ArgomentoLezione) VALUES
 ('RSSMRA80A01H501A', 'Ottimo corso', '2025-04-01', 'Segnaletica stradale'),
 ('VRDLCA81B02H501B', 'Buona esperienza', '2025-04-02', 'Precedenze'),
@@ -422,9 +420,6 @@ INSERT INTO Lezione (Data, ArgomentoLezione, TipoLezione, OraInizio, Durata) VAL
 ('2025-04-19', 'Guida sportiva', 'Pratico', '09:00:00', 60),
 ('2025-04-20', 'Manutenzione', 'Teorico', '11:00:00', NULL);
 
-
-
--- Populate Patente
 INSERT INTO Patente (TipoPatente, Descrizione) VALUES
 ('A', 'Motocicli senza limitazioni'),
 ('A1', 'Motocicli leggeri fino a 125cc'),

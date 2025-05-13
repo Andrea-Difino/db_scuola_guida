@@ -243,7 +243,8 @@
     Gli iscritti devono effettuare i pagamenti relativi ai servizi formativi:
 
     \begin{itemize}
-        \item Data di pagamento.
+        \item Data del pagamento.
+        \item Ora del pagamento.
         \item Importo versato.
         \item Metodo di pagamento (carta di credito, bonifico, contante).
         \item Stato del pagamento (pagato, da pagare).
@@ -281,7 +282,7 @@
     \label{fig:diagrammaER}
 \end{figure}
 
-
+\newpage
 
 \section{Progettazione Logica}{
     In questa sezione viene presentato lo schema logico relazionale derivato dal modello concettuale;
@@ -343,7 +344,7 @@
             Recensione & Recensione istruttori e lezioni & \textit{Oggetto, Email, Commento, Data, Gradimento} & \textit{Oggetto}, relazione "Feedback"\\
             \hline
             \rowcolor{white!40}
-            Pagamento & Pagamenti associati ai servizi offerti & \textit{Importo, Data, Stato, Metodo} & \textit{Importo, Data}, relazione "Quota"\\
+            Pagamento & Pagamenti associati ai servizi offerti & \textit{Importo, Data, OraPagamento, Stato, Metodo} & \textit{OraPagamento, Data}, relazione "Quota"\\
             \hline
         \end{tabularx}
         \caption{Entità}
@@ -618,8 +619,7 @@
         Creiamo quindi una ulteriore entità Città partendo dall'attributo composto \textit{Città} che contiene gli attributi: \textit{CAP, Provincia e NomeCittà}. \\
 
         \textbf{Pagamento.} \\ 
-        Assumiamo che ogni Iscritto possa effetturare piu' di un pagamento in un giorno per cui, al fine di minimizzare le chiavi primarie ID abbiamo deciso di identificare 
-        ogni pagamento mediante una chiave primaria composta dall'attributo \textit{Data} e dall'attributo \textit{Importo}.
+        Assumiamo che ogni Iscritto possa effetturare piu' di un pagamento in un giorno per cui, al fine di minimizzare le chiavi primarie ID abbiamo deciso di identificare ogni pagamento mediante una chiave primaria composta dall'attributo \textit{Data} e dall'attributo \textit{OraPagamento}. In questo modo evitiamo che ci possano essere due tuple uguali nel caso in cui un iscritto effettui piu' pagamenti nella stessa giornata.\\
     }
 
     \subsection{Partizionamento/Accorpamento di Entitá e Relationships}{
@@ -669,7 +669,7 @@
             \begin{itemize}
                 \item Recensione.Iscritto $\rightarrow$ Iscritto.CF
             \end{itemize}
-            \item \textbf{Pagamento}(\underline{Importo}, Data, Stato, Metodo, Iscritto)
+            \item \textbf{Pagamento}(\underline{OraPagamento, Data, Iscritto}, Stato, Metodo, Importo)
             \begin{itemize}
                 \item Pagamento.Iscritto $\rightarrow$ Iscritto.CF
             \end{itemize}
