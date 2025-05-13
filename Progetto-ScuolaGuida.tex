@@ -747,6 +747,34 @@ delle Query}{
         $$
     }
 
+    \subsection{Creazione degli indici}{
+        Si suppone di voler ottimizzare la query 3, per la quale occorre considerare:
+
+        \begin{enumerate}
+            \item Condizione di Join tra le tabelle Veicolo, Prenotazione e Iscritto, in particolare:
+            \begin{itemize}
+                \item p.CodiceFiscale = i.CodiceFiscale
+                \item v.Stato = 'Disponibile'
+            \end{itemize}
+            \item Condizioni di filtro su:
+            \begin{itemize}
+                \item v.Stato = 'Disponibile'
+                \item p.Stato = 'Accettata'
+            \end{itemize}
+            \item Ordinamento finale sui campi DataPrenotazione e Ora.
+        \end{enumerate}
+
+        Per ottimizzare il punto 1 e 2, è opportuno creare due indici:
+
+        $$
+            \includegraphics[width=1\linewidth]{img/indici.png}
+        $$
+
+        L'indice \textbf{idx\_veicolo\_stato} permette di cercare rapidamente tutti i veicoli con stato Disponibile, utilizzando una struttura hash, particolarmente efficiente per confronti di uguaglianza.
+
+        L'indice \textbf{idx\_prenotazione\_cf\_stato\_data\_ora}, invece, migliora l'accesso alla tabella Prenotazione in fase di join con la tabella Iscritto (tramite CodiceFiscale) e consente un accesso ordinato sui campi DataPrenotazione e Ora, riducendo i costi di ordinamento nel risultato finale.
+    }
+
 }
 
 \end{document}
