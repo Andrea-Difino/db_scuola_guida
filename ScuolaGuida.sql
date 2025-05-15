@@ -30,7 +30,7 @@ CREATE TABLE Partecipazione (
     Data DATE,
     PRIMARY KEY (CodiceFiscale, Data),
     FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale),
-    FOREIGN KEY (Data, CodiceFiscale) REFERENCES Esame(Data, CodiceFiscale)
+    FOREIGN KEY (Data) REFERENCES Esame(Data)
 );
 
 CREATE TABLE Recensione (
