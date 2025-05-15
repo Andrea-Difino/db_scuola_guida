@@ -109,7 +109,6 @@ CREATE TABLE Istruttore (
     Nome VARCHAR(20),
     Cognome VARCHAR(20),
     AnniEsperienza INTEGER,
-    Abilitazione VARCHAR(4),
     Numero VARCHAR(12) UNIQUE,
     Email VARCHAR (30) UNIQUE
 );
@@ -341,18 +340,18 @@ INSERT INTO Aula (NomeAula, Posti, Attrezzatura) VALUES
 ('Aula 10A', 40, 'Proiettore');
 
 
-INSERT INTO Istruttore (CodiceFiscale, Nome, Cognome, AnniEsperienza, Abilitazione, Numero, Email) VALUES
-('BNCMRA70A01H501X', 'Mario', 'Bianchi', 15, 'ABCD', '321234567890', 'mario.bianchi@scuola.it'),
-('RSSGVN75B02H501Y', 'Giovanni', 'Rossi', 12, 'EFGH', '322234567890', 'giovanni.rossi@scuola.it'),
-('VRDLCA80C03H501Z', 'Luca', 'Verdi', 10, 'ILMN', '323234567890', 'luca.verdi@scuola.it'),
-('NRIGPP85D04H501W', 'Giuseppe', 'Neri', 8, 'OPQR', '324234567890', 'giuseppe.neri@scuola.it'),
-('BNCNNA90E05H501V', 'Anna', 'Bianchi', 7, 'STUV', '325234567890', 'anna.bianchi@scuola.it'),
-('RSSMRA75F06H501U', 'Maria', 'Rossi', 13, 'ZABC', '326234567890', 'maria.rossi@scuola.it'),
-('VRDPLA80G07H501T', 'Paolo', 'Verdi', 11, 'DEFG', '327234567890', 'paolo.verdi@scuola.it'),
-('NRILCU85H08H501S', 'Lucia', 'Neri', 9, 'HILM', '328234567890', 'lucia.neri@scuola.it'),
-('BNCFBA90I09H501R', 'Fabio', 'Bianchi', 6, 'NOPQ', '329234567890', 'fabio.bianchi@scuola.it'),
-('RSSSFN75L10H501Q', 'Stefano', 'Rossi', 14, 'RSTU', '330234567890', 'stefano.rossi@scuola.it'),
-('VRDMRC80M11H501P', 'Marco', 'Verdi', 12, 'VWXY', '331234567890', 'marco.verdi@scuola.it');
+INSERT INTO Istruttore (CodiceFiscale, Nome, Cognome, AnniEsperienza, Numero, Email) VALUES
+('BNCMRA70A01H501X', 'Mario', 'Bianchi', 15, '321234567890', 'mario.bianchi@scuola.it'),
+('RSSGVN75B02H501Y', 'Giovanni', 'Rossi', 12, '322234567890', 'giovanni.rossi@scuola.it'),
+('VRDLCA80C03H501Z', 'Luca', 'Verdi', 10, '323234567890', 'luca.verdi@scuola.it'),
+('NRIGPP85D04H501W', 'Giuseppe', 'Neri', 8, '324234567890', 'giuseppe.neri@scuola.it'),
+('BNCNNA90E05H501V', 'Anna', 'Bianchi', 7, '325234567890', 'anna.bianchi@scuola.it'),
+('RSSMRA75F06H501U', 'Maria', 'Rossi', 13, '326234567890', 'maria.rossi@scuola.it'),
+('VRDPLA80G07H501T', 'Paolo', 'Verdi', 11, '327234567890', 'paolo.verdi@scuola.it'),
+('NRILCU85H08H501S', 'Lucia', 'Neri', 9, '328234567890', 'lucia.neri@scuola.it'),
+('BNCFBA90I09H501R', 'Fabio', 'Bianchi', 6, '329234567890', 'fabio.bianchi@scuola.it'),
+('RSSSFN75L10H501Q', 'Stefano', 'Rossi', 14, '330234567890', 'stefano.rossi@scuola.it'),
+('VRDMRC80M11H501P', 'Marco', 'Verdi', 12, '331234567890', 'marco.verdi@scuola.it');
 
 INSERT INTO ValutazioneLezione (CodiceFiscale, Oggetto, DataLezione, ArgomentoLezione) VALUES
 ('RSSMRA80A01H501A', 'Ottimo corso', '2025-04-01', 'Segnaletica stradale'),
