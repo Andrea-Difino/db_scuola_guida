@@ -29,8 +29,7 @@ CREATE TABLE Partecipazione (
     CodiceFiscale CHAR(16),
     Data DATE,
     PRIMARY KEY (CodiceFiscale, Data),
-    FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale),
-    FOREIGN KEY (Data) REFERENCES Esame(Data)
+    FOREIGN KEY (CodiceFiscale, Data) REFERENCES Esame(CodiceFiscale, Data)
 );
 
 CREATE TABLE Recensione (
@@ -353,6 +352,28 @@ INSERT INTO Istruttore (CodiceFiscale, Nome, Cognome, AnniEsperienza, Numero, Em
 ('RSSSFN75L10H501Q', 'Stefano', 'Rossi', 14, '330234567890', 'stefano.rossi@scuola.it'),
 ('VRDMRC80M11H501P', 'Marco', 'Verdi', 12, '331234567890', 'marco.verdi@scuola.it');
 
+INSERT INTO Lezione (Data, ArgomentoLezione, TipoLezione, OraInizio, Durata) VALUES
+('2025-04-01', 'Segnaletica stradale', 'Teorico', '09:00:00', NULL),
+('2025-04-02', 'Precedenze', 'Teorico', '11:00:00', NULL),
+('2025-04-03', 'Parcheggio', 'Pratico', '14:00:00', 60),
+('2025-04-04', 'Codice della strada', 'Teorico', '09:00:00', NULL),
+('2025-04-05', 'Guida in città', 'Pratico', '11:00:00', 60),
+('2025-04-06', 'Sicurezza stradale', 'Teorico', '14:00:00', NULL),
+('2025-04-07', 'Manovre base', 'Pratico', '09:00:00', 60),
+('2025-04-08', 'Limiti di velocità', 'Teorico', '11:00:00', NULL),
+('2025-04-09', 'Guida notturna', 'Pratico', '14:00:00', 60),
+('2025-04-10', 'Emergenze', 'Teorico', '09:00:00', NULL),
+('2025-04-11', 'Autostrada', 'Pratico', '11:00:00', 60),
+('2025-04-12', 'Meccanica base', 'Teorico', '14:00:00', NULL),
+('2025-04-13', 'Parcheggio parallelo', 'Pratico', '09:00:00', 60),
+('2025-04-14', 'Primo soccorso', 'Teorico', '11:00:00', NULL),
+('2025-04-15', 'Guida eco', 'Pratico', '14:00:00', 60),
+('2025-04-16', 'Meteo e guida', 'Teorico', '09:00:00', NULL),
+('2025-04-17', 'Rotatorie', 'Pratico', '11:00:00', 60),
+('2025-04-18', 'Documenti auto', 'Teorico', '14:00:00', NULL),
+('2025-04-19', 'Guida sportiva', 'Pratico', '09:00:00', 60),
+('2025-04-20', 'Manutenzione', 'Teorico', '11:00:00', NULL);
+
 INSERT INTO ValutazioneLezione (CodiceFiscale, Oggetto, DataLezione, ArgomentoLezione) VALUES
 ('RSSMRA80A01H501A', 'Ottimo corso', '2025-04-01', 'Segnaletica stradale'),
 ('VRDLCA81B02H501B', 'Buona esperienza', '2025-04-02', 'Precedenze'),
@@ -374,6 +395,8 @@ INSERT INTO ValutazioneLezione (CodiceFiscale, Oggetto, DataLezione, ArgomentoLe
 ('CNTDVD97U18H501U', 'Soddisfatto', '2025-04-18', 'Documenti auto'),
 ('FRRSRA98V19H501V', 'Ottima scelta', '2025-04-19', 'Guida sportiva'),
 ('MTTPLA99Z20H501Z', 'Corso consigliato', '2025-04-20', 'Manutenzione');
+
+
 
 INSERT INTO ValutazioneIstruttore (CodiceFiscale, Oggetto, CodiceFiscaleIstruttore) VALUES
 ('RSSMRA80A01H501A', 'Ottimo corso', 'BNCMRA70A01H501X'),
@@ -397,27 +420,7 @@ INSERT INTO ValutazioneIstruttore (CodiceFiscale, Oggetto, CodiceFiscaleIstrutto
 ('FRRSRA98V19H501V', 'Ottima scelta', 'BNCFBA90I09H501R'),
 ('MTTPLA99Z20H501Z', 'Corso consigliato', 'RSSSFN75L10H501Q');
 
-INSERT INTO Lezione (Data, ArgomentoLezione, TipoLezione, OraInizio, Durata) VALUES
-('2025-04-01', 'Segnaletica stradale', 'Teorico', '09:00:00', NULL),
-('2025-04-02', 'Precedenze', 'Teorico', '11:00:00', NULL),
-('2025-04-03', 'Parcheggio', 'Pratico', '14:00:00', 60),
-('2025-04-04', 'Codice della strada', 'Teorico', '09:00:00', NULL),
-('2025-04-05', 'Guida in città', 'Pratico', '11:00:00', 60),
-('2025-04-06', 'Sicurezza stradale', 'Teorico', '14:00:00', NULL),
-('2025-04-07', 'Manovre base', 'Pratico', '09:00:00', 60),
-('2025-04-08', 'Limiti di velocità', 'Teorico', '11:00:00', NULL),
-('2025-04-09', 'Guida notturna', 'Pratico', '14:00:00', 60),
-('2025-04-10', 'Emergenze', 'Teorico', '09:00:00', NULL),
-('2025-04-11', 'Autostrada', 'Pratico', '11:00:00', 60),
-('2025-04-12', 'Meccanica base', 'Teorico', '14:00:00', NULL),
-('2025-04-13', 'Parcheggio parallelo', 'Pratico', '09:00:00', 60),
-('2025-04-14', 'Primo soccorso', 'Teorico', '11:00:00', NULL),
-('2025-04-15', 'Guida eco', 'Pratico', '14:00:00', 60),
-('2025-04-16', 'Meteo e guida', 'Teorico', '09:00:00', NULL),
-('2025-04-17', 'Rotatorie', 'Pratico', '11:00:00', 60),
-('2025-04-18', 'Documenti auto', 'Teorico', '14:00:00', NULL),
-('2025-04-19', 'Guida sportiva', 'Pratico', '09:00:00', 60),
-('2025-04-20', 'Manutenzione', 'Teorico', '11:00:00', NULL);
+
 
 INSERT INTO Patente (TipoPatente, Descrizione) VALUES
 ('A', 'Motocicli senza limitazioni'),
