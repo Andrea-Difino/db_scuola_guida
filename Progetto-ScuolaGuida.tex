@@ -1,8 +1,6 @@
 \documentclass[10pt,twoside]{article}
 
-\usepackage[T1]{fontenc}
-\usepackage[scaled]{uarial}
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage{fontspec}
 \usepackage{caption}
 \captionsetup[figure]{name=Figura}
 \captionsetup[table]{name=Tabella}
@@ -27,6 +25,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{array}
 \usepackage[margin=2.54cm]{geometry}
+\usepackage{longtable}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{titlesec}
@@ -34,7 +33,7 @@
 \usepackage{parskip}
 \usepackage{lmodern}
 \pagenumbering{gobble}  % disabilita completamente la numerazione visibile
-
+\setmainfont{Arial}
 
 
 \begin{document}
@@ -274,9 +273,25 @@
     \hyperref[fig:tabellaEntita]{Tabella~\ref*{fig:tabellaEntita}} (descritta successivamente) riassume tutte le entità e \hyperref[fig:tabellaRelazioni]{Tabella~\ref*{fig:tabellaRelazioni}} (descritta successivamente) le relazioni individuate dall'analisi dei requisiti e rappresentate nel diagramma E-R, con i relativi attributi rilevanti.
     Per le entità principali viene anche fornito l'identificatore, che può includere riferimenti a relazioni nei casi di Lezione, Esame, Prenotazione e Pagamento.
 
+    Il presente schema E-R non permette di rappresentare direttametne i seguenti vincoli:
+
+    \begin{enumerate}
+        \item Un istruttore i non può tenere contemporaneamente più lezioni. Se un istruttore insegna due lezioni $l_1$ e $l_2$, allora le date e orari devono essere diversi:
+        \vspace{-.22cm}
+        \[(l_1,i)\in Insegnamento\land (l_2 ,i)\in Insegnamento\Rightarrow(l_1.Data\neq l_2.Data \lor l_1.OraInizio \neq l_2.OraInizio)\]
+        \vspace{-.5cm}
+        \item Un iscritto s non può partecipare a due esami nello stesso momento. Un iscritto non può sostenere due esami $e_1$ ed $e_2$ nello stesso giorno e ora:
+        \vspace{-.22cm}
+        \[(e_1,s)\in Partecipazione\land (e_2,s)\in Partecipazione\Rightarrow(e_1.Data\neq e_2.Data)\]
+        \vspace{-.5cm}
+        \item Un iscritto può lasciare una recensione solo su una lezione a cui ha fatto prenotazione. Se un iscritto s scrive una recensione r relativa a una lezione l, allora s deve aver richiesto una prenotazione p per quella lezione:
+        \vspace{-.22cm}
+        \[(r,l)\in ValutazioneLezione \land (p,l)\in Appuntamento\Rightarrow \exists s((p,s)\in Richiesta\land (r,s)\in Feedback)\]
+    \end{enumerate}
+
 }
 
-\begin{figure}[H]        
+\begin{figure}[h]        
     \includegraphics[width=.88\linewidth]{img/ER_ScuolaGuida.drawio.png}\centering
     \caption{Diagramma E-R della base di dati relativa alla gestione di una Scuola Guida}
     \label{fig:diagrammaER}
@@ -351,11 +366,10 @@
         \label{fig:tabellaEntita}
     \end{table}
 
-    \newpage
-
-    \begin{table}[H]
-        \centering
-        \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}p{4.85cm}|>{\centering\arraybackslash}X|}
+    \begin{longtable}[H]{|>{\centering\arraybackslash}p{3cm}|
+                            >{\centering\arraybackslash}p{3cm}|
+                            >{\centering\arraybackslash}p{4.85cm}|
+                            >{\centering\arraybackslash}p{3cm}|}
             \hline
             \rowcolor{lightgray!40}
             \textbf{Relazione} & \textbf{Descrizione} & \textbf{Componente} & \textbf{Attributi} \\
@@ -396,10 +410,9 @@
             \rowcolor{white!40}
             Assegnazione & Aula usata per una lezione teorica & Aula, Lezione Teorica & \\
             \hline
-        \end{tabularx}
         \caption{Relazioni}
         \label{fig:tabellaRelazioni}
-    \end{table}
+    \end{longtable}
 
     \subsection{Analisi delle ridondanze}{
         L’attributo \textit{Email} presente in Recensione, che memorizza l’indirizzo email dell’iscritto autore della recensione, presenta una ridondanza. Questo valore può infatti essere ottenuto tramite la relazione con l’entità Iscritto, accedendo all’attributo Email già presente lì.
