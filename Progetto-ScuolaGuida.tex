@@ -61,7 +61,7 @@
 \end{titlepage}
 
 \clearpage
-\pagenumbering{arabic}
+
 
 \pagestyle{fancy}
 \fancyhead{}
@@ -75,6 +75,7 @@
 \tableofcontents
 
 \newpage
+\pagenumbering{arabic}
 
 \section{Abstract}{
     Questo lavoro sviluppa una base di dati progettata per gestire in modo strutturato e coerente le informazioni relative alle scuole guida, agli istruttori, agli iscritti ai corsi e agli esami sostenuti dagli allievi. 
@@ -277,16 +278,17 @@
 
     \begin{enumerate}
         \item Un istruttore i non può tenere contemporaneamente più lezioni. Se un istruttore insegna due lezioni $l_1$ e $l_2$, allora le date e orari devono essere diversi:
-        \vspace{-.22cm}
+        \vspace{-.1cm}
         \[(l_1,i)\in Insegnamento\land (l_2 ,i)\in Insegnamento\Rightarrow(l_1.Data\neq l_2.Data \lor l_1.OraInizio \neq l_2.OraInizio)\]
-        \vspace{-.5cm}
         \item Un iscritto s non può partecipare a due esami nello stesso momento. Un iscritto non può sostenere due esami $e_1$ ed $e_2$ nello stesso giorno e ora:
-        \vspace{-.22cm}
+        \vspace{-.1cm}
         \[(e_1,s)\in Partecipazione\land (e_2,s)\in Partecipazione\Rightarrow(e_1.Data\neq e_2.Data)\]
-        \vspace{-.5cm}
         \item Un iscritto può lasciare una recensione solo su una lezione a cui ha fatto prenotazione. Se un iscritto s scrive una recensione r relativa a una lezione l, allora s deve aver richiesto una prenotazione p per quella lezione:
-        \vspace{-.22cm}
+        \vspace{-.1cm}
         \[(r,l)\in ValutazioneLezione \land (p,l)\in Appuntamento\Rightarrow \exists s((p,s)\in Richiesta\land (r,s)\in Feedback)\]
+        \item Un iscritto s non può partecipare lo stesso giorno sia ad un esame teorico $e_1$ e ad un esame pratico $e_2$ e la data dell'esame teorico deve obbligatoriamente precedere quella dell'esame pratico:
+        \vspace{-.1cm}
+        \[(s,e_1)\in EsameTeorico \land (s,e_2)\in EsamePratico\Rightarrow (e_1.Data\neq e_2.Data \land e_1.Data < e_2.Data)\]
     \end{enumerate}
 
 }

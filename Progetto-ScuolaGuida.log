@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  22 MAY 2025 13:06
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  22 MAY 2025 13:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -602,15 +602,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 
-[1
+[2
 
 ]
+
+[1]
 
 [2]
 
 [3]
-
-[4]
 File: img/ER_ScuolaGuida.drawio.png Graphic file (type bmp)
 <img/ER_ScuolaGuida.drawio.png>
 
@@ -619,73 +619,73 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[5]
+[4]
 Underfull \vbox (badness 2103) has occurred while \output is active []
 
 
 
-[6]
-Overfull \hbox (5.6183pt too wide) in paragraph at lines 381--381
+[5]
+Overfull \hbox (5.6183pt too wide) in paragraph at lines 383--383
  []|\TU/Arial(0)/m/n/10 ValutazioneIstruttore| 
  []
 
 
-Overfull \hbox (1.18959pt too wide) in paragraph at lines 384--384
+Overfull \hbox (1.18959pt too wide) in paragraph at lines 386--386
  []|\TU/Arial(0)/m/n/10 ValutazioneLezione| 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 446--448
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 448--450
 
  []
 
 
-Overfull \hbox (71.97122pt too wide) in paragraph at lines 453--479
+Overfull \hbox (71.97122pt too wide) in paragraph at lines 455--481
 [][] 
+ []
+
+
+
+[7]
+Overfull \hbox (71.97122pt too wide) in paragraph at lines 521--543
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
+
  []
 
 
 
 [8]
-Overfull \hbox (71.97122pt too wide) in paragraph at lines 519--541
-[][] 
+Underfull \hbox (badness 10000) in paragraph at lines 632--635
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
+Underfull \hbox (badness 10000) in paragraph at lines 632--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--639
 
  []
 
 
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 630--633
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 630--633
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 634--637
-
- []
-
-
-
-[10]
 File: img/ER_ScuolaGuidaRistrutturato.drawio.png Graphic file (type bmp)
 <img/ER_ScuolaGuidaRistrutturato.drawio.png>
 
 
-[11]
+[10]
 File: img/query1.png Graphic file (type bmp)
 <img/query1.png>
 
 
-[12]
+[11]
 File: img/risultati1.png Graphic file (type bmp)
 <img/risultati1.png>
 File: img/query2.png Graphic file (type bmp)
@@ -699,7 +699,7 @@ Underfull \vbox (badness 2269) has occurred while \output is active []
 
 
 
-[13]
+[12]
 File: img/risultati3.png Graphic file (type bmp)
 <img/risultati3.png>
 File: img/query4.png Graphic file (type bmp)
@@ -710,11 +710,11 @@ File: img/query5.png Graphic file (type bmp)
 <img/query5.png>
 
 
-[14]
+[13]
 File: img/risultati5.png Graphic file (type bmp)
 <img/risultati5.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--772
+Underfull \hbox (badness 10000) in paragraph at lines 772--774
 
  []
 
@@ -722,8 +722,8 @@ File: img/indici.png Graphic file (type bmp)
 <img/indici.png>
 
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 804--806
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 806--808
 
  []
 
@@ -731,7 +731,7 @@ File: img/CfileExecution.png Graphic file (type bmp)
 <img/CfileExecution.png>
 
 
-[16] (Progetto-ScuolaGuida.aux)
+[15] (Progetto-ScuolaGuida.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-25>
@@ -748,4 +748,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  79i,12n,93p,1248b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Progetto-ScuolaGuida.xdv (17 pages, 293320 bytes).
+Output written on Progetto-ScuolaGuida.xdv (17 pages, 295496 bytes).
