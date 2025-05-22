@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  22 MAY 2025 13:22
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  22 MAY 2025 14:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -659,17 +659,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 632--635
+Underfull \hbox (badness 10000) in paragraph at lines 641--643
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--635
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 636--639
+Underfull \hbox (badness 10000) in paragraph at lines 644--647
 
  []
 
@@ -714,7 +709,7 @@ File: img/query5.png Graphic file (type bmp)
 File: img/risultati5.png Graphic file (type bmp)
 <img/risultati5.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--774
+Underfull \hbox (badness 10000) in paragraph at lines 775--777
 
  []
 
@@ -723,7 +718,7 @@ File: img/indici.png Graphic file (type bmp)
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 806--808
+Underfull \hbox (badness 10000) in paragraph at lines 809--811
 
  []
 
@@ -748,4 +743,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  79i,12n,93p,1248b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Progetto-ScuolaGuida.xdv (17 pages, 295496 bytes).
+Output written on Progetto-ScuolaGuida.xdv (17 pages, 295484 bytes).
