@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <libpq-fe.h>
 
-#define DB_NAME "postgres"
+#define DB_NAME "scuola_guidaDB"
 #define DB_USER "postgres"
 #define DB_PASS "PostGreeAndre14"
 #define DB_HOST "127.0.0.1"

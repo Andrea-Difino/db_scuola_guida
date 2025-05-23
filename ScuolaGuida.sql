@@ -32,8 +32,8 @@ CREATE TABLE Veicolo (
 
 CREATE TABLE Aula (
     NomeAula VARCHAR(20) PRIMARY KEY,
-    Posti INTEGER,
-    Attrezzatura TEXT CHECK(Attrezzatura IN ('Proiettore', 'Lavagna', 'LIM', 'Impianto Audio'))
+    Posti INTEGER NOT NULL,
+    Attrezzatura TEXT CHECK(Attrezzatura IN ('Proiettore', 'Lavagna', 'LIM', 'Impianto Audio')) NOT NULL
 );
 
 CREATE TABLE Istruttore (
@@ -65,8 +65,8 @@ CREATE TABLE Partecipazione (
 );
 
 CREATE TABLE Lezione (
-    Data DATE NOT NULL,
-    ArgomentoLezione VARCHAR(25) NOT NULL,
+    Data DATE,
+    ArgomentoLezione VARCHAR(25),
     TipoLezione TEXT CHECK(TipoLezione IN ('Teorico', 'Pratico')),
     OraInizio TIME NOT NULL,
     CFIstruttore CHAR(16) NOT NULL,
