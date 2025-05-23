@@ -60,14 +60,10 @@ void runQuery(const char *query) {
 }
 
 const char *queries[] = {
-    "SELECT i.TipoPatente, COUNT(*) as NumeroEsami, AVG(e.Punti) as MediaPunti, COUNT(e.Esito) as NumeroPromossi FROM Iscritto i JOIN Esame e ON i.CodiceFiscale = e.CodiceFiscale WHERE e.TipoEsame = 'Teorico' GROUP BY i.TipoPatente HAVING AVG(e.Punti) > 20 ORDER BY MediaPunti DESC;",
-
+    NULL, // Query 1 sarà gestita dinamicamente
     "SELECT v.TipoVeicolo, COUNT(*) as NumeroVeicoli, COUNT(CASE WHEN v.Stato = 'Disponibile' THEN 1 END) as VeicoliDisponibili, COUNT(DISTINCT i.TipoPatente) as TipiPatentiNecessarie, COUNT(DISTINCT p.DataPrenotazione) as NumeroPrenotazioni FROM Veicolo v JOIN Iscritto i ON ((v.TipoVeicolo = 'Auto' AND i.TipoPatente = 'B') OR (v.TipoVeicolo = 'Moto' AND i.TipoPatente = 'A') OR (v.TipoVeicolo = 'Camion' AND i.TipoPatente = 'C')) LEFT JOIN Prenotazione p ON i.CodiceFiscale = p.CodiceFiscale GROUP BY v.TipoVeicolo ORDER BY NumeroVeicoli DESC;",
-
     "SELECT v.TipoVeicolo, v.Modello, v.Stato, p.DataPrenotazione, p.Ora, i.Nome, i.Cognome FROM Veicolo v JOIN Prenotazione p ON v.Stato = 'Disponibile' JOIN Iscritto i ON p.CodiceFiscale = i.CodiceFiscale WHERE v.Stato = 'Disponibile' AND p.Stato = 'Accettata' ORDER BY p.DataPrenotazione, p.Ora;",
-
     "SELECT I.Nome, P.CodiceFiscale, I.TipoPatente, SUM(P.Importo) AS TotalePagato FROM Pagamento P JOIN Iscritto I ON P.CodiceFiscale = I.CodiceFiscale GROUP BY I.Nome, P.CodiceFiscale, I.TipoPatente HAVING SUM(P.Importo) > 0;",
-
     "SELECT I.Nome, I.Cognome, AVG(R.Gradimento) AS MediaGradimento, COUNT(*) AS NumeroRecensioni FROM Istruttore I JOIN Recensione R ON I.CodiceFiscale = R.CFIstruttore JOIN Iscritto S ON R.CodiceFiscale = S.CodiceFiscale GROUP BY I.CodiceFiscale, I.Nome, I.Cognome HAVING AVG(R.Gradimento) > 4.0 ORDER BY MediaGradimento DESC;"
 };
 
@@ -94,7 +90,28 @@ int main() {
             continue;
         }
 
-        if (option >= 1 && option <= 5) {
+        if (option == 1) {
+            double soglia;
+            printf("Inserisci la soglia minima di punti per filtrare i risultati (es. 20): ");
+            if (scanf("%lf", &soglia) != 1) {
+                while (getchar() != '\n');
+                printf("Input non valido.\n");
+                continue;
+            }
+
+            char query1[1024];
+            snprintf(query1, sizeof(query1),
+                "SELECT i.TipoPatente, COUNT(*) as NumeroEsami, AVG(e.Punti) as MediaPunti, COUNT(e.Esito) as NumeroPromossi "
+                "FROM Iscritto i "
+                "JOIN Esame e ON i.CodiceFiscale = e.CodiceFiscale "
+                "WHERE e.TipoEsame = 'Teorico' "
+                "GROUP BY i.TipoPatente "
+                "HAVING AVG(e.Punti) > %.2f "
+                "ORDER BY MediaPunti DESC;",
+                soglia);
+
+            runQuery(query1);
+        } else if (option >= 2 && option <= 5) {
             printf("\n");
             runQuery(queries[option - 1]);
         } else if (option == 7) {
@@ -108,3 +125,4 @@ int main() {
     PQfinish(conn);
     return 0;
 }
+
