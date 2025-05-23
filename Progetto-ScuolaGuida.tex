@@ -288,6 +288,12 @@
         \item Un iscritto s non può partecipare lo stesso giorno sia ad un esame teorico $e_1$ e ad un esame pratico $e_2$ e la data dell'esame teorico deve obbligatoriamente precedere quella dell'esame pratico:
         \vspace{-.1cm}
         \[(s,e_1)\in EsameTeorico \land (s,e_2)\in EsamePratico\Rightarrow (e_1.Data\neq e_2.Data \land e_1.Data < e_2.Data)\]
+        \item La data di una prenotazione p deve essere antecedente alla data della lezione l prenotata.
+        \vspace{-.1cm}
+        \[(p,l)\in Appuntamento \Rightarrow (p.DataPrenotazione < l.Data)\]
+        \item Una recensione non può essere contemporaneamente per una lezione e un istruttore. 
+        \item Se un veicolo v è in manutenzione o non disponibile allora non può essere usato per una lezione pratica.
+        \[(v,l)\in Utilizzo \rightarrow (v.Stato \neq \text{"In Manutenzione"} \land v.Stato \neq \text{"Non Disponibile"})\] 
     \end{enumerate}
 
 }
@@ -665,10 +671,10 @@
             \item \textbf{Patente}(\underline{TipoPatente}, Descrizione)
             \item \textbf{Veicolo}(\underline{Targa}, Modello, Tipo, Stato, AnnoImmatricolazione)
             \item \textbf{Aula}(\underline{Nome}, Attrezzatura, Posti)
-            \item \textbf{Prenotazione}(\underline{DataPrenotazione, Iscritto}, Email, Stato)
+            \item \textbf{Prenotazione}(\underline{DataPrenotazione, Iscritto}, Email, Stato, Data, ArgomentoLezione)
             \begin{itemize}
                 \item Prenotazione.Iscritto → Iscritto.CF
-                \item Prenotazione.IDLezione → Lezione.(ArgomentoLezione, Data)
+                \item Prenotazione.(Data, ArgomentoLezione) → Lezione.(Data, ArgomentoLezione)
             \end{itemize}
             \item \textbf{Esame}(\underline{Data, Iscritto}, Esito, Durata, Tipo, Sede*, Punti*)
             \begin{itemize}
