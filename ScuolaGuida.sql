@@ -33,33 +33,34 @@ CREATE TABLE Partecipazione (
 );
 
 CREATE TABLE Recensione (
-    CodiceFiscale CHAR(16),
-    Oggetto VARCHAR(50),
-    Commento TEXT,
-    Email VARCHAR(30),
-    Data DATE,
-    Gradimento INTEGER CHECK(Gradimento BETWEEN 1 AND 5),
+    CodiceFiscale CHAR(16) NOT NULL,
+    Oggetto VARCHAR(50) NOT NULL,
+    Commento TEXT NOT NULL,
+    Email VARCHAR(30) NOT NULL,
+    Data DATE NOT NULL,
+    Gradimento INTEGER CHECK(Gradimento BETWEEN 1 AND 5) NOT NULL,
+    CFIstruttore CHAR(16),
+    DataLezione DATE, 
+    ArgomentoLezione VARCHAR(25),
     PRIMARY KEY (CodiceFiscale, Oggetto),
-    FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale)
+    FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale),
+    FOREIGN KEY (CFIstruttore) REFERENCES Istruttore(CodiceFiscale),
+    FOREIGN KEY (DataLezione, ArgomentoLezione) REFERENCES Lezione(Data, ArgomentoLezione)
 );
 
 CREATE TABLE Lezione (
-    Data DATE,
-    ArgomentoLezione VARCHAR(50),
+    Data DATE NOT NULL,
+    ArgomentoLezione VARCHAR(50) NOT NULL,
     TipoLezione TEXT CHECK(TipoLezione IN ('Teorico', 'Pratico')),
-    OraInizio TIME,
-    Durata INTEGER NULL,
-    PRIMARY KEY (Data, ArgomentoLezione)
-);
-
-CREATE TABLE ValutazioneLezione (
-    CodiceFiscale CHAR(16),
-    Oggetto VARCHAR(50),
-    DataLezione DATE,
-    ArgomentoLezione VARCHAR(50),
-    PRIMARY KEY (CodiceFiscale, Oggetto, DataLezione, ArgomentoLezione),
-    FOREIGN KEY (CodiceFiscale, Oggetto) REFERENCES Recensione(CodiceFiscale, Oggetto),
-    FOREIGN KEY (DataLezione, ArgomentoLezione) REFERENCES Lezione(Data, ArgomentoLezione)
+    OraInizio TIME NOT NULL,
+    CFIstruttore CHAR(16) NOT NULL,
+    Durata INTEGER,
+    IDAula VARCHAR(20), 
+    VeicoloUsato CHAR(7),
+    PRIMARY KEY (Data, ArgomentoLezione),
+    FOREIGN KEY (CFIstruttore) REFERENCES Istruttore(CF),
+    FOREIGN KEY (IDAula) REFERENCES Aula(NomeAula),
+    FOREIGN KEY (VeicoloUsato) REFERENCES Veicolo(Targa)
 );
 
 CREATE TABLE Prenotazione (
@@ -112,26 +113,17 @@ CREATE TABLE Istruttore (
     Email VARCHAR (30) UNIQUE
 );
 
-CREATE TABLE ValutazioneIstruttore (
-    CodiceFiscale CHAR(16),               
-    Oggetto VARCHAR(50),
-    CodiceFiscaleIstruttore CHAR(16),    
-    PRIMARY KEY (CodiceFiscale, Oggetto, CodiceFiscaleIstruttore),
-    FOREIGN KEY (CodiceFiscale, Oggetto) REFERENCES Recensione(CodiceFiscale, Oggetto),
-    FOREIGN KEY (CodiceFiscaleIstruttore) REFERENCES Istruttore(CodiceFiscale)
-);
-
 CREATE TABLE Patente (
     TipoPatente TEXT PRIMARY KEY CHECK (TipoPatente IN (
         'A', 'A1', 'A2', 'AM', 'B', 'B1', 'BE', 'B96',
         'C', 'C1', 'CE', 'C1E', 'D', 'D1', 'DE', 'D1E', 'M'
-    )),
-    Descrizione TEXT
+    )) NOT NULL,
+    Descrizione TEXT NOT NULL
 );
 
 CREATE TABLE Abilitazione (
-    IstruttoreCF CHAR(16),
-    TipoPatente TEXT,
+    IstruttoreCF CHAR(16) NOT NULL,
+    TipoPatente TEXT NOT NULL,
     PRIMARY KEY (IstruttoreCF, TipoPatente),
     FOREIGN KEY (IstruttoreCF) REFERENCES Istruttore(CodiceFiscale),
     FOREIGN KEY (TipoPatente) REFERENCES Patente(TipoPatente)
@@ -204,27 +196,28 @@ INSERT INTO Partecipazione (CodiceFiscale, Data) VALUES
 ('FRRSRA98V19H501V', '2025-02-19'),
 ('MTTPLA99Z20H501Z', '2025-02-20');
 
-INSERT INTO Recensione (CodiceFiscale, Oggetto, Commento, Email, Data, Gradimento) VALUES
-('RSSMRA80A01H501A', 'Ottimo corso', 'Istruttori molto preparati', 'mario.rossi@email.it', '2025-03-01', 5),
-('VRDLCA81B02H501B', 'Buona esperienza', 'Corso ben strutturato', 'luca.verdi@email.it', '2025-03-02', 4),
-('BNCGPP82C03H501C', 'Soddisfatto', 'Ottimo rapporto qualità/prezzo', 'giuseppe.b@email.it', '2025-03-03', 5),
-('NRENNA83D04H501D', 'Esperienza positiva', 'Personale disponibile', 'anna.neri@email.it', '2025-03-04', 4),
-('GLLMRC84E05H501E', 'Da migliorare', 'Orari poco flessibili', 'marco.g@email.it', '2025-03-05', 3),
-('VLNSFN85F06H501F', 'Molto professionale', 'Consigliato', 'stefano.v@email.it', '2025-03-06', 5),
-('RSSMRA86G07H501G', 'Corso eccellente', 'Ottima preparazione', 'maria.r@email.it', '2025-03-07', 5),
-('CNTLCA87H08H501H', 'Buon corso', 'Istruttori pazienti', 'luca.c@email.it', '2025-03-08', 4),
-('FRRPLA88I09H501I', 'Esperienza ok', 'Corso nella media', 'paola.f@email.it', '2025-03-09', 3),
-('MRTGNN89L10H501L', 'Molto soddisfatta', 'Ottima scuola', 'gianna.m@email.it', '2025-03-10', 5),
-('BRNGPP90M11H501M', 'Corso completo', 'Ben organizzato', 'giuseppe@email.it', '2025-03-11', 4),
-('RMNNNA91N12H501N', 'Esperienza positiva', 'Consigliato', 'anna.rom@email.it', '2025-03-12', 4),
-('GLLCRL92P13H501P', 'Ottimo servizio', 'Personale competente', 'carlo.g@email.it', '2025-03-13', 5),
-('RSSLRA93Q14H501Q', 'Corso efficace', 'Preparazione completa', 'laura.r@email.it', '2025-03-14', 4),
-('BNCFBA94R15H501R', 'Buona scuola', 'Ambiente professionale', 'fabio.b@email.it', '2025-03-15', 4),
-('VLNLSA95S16H501S', 'Esperienza positiva', 'Consigliata', 'elisa.v@email.it', '2025-03-16', 5),
-('RSSMTA96T17H501T', 'Corso valido', 'Ottimi istruttori', 'marta.r@email.it', '2025-03-17', 4),
-('CNTDVD97U18H501U', 'Soddisfatto', 'Buon rapporto qualità/prezzo', 'davide.c@email.it', '2025-03-18', 4),
-('FRRSRA98V19H501V', 'Ottima scelta', 'Preparazione eccellente', 'sara.f@email.it', '2025-03-19', 5),
-('MTTPLA99Z20H501Z', 'Corso consigliato', 'Esperienza positiva', 'paolo.m@email.it', '2025-03-20', 4);
+INSERT INTO Recensione (CodiceFiscale, Oggetto, Commento, Email, Data, Gradimento, CFIstruttore, DataLezione, ArgomentoLezione) VALUES
+('RSSMRA80A01H501A', 'Ottimo corso', 'Istruttori molto preparati', 'mario.rossi@email.it', '2025-03-01', 5, 'BNCMRA70A01H501X', '2025-04-01', 'Segnaletica stradale'),
+('VRDLCA81B02H501B', 'Buona esperienza', 'Corso ben strutturato', 'luca.verdi@email.it', '2025-03-02', 4, 'RSSGVN75B02H501Y', '2025-04-02', 'Precedenze'), 
+('BNCGPP82C03H501C', 'Soddisfatto', 'Ottimo rapporto qualità/prezzo', 'giuseppe.b@email.it', '2025-03-03', 5, 'VRDLCA80C03H501Z', '2025-04-03', 'Parcheggio'),
+('NRENNA83D04H501D', 'Esperienza positiva', 'Personale disponibile', 'anna.neri@email.it', '2025-03-04', 4, 'NRIGPP85D04H501W', '2025-04-04', 'Codice della strada'),
+('GLLMRC84E05H501E', 'Da migliorare', 'Orari poco flessibili', 'marco.g@email.it', '2025-03-05', 3, 'BNCNNA90E05H501V', '2025-04-05', 'Guida in città'),
+('VLNSFN85F06H501F', 'Molto professionale', 'Consigliato', 'stefano.v@email.it', '2025-03-06', 5, 'RSSMRA75F06H501U', '2025-04-06', 'Sicurezza stradale'),
+('RSSMRA86G07H501G', 'Corso eccellente', 'Ottima preparazione', 'maria.r@email.it', '2025-03-07', 5, 'VRDPLA80G07H501T', '2025-04-07', 'Manovre base'),
+('CNTLCA87H08H501H', 'Buon corso', 'Istruttori pazienti', 'luca.c@email.it', '2025-03-08', 4, 'NRILCU85H08H501S', '2025-04-08', 'Limiti di velocità'),
+('FRRPLA88I09H501I', 'Esperienza ok', 'Corso nella media', 'paola.f@email.it', '2025-03-09', 3, 'BNCFBA90I09H501R', '2025-04-09', 'Guida notturna'),
+('MRTGNN89L10H501L', 'Molto soddisfatta', 'Ottima scuola', 'gianna.m@email.it', '2025-03-10', 5, 'RSSSFN75L10H501Q', '2025-04-10', 'Emergenze'),
+('BRNGPP90M11H501M', 'Corso completo', 'Ben organizzato', 'giuseppe@email.it', '2025-03-11', 4, 'BNCMRA70A01H501X', '2025-04-11', 'Autostrada'),
+('RMNNNA91N12H501N', 'Esperienza positiva', 'Consigliato', 'anna.rom@email.it', '2025-03-12', 4, 'RSSGVN75B02H501Y', '2025-04-12', 'Meccanica base'),
+('GLLCRL92P13H501P', 'Ottimo servizio', 'Personale competente', 'carlo.g@email.it', '2025-03-13', 5, 'VRDLCA80C03H501Z', '2025-04-13', 'Parcheggio parallelo'),
+('RSSLRA93Q14H501Q', 'Corso efficace', 'Preparazione completa', 'laura.r@email.it', '2025-03-14', 4, 'NRIGPP85D04H501W', '2025-04-14', 'Primo soccorso'),
+('BNCFBA94R15H501R', 'Buona scuola', 'Ambiente professionale', 'fabio.b@email.it', '2025-03-15', 4, 'BNCNNA90E05H501V', '2025-04-15', 'Guida eco'),
+('VLNLSA95S16H501S', 'Esperienza positiva', 'Consigliata', 'elisa.v@email.it', '2025-03-16', 5, 'RSSMRA75F06H501U', '2025-04-16', 'Meteo e guida'),
+('RSSMTA96T17H501T', 'Corso valido', 'Ottimi istruttori', 'marta.r@email.it', '2025-03-17', 4, 'VRDPLA80G07H501T', '2025-04-17', 'Rotatorie'),
+('CNTDVD97U18H501U', 'Soddisfatto', 'Buon rapporto qualità/prezzo', 'davide.c@email.it', '2025-03-18', 4, 'NRILCU85H08H501S', '2025-04-18', 'Documenti auto'),
+('FRRSRA98V19H501V', 'Ottima scelta', 'Preparazione eccellente', 'sara.f@email.it', '2025-03-19', 5, 'BNCFBA90I09H501R', '2025-04-19', 'Guida sportiva'),
+('MTTPLA99Z20H501Z', 'Corso consigliato', 'Esperienza positiva', 'paolo.m@email.it', '2025-03-20', 4, 'RSSSFN75L10H501Q', '2025-04-20', 'Manutenzione');
+
 
 INSERT INTO Prenotazione (DataPrenotazione, CodiceFiscale, Ora, Stato) VALUES
 ('2025-05-01', 'RSSMRA80A01H501A', '09:00:00', 'Accettata'),
@@ -373,53 +366,6 @@ INSERT INTO Lezione (Data, ArgomentoLezione, TipoLezione, OraInizio, Durata) VAL
 ('2025-04-18', 'Documenti auto', 'Teorico', '14:00:00', NULL),
 ('2025-04-19', 'Guida sportiva', 'Pratico', '09:00:00', 60),
 ('2025-04-20', 'Manutenzione', 'Teorico', '11:00:00', NULL);
-
-INSERT INTO ValutazioneLezione (CodiceFiscale, Oggetto, DataLezione, ArgomentoLezione) VALUES
-('RSSMRA80A01H501A', 'Ottimo corso', '2025-04-01', 'Segnaletica stradale'),
-('VRDLCA81B02H501B', 'Buona esperienza', '2025-04-02', 'Precedenze'),
-('BNCGPP82C03H501C', 'Soddisfatto', '2025-04-03', 'Parcheggio'),
-('NRENNA83D04H501D', 'Esperienza positiva', '2025-04-04', 'Codice della strada'),
-('GLLMRC84E05H501E', 'Da migliorare', '2025-04-05', 'Guida in città'),
-('VLNSFN85F06H501F', 'Molto professionale', '2025-04-06', 'Sicurezza stradale'),
-('RSSMRA86G07H501G', 'Corso eccellente', '2025-04-07', 'Manovre base'),
-('CNTLCA87H08H501H', 'Buon corso', '2025-04-08', 'Limiti di velocità'),
-('FRRPLA88I09H501I', 'Esperienza ok', '2025-04-09', 'Guida notturna'),
-('MRTGNN89L10H501L', 'Molto soddisfatta', '2025-04-10', 'Emergenze'),
-('BRNGPP90M11H501M', 'Corso completo', '2025-04-11', 'Autostrada'),
-('RMNNNA91N12H501N', 'Esperienza positiva', '2025-04-12', 'Meccanica base'),
-('GLLCRL92P13H501P', 'Ottimo servizio', '2025-04-13', 'Parcheggio parallelo'),
-('RSSLRA93Q14H501Q', 'Corso efficace', '2025-04-14', 'Primo soccorso'),
-('BNCFBA94R15H501R', 'Buona scuola', '2025-04-15', 'Guida eco'),
-('VLNLSA95S16H501S', 'Esperienza positiva', '2025-04-16', 'Meteo e guida'),
-('RSSMTA96T17H501T', 'Corso valido', '2025-04-17', 'Rotatorie'),
-('CNTDVD97U18H501U', 'Soddisfatto', '2025-04-18', 'Documenti auto'),
-('FRRSRA98V19H501V', 'Ottima scelta', '2025-04-19', 'Guida sportiva'),
-('MTTPLA99Z20H501Z', 'Corso consigliato', '2025-04-20', 'Manutenzione');
-
-
-
-INSERT INTO ValutazioneIstruttore (CodiceFiscale, Oggetto, CodiceFiscaleIstruttore) VALUES
-('RSSMRA80A01H501A', 'Ottimo corso', 'BNCMRA70A01H501X'),
-('VRDLCA81B02H501B', 'Buona esperienza', 'RSSGVN75B02H501Y'),
-('BNCGPP82C03H501C', 'Soddisfatto', 'VRDLCA80C03H501Z'),
-('NRENNA83D04H501D', 'Esperienza positiva', 'NRIGPP85D04H501W'),
-('GLLMRC84E05H501E', 'Da migliorare', 'BNCNNA90E05H501V'),
-('VLNSFN85F06H501F', 'Molto professionale', 'RSSMRA75F06H501U'),
-('RSSMRA86G07H501G', 'Corso eccellente', 'VRDPLA80G07H501T'),
-('CNTLCA87H08H501H', 'Buon corso', 'NRILCU85H08H501S'),
-('FRRPLA88I09H501I', 'Esperienza ok', 'BNCFBA90I09H501R'),
-('MRTGNN89L10H501L', 'Molto soddisfatta', 'RSSSFN75L10H501Q'),
-('BRNGPP90M11H501M', 'Corso completo', 'BNCMRA70A01H501X'),
-('RMNNNA91N12H501N', 'Esperienza positiva', 'RSSGVN75B02H501Y'),
-('GLLCRL92P13H501P', 'Ottimo servizio', 'VRDLCA80C03H501Z'),
-('RSSLRA93Q14H501Q', 'Corso efficace', 'NRIGPP85D04H501W'),
-('BNCFBA94R15H501R', 'Buona scuola', 'BNCNNA90E05H501V'),
-('VLNLSA95S16H501S', 'Esperienza positiva', 'RSSMRA75F06H501U'),
-('RSSMTA96T17H501T', 'Corso valido', 'VRDPLA80G07H501T'),
-('CNTDVD97U18H501U', 'Soddisfatto', 'NRILCU85H08H501S'),
-('FRRSRA98V19H501V', 'Ottima scelta', 'BNCFBA90I09H501R'),
-('MTTPLA99Z20H501Z', 'Corso consigliato', 'RSSSFN75L10H501Q');
-
 
 
 INSERT INTO Patente (TipoPatente, Descrizione) VALUES
