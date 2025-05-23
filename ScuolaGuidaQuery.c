@@ -66,9 +66,9 @@ const char *queries[] = {
 
     "SELECT v.TipoVeicolo, v.Modello, v.Stato, p.DataPrenotazione, p.Ora, i.Nome, i.Cognome FROM Veicolo v JOIN Prenotazione p ON v.Stato = 'Disponibile' JOIN Iscritto i ON p.CodiceFiscale = i.CodiceFiscale WHERE v.Stato = 'Disponibile' AND p.Stato = 'Accettata' ORDER BY p.DataPrenotazione, p.Ora;",
 
-    "SELECT a.NomeAula, a.Posti, a.Attrezzatura, COUNT(DISTINCT r.CodiceFiscale) as NumeroStudenti, COUNT(DISTINCT l.ArgomentoLezione) as ArgomentiDiversi, MIN(l.Data) as PrimaLezione, MAX(l.Data) as UltimaLezione FROM Aula a JOIN Lezione l ON l.TipoLezione = 'Teorico' JOIN ValutazioneLezione vl ON l.Data = vl.DataLezione AND l.ArgomentoLezione = vl.ArgomentoLezione JOIN Recensione r ON vl.CodiceFiscale = r.CodiceFiscale AND vl.Oggetto = r.Oggetto WHERE a.Attrezzatura IN ('Proiettore', 'LIM') GROUP BY a.NomeAula, a.Posti, a.Attrezzatura HAVING COUNT(DISTINCT r.CodiceFiscale) > 0 ORDER BY NumeroStudenti DESC;",
+    "SELECT I.Nome, P.CodiceFiscale, I.TipoPatente, SUM(P.Importo) AS TotalePagato FROM Pagamento P JOIN Iscritto I ON P.CodiceFiscale = I.CodiceFiscale GROUP BY I.Nome, P.CodiceFiscale, I.TipoPatente HAVING SUM(P.Importo) > 0;",
 
-    "SELECT i.Nome, i.Cognome, AVG(r.Gradimento) as MediaGradimento, COUNT(DISTINCT r.CodiceFiscale) as NumeroRecensioni FROM Istruttore i JOIN ValutazioneIstruttore vi ON i.CodiceFiscale = vi.CodiceFiscaleIstruttore JOIN Recensione r ON vi.CodiceFiscale = r.CodiceFiscale AND r.CodiceFiscale IN (SELECT CodiceFiscale FROM Iscritto) GROUP BY i.CodiceFiscale, i.Nome, i.Cognome HAVING AVG(r.Gradimento) > 4.0 ORDER BY MediaGradimento DESC;"
+    "SELECT I.Nome, I.Cognome, AVG(R.Gradimento) AS MediaGradimento, COUNT(*) AS NumeroRecensioni FROM Istruttore I JOIN Recensione R ON I.CodiceFiscale = R.CFIstruttore JOIN Iscritto S ON R.CodiceFiscale = S.CodiceFiscale GROUP BY I.CodiceFiscale, I.Nome, I.Cognome HAVING AVG(R.Gradimento) > 4.0 ORDER BY MediaGradimento DESC;"
 };
 
 void print_menu() {
@@ -76,7 +76,7 @@ void print_menu() {
     printf("1. Media punti e numero promossi per tipo patente\n");
     printf("2. Info veicoli e tipi patenti necessarie\n");
     printf("3. Prenotazioni accettate per veicoli disponibili\n");
-    printf("4. Aule con attrezzature moderne\n");
+    printf("4. Pagamenti per Iscritto\n");
     printf("5. Gradimento istruttori\n");
     printf("7. Uscire\n");
     printf("Seleziona un'opzione: ");

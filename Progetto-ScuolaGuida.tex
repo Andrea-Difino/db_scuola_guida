@@ -662,9 +662,9 @@
                 \item Lezione.IDAula  $\rightarrow$ Aula.Nome
                 \item Lezione.VeicoloUsato $\rightarrow$ Veicolo.Targa
             \end{itemize}
-            \item \textbf{Iscritto}(\underline{CF}, DataIscrizione, TipoPatente, Numero, Email, Indirizzo, Cognome, Nome, idCittà)
+            \item \textbf{Iscritto}(\underline{CF}, DataIscrizione, TipoPatente, Numero, Email, Indirizzo, Cognome, Nome, IDCitta)
             \begin{itemize}
-                \item Iscritto.idCittà $\rightarrow$ Città.CodiceCatastale
+                \item Iscritto.IDCitta $\rightarrow$ Città.CodiceCatastale
             \end{itemize}
             \item \textbf{Città}(\underline{CodiceCatastale}, NomeCittà, Provincia, CAP)
             \item \textbf{Istruttore}(\underline{CF}, Nome, Cognome, AnniEsperienza, Numero, Email)
@@ -749,16 +749,16 @@ delle Query}{
             \includegraphics[width=.65\linewidth]{img/risultati3.png}
         $$
 
-        \noindent \textbf{Query 4} Elencare le aule dotate di attrezzatura moderna (Proiettore o LIM), indicando numero di studenti, argomenti trattati, prima e ultima lezione teorica. Le aule sono ordinate per numero di studenti in ordine decrescente.
+        \noindent \textbf{Query 4} Restituisce un elenco degli iscritti che hanno effettuato almeno un pagamento, mostrando per ciascuno quanto hanno versato e per che tipo di patente stanno studiando:
 
         $$
-            \includegraphics[width=.5\linewidth]{img/query4.png}
+            \includegraphics[width=.7\linewidth]{img/query4.png}
         $$
 
         Un estratto dell'output: 
 
         $$
-            \includegraphics[width=.65\linewidth]{img/risultati4.png}
+            \includegraphics[width=.6\linewidth]{img/risultati4.png}
         $$
 
         \noindent \textbf{Query 5} Calcolare, per ogni istruttore, la media di gradimento ricevuta e il numero di recensioni scritte da iscritti. Vengono mostrati solo gli istruttori con una media di gradimento superiore a 4.
