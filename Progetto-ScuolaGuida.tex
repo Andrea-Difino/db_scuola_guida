@@ -321,9 +321,9 @@
         \[(p,l)\in Appuntamento \Rightarrow (p.DataPrenotazione < l.Data)\]
         \item Una recensione non può essere riferita contemporaneamente ad una lezione e ad un istruttore. 
         \item Se un veicolo v è in manutenzione o non disponibile allora non può essere usato per una lezione pratica.
-        \[(v,l)\in Utilizzo \rightarrow (v.Stato \neq \text{"In Manutenzione"} \land v.Stato \neq \text{"Non Disponibile"})\] 
-        \item Il numero di partecipanti a una lezione teorica non può superare il numero di posti disponibili nell'aula assegnata:
-        \[(l,a)\in Assegnazione \land l.NumeroPartecipanti > a.Posti \Rightarrow \text{Vincolo Violato}\]
+        \[(v,l)\in Utilizzo \Rightarrow (v.Stato \neq \text{"In Manutenzione"} \land v.Stato \neq \text{"Non Disponibile"})\] 
+        \item Il numero di partecipanti a una lezione teorica deve essere minore o uguale al numero di posti disponibili per l'aula assegnata:
+        \[(l,a)\in Assegnazione \Rightarrow (l.NumeroPartecipanti <= a.Posti)\]
         \item Nel caso di una lezione pratica, il numero di partecipanti è sempre 1.
     \end{enumerate}
 
