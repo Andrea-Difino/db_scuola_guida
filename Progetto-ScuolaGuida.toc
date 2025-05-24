@@ -6,7 +6,7 @@
 \contentsline {paragraph}{Veicolo.}{2}{section.2}%
 \contentsline {paragraph}{Aula.}{2}{section.2}%
 \contentsline {paragraph}{Lezione.}{2}{section.2}%
-\contentsline {paragraph}{Prenotazione.}{2}{section.2}%
+\contentsline {paragraph}{Prenotazione.}{3}{section.2}%
 \contentsline {paragraph}{Esame.}{3}{section.2}%
 \contentsline {paragraph}{Recensione.}{3}{section.2}%
 \contentsline {paragraph}{Pagamento.}{3}{section.2}%

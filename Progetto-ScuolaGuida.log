@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  24 MAY 2025 10:35
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  24 MAY 2025 11:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -620,25 +620,20 @@ Underfull \vbox (badness 2103) has occurred while \output is active []
 
 
 [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 447--449
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
 
  []
 
 
-Overfull \hbox (71.97122pt too wide) in paragraph at lines 454--480
+Overfull \hbox (71.97122pt too wide) in paragraph at lines 452--478
 [][] 
  []
 
 
 
 [7]
-Overfull \hbox (71.97122pt too wide) in paragraph at lines 520--542
+Overfull \hbox (71.97122pt too wide) in paragraph at lines 518--540
 [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 543--544
-
  []
 
 
@@ -731,4 +726,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  79i,12n,93p,1248b,528s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Progetto-ScuolaGuida.xdv (17 pages, 299044 bytes).
+Output written on Progetto-ScuolaGuida.xdv (17 pages, 297800 bytes).

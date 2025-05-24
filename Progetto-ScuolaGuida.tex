@@ -168,6 +168,7 @@
         \item Orario di inizio lezione.
         \item Data.
         \item Argomento lezione.
+        \item Numero di Partecipanti. 
     \end{itemize}
     
     si suddivide in:
@@ -232,7 +233,6 @@
         \item Gradimento (da 1 a 5 stelle).
         \item Commento testuale.
         \item Oggetto 
-        \item Email
     \end{itemize}
 
     Un iscritto può recensire un istruttore o una lezione.
@@ -294,6 +294,7 @@
         \item Una recensione non può essere riferita contemporaneamente ad una lezione e ad un istruttore. 
         \item Se un veicolo v è in manutenzione o non disponibile allora non può essere usato per una lezione pratica.
         \[(v,l)\in Utilizzo \rightarrow (v.Stato \neq \text{"In Manutenzione"} \land v.Stato \neq \text{"Non Disponibile"})\] 
+        \item Aggiungere vincolo numeroPartecipanti <= postiAula
     \end{enumerate}
 
 }
@@ -342,7 +343,7 @@
             Aula & Aula per le lezioni teoriche & \textit{NomeAula, Attrezzatura, Posti} & \textit{NomeAula}\\
             \hline
             \rowcolor{white!40}
-            Lezione & Lezione generica & \textit{ArgomentoLezione, Data, OraInizio} & \textit{Data, ArgomentoLezione}\\
+            Lezione & Lezione generica & \textit{ArgomentoLezione, Data, OraInizio, NumeroPartecipanti} & \textit{Data, ArgomentoLezione}\\
             \hline
             \rowcolor{white!40}
             Lezione Teorica & Lezione teorica scuola guida & & \\
@@ -363,7 +364,7 @@
             Esame Pratico & Esame pratico con prova di guida & & \\
             \hline
             \rowcolor{white!40}
-            Recensione & Recensione istruttori e lezioni & \textit{Oggetto, Email, Commento, Data, Gradimento} & \textit{Oggetto}, relazione "Feedback"\\
+            Recensione & Recensione istruttori e lezioni & \textit{Oggetto, Commento, Data, Gradimento} & \textit{Oggetto}, relazione "Feedback"\\
             \hline
             \rowcolor{white!40}
             Pagamento & Pagamenti associati ai servizi offerti & \textit{Importo, Data, OraPagamento, Stato, Metodo} & \textit{OraPagamento, Data}, relazione "Quota"\\
@@ -416,14 +417,12 @@
     \end{longtable}
 
     \subsection{Analisi delle ridondanze}{
-        L’attributo \textit{Email} presente in Recensione, che memorizza l’indirizzo email dell’iscritto autore della recensione, presenta una ridondanza. Questo valore può infatti essere ottenuto tramite la relazione con l’entità Iscritto, accedendo all’attributo Email già presente lì.
+        L’attributo NumeroPartecipanti presente in Lezione, che memorizza il conteggio dei partecipanti a una specifica data e ora, presenta una ridondanza. Questo valore può infatti essere ottenuto al volo tramite una semplice query di aggregazione sulla relazione Prenotazione.
 
-        Questo attributo viene modificato ogni volta che un iscritto aggiorna i propri dati anagrafici (evento poco frequente), ma viene visualizzato frequentemente, ad esempio ogni volta che un amministratore consulta le recensioni lasciate dagli utenti.
-        Si stima che vengano inserite circa 60 recensioni nuove a settimana, mentre la lettura delle recensioni avviene in media 200 volte a settimana da parte del personale o dei sistemi di report.
-        Questo si riassume nelle seguenti due operazioni:
+        Tale attributo viene modificato ogni volta che si inserisce o si elimina una prenotazione per la lezione (evento relativamente frequente), mentre viene letto molto spesso, ad esempio ogni volta che un utente o un sistema di report richiede il numero attuale di partecipanti alla lezione. Si stima che:
         \begin{itemize}
-            \item \textbf{Operazione 1 (60 a settimana)} : Memorizza 60 nuove recensioni nella tabella Recensione.
-            \item \textbf{Operazione 2 (200 a settimana)} : Visualizza l’indirizzo email associato a una determinata recensione (ad esempio in fase di moderazione o gestione del feedback da parte dell'amministrazione).
+            \item \textbf{Operazione 1 (60 a settimana)} : vengano create o cancellate circa 60 prenotazioni a settimana;
+            \item \textbf{Operazione 2 (200 a settimana)} : siano effettuate in media 200 letture a settimana del numero di partecipanti (Operazione 2).
         \end{itemize}
 
         Assumendo i seguenti volumi nella base di dati:
@@ -436,16 +435,15 @@
                 \textbf{Concetto} & \textbf{Costrutto} & \textbf{Volume} \\
                 \hline
                 \rowcolor{white!40}
-                Iscritto & E & 1000\\
+                Lezione & E & 800\\
                 \hline
-                \rowcolor{white!40}
-                Recensione & E & 3000\\
+                \rowcolor{white!40} 
+                Prenotazione & E & 16000\\
                 \hline
             \end{tabular}
         \end{table}
         
-        la seguente analisi serve per stabilire se sia utile o meno tenere l’attributo ridondante
-        \textit{Email} in Recensioni. \\
+        la seguente analisi serve per stabilire se sia utile o meno tenere l’attributo ridondante \textit{NumeroPartecipanti} in Lezione. \\
 
         \textbf{CON RIDONDANZA}: Analizziamo prima il costo totale con ridondanza:
         \begin{itemize}
@@ -463,10 +461,10 @@
                     \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
                     \hline
                     \rowcolor{white!40}
-                    Recensione & E & 1 & S \\
+                    Prenotazione & E & 1 & S \\
                     \hline
                     \rowcolor{white!40}
-                    Iscritto & E & 1 & L \\
+                    Lezione & E & 1 & S \\
                     \hline
                 \end{tabular}
             \end{minipage}%
@@ -494,7 +492,7 @@
                     \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
                     \hline
                     \rowcolor{white!40}
-                    Recensione & E & 1 & L \\
+                    Lezione & E & 1 & L \\
                     \hline
                 \end{tabular}
             \end{minipage}%
@@ -510,7 +508,7 @@
         
         Assumendo \textit{costo doppio per gli accessi in scrittura}, il costo totale è:
         \[
-            \text{Costo Totale} = 60 \times 2 + 60 + 200 = \boxed{380}
+            \text{Costo Totale} = 60 \times 4 + 200 = \boxed{440}
         \]
         
         \textbf{SENZA RIDONDANZA}: Analizziamo il costo totale senza ridondanza:
@@ -529,7 +527,7 @@
                     \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
                     \hline
                     \rowcolor{white!40}
-                    Recensione & E & 1 & S \\
+                    Prenotazione & E & 1 & S \\
                     \hline
                 \end{tabular}
             \end{minipage}%
@@ -540,9 +538,11 @@
                 \end{flushleft}
             \end{minipage}
 
-            Nessun accesso aggiuntivo per aggiornare \textit{Email}, in quanto non viene salvato. \\
+            Non c'è più il contatore in Lezione quindi si usa solo l'entità Prenotazione
+
+            \
             
-            \vspace{1em}
+            \vspace{.5em}
         
             \item \textbf{Operazione 2}:
                     
@@ -558,10 +558,10 @@
                     \textbf{Concetto} & \textbf{Costrutto} & \textbf{Accessi} & \textbf{Tipo} \\
                     \hline
                     \rowcolor{white!40}
-                    Recensione & E & 1 & L \\
+                    Prenotazione & E & 1 & L \\
                     \hline
                     \rowcolor{white!40} 
-                    Iscritto & E & 1 & L \\
+                    Lezione & E & 1 & L \\
                     \hline
                 \end{tabular}
             \end{minipage}%
@@ -812,8 +812,8 @@ delle Query}{
             \item 1. Numero di esami teorici sostenuti per ogni tipo di patente, media punti e promossi (media >20 punti).
             \item 2. Analisi dei veicoli per tipo, conteggiando il numero totale, quelli disponibili, i tipi di patente necessari e le prenotazioni effettuate.
             \item 3. Visualizzazione delle prenotazioni accettate per veicoli disponibili, mostrando data, ora, modello, stato del veicolo e dati dell’iscritto.
-            \item 4. Elenco delle aule dotate di attrezzatura moderna (Proiettore o LIM), indicando numero di studenti, argomenti trattati, prima e ultima lezione teorica.
-            \item 5. Calcolo della media di gradimento ricevuta e del numero di recensioni scritte da iscritti per ogni istruttore.
+            \item 4. Elenco degli iscritti che hanno effettuato almeno un pagamento mostrando per ciascuno quanto hanno versato e la patente per cui stanno studiando.
+            \item 5. Calcolo della media di gradimento ricevuta da un istruttore e del numero di recensioni scritte da iscritti per ogni istruttore.
         \end{itemize}
          L’utente potrà selezionare la query da eseguire digitando il numero corrispondente.
 
