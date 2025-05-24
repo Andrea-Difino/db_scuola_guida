@@ -422,7 +422,7 @@ FROM Iscritto i
 JOIN Esame e ON i.CodiceFiscale = e.CodiceFiscale
 WHERE e.TipoEsame = 'Teorico'
 GROUP BY i.TipoPatente
-HAVING AVG(e.Punti) > 20
+HAVING AVG(e.Punti) >= 20
 ORDER BY MediaPunti DESC;
 
 --Query 2
@@ -464,7 +464,7 @@ SELECT I.Nome, P.CodiceFiscale, I.TipoPatente, SUM(P.Importo) AS TotalePagato
 FROM Pagamento P
 JOIN Iscritto I ON P.CodiceFiscale = I.CodiceFiscale
 GROUP BY I.Nome, P.CodiceFiscale, I.TipoPatente
-HAVING SUM(P.Importo) > 0;
+HAVING SUM(P.Importo) >= 0;
 
 --Query 5
 SELECT 
@@ -476,7 +476,7 @@ FROM Istruttore I
 JOIN Recensione R ON I.CodiceFiscale = R.CFIstruttore
 JOIN Iscritto S ON R.CodiceFiscale = S.CodiceFiscale
 GROUP BY I.CodiceFiscale, I.Nome, I.Cognome
-HAVING AVG(R.Gradimento) > 4.0
+HAVING AVG(R.Gradimento) >= 4.0
 ORDER BY MediaGradimento DESC;
 
 --Indici

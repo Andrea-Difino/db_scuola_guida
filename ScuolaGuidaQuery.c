@@ -69,7 +69,7 @@ const char *queries[] = {
 
 void print_menu() {
     printf("\n----- MENU QUERIES -----\n");
-    printf("1. Media punti e numero promossi per tipo patente\n");
+    printf("1. Media punti e numero promossi per tipo patente (parametrico)\n");
     printf("2. Info veicoli e tipi patenti necessarie\n");
     printf("3. Prenotazioni accettate per veicoli disponibili\n");
     printf("4. Pagamenti per Iscritto (parametrico)\n");
@@ -106,7 +106,7 @@ int main() {
                 "JOIN Esame e ON i.CodiceFiscale = e.CodiceFiscale "
                 "WHERE e.TipoEsame = 'Teorico' "
                 "GROUP BY i.TipoPatente "
-                "HAVING AVG(e.Punti) > %.2f "
+                "HAVING AVG(e.Punti) >= %.2f "
                 "ORDER BY MediaPunti DESC;",
                 soglia);
 
@@ -127,7 +127,7 @@ int main() {
                 "FROM Pagamento P "
                 "JOIN Iscritto I ON P.CodiceFiscale = I.CodiceFiscale "
                 "GROUP BY I.Nome, P.CodiceFiscale, I.TipoPatente "
-                "HAVING SUM(P.Importo) > %.2f;",
+                "HAVING SUM(P.Importo) >= %.2f;",
                 importo);
 
             runQuery(query);
@@ -148,7 +148,7 @@ int main() {
                 "JOIN Recensione R ON I.CodiceFiscale = R.CFIstruttore "
                 "JOIN Iscritto S ON R.CodiceFiscale = S.CodiceFiscale "
                 "GROUP BY I.CodiceFiscale, I.Nome, I.Cognome "
-                "HAVING AVG(R.Gradimento) > %.2f "
+                "HAVING AVG(R.Gradimento) >= %.2f "
                 "ORDER BY MediaGradimento DESC;",
                 gradimento);
 
