@@ -31,6 +31,36 @@
 \usepackage{setspace}
 \usepackage{parskip}
 \usepackage{lmodern}
+\usepackage{minted}
+
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=8pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
 \pagenumbering{gobble}  % disabilita completamente la numerazione visibile
 \setmainfont{Arial}
 
@@ -513,7 +543,17 @@
             \text{Costo Totale} = 60 \times 4 + 200 = \boxed{440}
         \]
         
-        \textbf{SENZA RIDONDANZA}: Analizziamo il costo totale senza ridondanza:
+        \textbf{SENZA RIDONDANZA}: Possiamo calcolare il numero di partecipanti a una lezione tramite una query del tipo:
+        
+
+        \begin{lstlisting}[language=SQL]
+            SELECT COUNT(*) AS NumeroPartecipanti
+            FROM Prenotazione P 
+            WHERE P.DataLezione = "2025-04-01" AND P.ArgomentoLezione = "Segnaletica stradale";\end{lstlisting}
+        
+        \
+
+        Analizziamo il costo totale senza ridondanza:
         \begin{itemize}
             \item \textbf{Operazione 1}:
         
