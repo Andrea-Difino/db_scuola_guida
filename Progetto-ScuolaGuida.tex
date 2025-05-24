@@ -447,7 +447,7 @@
     \end{longtable}
 
     \subsection{Analisi delle ridondanze}{
-        L’attributo NumeroPartecipanti presente in Lezione, che memorizza il conteggio dei partecipanti a una specifica data e ora, presenta una ridondanza. Questo valore può infatti essere ottenuto al volo tramite una semplice query di aggregazione sulla relazione Prenotazione.
+        L’attributo \textit{NumeroPartecipanti} presente in Lezione, che memorizza il conteggio dei partecipanti a una specifica data e ora, presenta una ridondanza. Questo valore può infatti essere ottenuto al volo tramite una semplice query di aggregazione sulla relazione Prenotazione.
 
         Tale attributo viene modificato ogni volta che si inserisce o si elimina una prenotazione per la lezione (evento relativamente frequente), mentre viene letto molto spesso, ad esempio ogni volta che un utente o un sistema di report richiede il numero attuale di partecipanti alla lezione. Si stima che:
         \begin{itemize}
@@ -621,7 +621,7 @@
             \text{Costo Totale} = 60 \times 2 + 200 \times 2 = \boxed{520}
         \]
 
-        L’analisi suggerisce quindi di tenere l’attributo ridondante, ottimizzando cosi' il
+        L’analisi suggerisce quindi di tenere l’attributo ridondante \textit{NumeroPartecipanti}, ottimizzando cosi' il
         numero di accessi.
     }
     \subsection{Eliminazione delle generalizzazioni}{
