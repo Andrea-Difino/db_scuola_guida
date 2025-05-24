@@ -67,6 +67,7 @@ CREATE TABLE Partecipazione (
 CREATE TABLE Lezione (
     Data DATE,
     ArgomentoLezione VARCHAR(25),
+    NumeroPartecipanti INTEGER NOT NULL,
     TipoLezione TEXT CHECK(TipoLezione IN ('Teorico', 'Pratico')),
     OraInizio TIME NOT NULL,
     CFIstruttore CHAR(16) NOT NULL,
@@ -83,7 +84,6 @@ CREATE TABLE Recensione (
     CodiceFiscale CHAR(16) NOT NULL,
     Oggetto VARCHAR(50) NOT NULL,
     Commento TEXT NOT NULL,
-    Email VARCHAR(30) NOT NULL,
     Data DATE NOT NULL,
     Gradimento INTEGER CHECK(Gradimento BETWEEN 1 AND 5) NOT NULL,
     CFIstruttore CHAR(16),
@@ -240,7 +240,7 @@ INSERT INTO Istruttore (CodiceFiscale, Nome, Cognome, AnniEsperienza, Numero, Em
 ('VRDMRC80M11H501P', 'Marco', 'Verdi', 12, '331234567890', 'marco.verdi@scuola.it');
 
 INSERT INTO Aula (NomeAula, Posti, Attrezzatura) VALUES
-('Aula Magna', 100, 'Proiettore'),
+('Aula Magna', 80, 'Proiettore'),
 ('Aula 1A', 30, 'LIM'),
 ('Aula 1B', 25, 'Lavagna'),
 ('Aula 2A', 40, 'Proiettore'),
@@ -283,27 +283,27 @@ INSERT INTO Veicolo (Targa, Modello, AnnoImmatricolazione, Stato, TipoVeicolo) V
 ('VV999ZZ', 'Peugeot 208', 2023, 'Non Disponibile', 'Auto'),
 ('ZZ000AA', 'Aprilia RSV4', 2023, 'Disponibile', 'Moto');
 
-INSERT INTO Lezione (Data, ArgomentoLezione, TipoLezione, OraInizio, Durata, CFIstruttore, IDAula, VeicoloUsato) VALUES
-('2025-04-01', 'Segnaletica stradale', 'Teorico', '09:00:00', NULL, 'BNCMRA70A01H501X', 'Aula Magna', NULL),
-('2025-04-02', 'Precedenze', 'Teorico', '11:00:00', NULL, 'RSSGVN75B02H501Y', 'Aula 1A', NULL),
-('2025-04-03', 'Parcheggio', 'Pratico', '14:00:00', 50, 'VRDLCA80C03H501Z', NULL, 'AA111BB'),
-('2025-04-04', 'Codice della strada', 'Teorico', '09:00:00', NULL, 'NRIGPP85D04H501W', 'Aula 1B', NULL),
-('2025-04-05', 'Guida in città', 'Pratico', '11:00:00', 60, 'BNCNNA90E05H501V', NULL, 'BB222CC'),
-('2025-04-06', 'Sicurezza stradale', 'Teorico', '14:00:00', NULL, 'RSSMRA75F06H501U', 'Aula 2A', NULL),
-('2025-04-07', 'Manovre base', 'Pratico', '09:00:00', 40, 'VRDPLA80G07H501T', NULL, 'DD444EE'),
-('2025-04-08', 'Limiti di velocità', 'Teorico', '11:00:00', NULL, 'NRILCU85H08H501S', 'Aula 2B', NULL),
-('2025-04-09', 'Guida notturna', 'Pratico', '14:00:00', 60, 'BNCFBA90I09H501R', NULL, 'FF666GG'),
-('2025-04-10', 'Emergenze', 'Teorico', '09:00:00', NULL, 'RSSSFN75L10H501Q', 'Aula 3A', NULL),
-('2025-04-11', 'Autostrada', 'Pratico', '11:00:00', 60, 'VRDMRC80M11H501P', NULL, 'GG777HH'),
-('2025-04-12', 'Meccanica base', 'Teorico', '14:00:00', NULL, 'BNCMRA70A01H501X', 'Aula 3B', NULL),
-('2025-04-13', 'Parcheggio parallelo', 'Pratico', '09:00:00', 80, 'RSSGVN75B02H501Y', NULL, 'HH888II'),
-('2025-04-14', 'Primo soccorso', 'Teorico', '11:00:00', NULL, 'VRDLCA80C03H501Z', 'Aula 4A', NULL),
-('2025-04-15', 'Guida eco', 'Pratico', '14:00:00', 60, 'NRIGPP85D04H501W', NULL, 'LL000MM'),
-('2025-04-16', 'Meteo e guida', 'Teorico', '09:00:00', NULL, 'BNCNNA90E05H501V', 'Aula 4B', NULL),
-('2025-04-17', 'Rotatorie', 'Pratico', '11:00:00', 50, 'RSSMRA75F06H501U', NULL, 'MM111NN'),
-('2025-04-18', 'Documenti auto', 'Teorico', '14:00:00', NULL, 'VRDPLA80G07H501T', 'Aula 5A', NULL),
-('2025-04-19', 'Guida sportiva', 'Pratico', '09:00:00', 30, 'NRILCU85H08H501S', NULL, 'PP333QQ'),
-('2025-04-20', 'Manutenzione', 'Teorico', '11:00:00', NULL, 'BNCFBA90I09H501R', 'Aula 5B', NULL);
+INSERT INTO Lezione (Data, ArgomentoLezione, NumeroPartecipanti, TipoLezione, OraInizio, Durata, CFIstruttore, IDAula, VeicoloUsato) VALUES
+('2025-04-01', 'Segnaletica stradale', 80,'Teorico', '09:00:00', NULL, 'BNCMRA70A01H501X', 'Aula Magna', NULL),
+('2025-04-02', 'Precedenze', 25,'Teorico', '11:00:00', NULL, 'RSSGVN75B02H501Y', 'Aula 1A', NULL),
+('2025-04-03', 'Parcheggio', 1,'Pratico', '14:00:00', 50, 'VRDLCA80C03H501Z', NULL, 'AA111BB'),
+('2025-04-04', 'Codice della strada', 25,'Teorico', '09:00:00', NULL, 'NRIGPP85D04H501W', 'Aula 1B', NULL),
+('2025-04-05', 'Guida in città', 1,'Pratico', '11:00:00', 60, 'BNCNNA90E05H501V', NULL, 'BB222CC'),
+('2025-04-06', 'Sicurezza stradale', 30,'Teorico', '14:00:00', NULL, 'RSSMRA75F06H501U', 'Aula 2A', NULL),
+('2025-04-07', 'Manovre base', 1,'Pratico', '09:00:00', 40, 'VRDPLA80G07H501T', NULL, 'DD444EE'),
+('2025-04-08', 'Limiti di velocità', 28,'Teorico', '11:00:00', NULL, 'NRILCU85H08H501S', 'Aula 2B', NULL),
+('2025-04-09', 'Guida notturna', 1,'Pratico', '14:00:00', 60, 'BNCFBA90I09H501R', NULL, 'FF666GG'),
+('2025-04-10', 'Emergenze', 28,'Teorico', '09:00:00', NULL, 'RSSSFN75L10H501Q', 'Aula 3A', NULL),
+('2025-04-11', 'Autostrada', 1,'Pratico', '11:00:00', 60, 'VRDMRC80M11H501P', NULL, 'GG777HH'),
+('2025-04-12', 'Meccanica base', 20,'Teorico', '14:00:00', NULL, 'BNCMRA70A01H501X', 'Aula 3B', NULL),
+('2025-04-13', 'Parcheggio parallelo', 1,'Pratico', '09:00:00', 80, 'RSSGVN75B02H501Y', NULL, 'HH888II'),
+('2025-04-14', 'Primo soccorso', 50,'Teorico', '11:00:00', NULL, 'VRDLCA80C03H501Z', 'Aula 4A', NULL),
+('2025-04-15', 'Guida eco', 1,'Pratico', '14:00:00', 60, 'NRIGPP85D04H501W', NULL, 'LL000MM'),
+('2025-04-16', 'Meteo e guida', 30,'Teorico', '09:00:00', NULL, 'BNCNNA90E05H501V', 'Aula 4B', NULL),
+('2025-04-17', 'Rotatorie', 1,'Pratico', '11:00:00', 50, 'RSSMRA75F06H501U', NULL, 'MM111NN'),
+('2025-04-18', 'Documenti auto', 30,'Teorico', '14:00:00', NULL, 'VRDPLA80G07H501T', 'Aula 5A', NULL),
+('2025-04-19', 'Guida sportiva', 1,'Pratico', '09:00:00', 30, 'NRILCU85H08H501S', NULL, 'PP333QQ'),
+('2025-04-20', 'Manutenzione', 20,'Teorico', '11:00:00', NULL, 'BNCFBA90I09H501R', 'Aula 5B', NULL);
 
 INSERT INTO Recensione (CodiceFiscale, Oggetto, Commento, Data, Gradimento, CFIstruttore, DataLezione, ArgomentoLezione) VALUES
 ('RSSMRA80A01H501A', 'Ottimo corso', 'Istruttori molto preparati', '2025-05-01', 5, 'BNCMRA70A01H501X', NULL, NULL),
