@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  24 MAY 2025 13:12
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  24 MAY 2025 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -641,12 +641,12 @@ Overfull \hbox (71.97122pt too wide) in paragraph at lines 558--580
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 674--676
+Underfull \hbox (badness 10000) in paragraph at lines 676--678
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 682--685
+Underfull \hbox (badness 10000) in paragraph at lines 684--687
 
  []
 
@@ -656,7 +656,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 682--685
 File: img/ER_ScuolaGuidaRistrutturato.drawio.png Graphic file (type bmp)
 <img/ER_ScuolaGuidaRistrutturato.drawio.png>
 
-Overfull \hbox (6.17046pt too wide) in paragraph at lines 698--699
+Overfull \hbox (6.17046pt too wide) in paragraph at lines 700--701
 []\TU/Arial(0)/b/n/10 Lezione\TU/Arial(0)/m/n/10 ($[]$, OraInizio, Tipo, NumeroPartecipanti, CFIstruttore, Durata*, IDAula*,
  []
 
@@ -699,7 +699,7 @@ Underfull \vbox (badness 1515) has occurred while \output is active []
 File: img/risultati5.png Graphic file (type bmp)
 <img/risultati5.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 813--815
+Underfull \hbox (badness 10000) in paragraph at lines 815--817
 
  []
 
@@ -708,7 +708,7 @@ File: img/indici.png Graphic file (type bmp)
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 847--849
+Underfull \hbox (badness 10000) in paragraph at lines 849--851
 
  []
 
@@ -733,4 +733,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  79i,12n,93p,1248b,1359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Progetto-ScuolaGuida.xdv (17 pages, 306980 bytes).
+Output written on Progetto-ScuolaGuida.xdv (17 pages, 307952 bytes).
