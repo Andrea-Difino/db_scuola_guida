@@ -294,7 +294,9 @@
         \item Una recensione non può essere riferita contemporaneamente ad una lezione e ad un istruttore. 
         \item Se un veicolo v è in manutenzione o non disponibile allora non può essere usato per una lezione pratica.
         \[(v,l)\in Utilizzo \rightarrow (v.Stato \neq \text{"In Manutenzione"} \land v.Stato \neq \text{"Non Disponibile"})\] 
-        \item Aggiungere vincolo numeroPartecipanti <= postiAula
+        \item Il numero di partecipanti a una lezione teorica non può superare il numero di posti disponibili nell'aula assegnata:
+        \[(l,a)\in Assegnazione \land l.NumeroPartecipanti > a.Posti \Rightarrow \text{Vincolo Violato}\]
+        \item Nel caso di una lezione pratica, il numero di partecipanti è sempre 1.
     \end{enumerate}
 
 }
@@ -655,7 +657,7 @@
         Lo schema ristrutturato in \hyperref[fig:diagrammaERristrutturato]{Figura~\ref*{fig:diagrammaERristrutturato}} contiene solamente costrutti mappabili in corrispettivi dello schema relazionale - detto anche schema logico. Lo schema logico è rappresentato a seguire, dove l’asterisco dopo il nome degli attributi indica quelli che ammettono valori nulli.
 
         \begin{itemize}
-            \item \textbf{Lezione}(\underline{ArgomentoLezione, Data}, OraInizio, Tipo, CFIstruttore, Durata*, IDAula*, VeicoloUsato*)
+            \item \textbf{Lezione}(\underline{ArgomentoLezione, Data}, OraInizio, Tipo, NumeroPartecipanti, CFIstruttore, Durata*, IDAula*, VeicoloUsato*)
             \begin{itemize}
                 \item Lezione.CFIstruttore  $\rightarrow$ Istruttore.CF
                 \item Lezione.IDAula  $\rightarrow$ Aula.Nome
