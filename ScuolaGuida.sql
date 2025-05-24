@@ -305,27 +305,27 @@ INSERT INTO Lezione (Data, ArgomentoLezione, TipoLezione, OraInizio, Durata, CFI
 ('2025-04-19', 'Guida sportiva', 'Pratico', '09:00:00', 30, 'NRILCU85H08H501S', NULL, 'PP333QQ'),
 ('2025-04-20', 'Manutenzione', 'Teorico', '11:00:00', NULL, 'BNCFBA90I09H501R', 'Aula 5B', NULL);
 
-INSERT INTO Recensione (CodiceFiscale, Oggetto, Commento, Email, Data, Gradimento, CFIstruttore, DataLezione, ArgomentoLezione) VALUES
-('RSSMRA80A01H501A', 'Ottimo corso', 'Istruttori molto preparati', 'mario.rossi@email.it', '2025-05-01', 5, 'BNCMRA70A01H501X', NULL, NULL),
-('VRDLCA81B02H501B', 'Buona esperienza', 'Corso ben strutturato', 'luca.verdi@email.it', '2025-05-02', 4, NULL, '2025-04-02', 'Precedenze'), 
-('BNCGPP82C03H501C', 'Soddisfatto', 'Ottimo rapporto qualità/prezzo', 'giuseppe.b@email.it', '2025-05-03', 5, NULL, '2025-04-03', 'Parcheggio'),
-('NRENNA83D04H501D', 'Esperienza positiva', 'Personale disponibile', 'anna.neri@email.it', '2025-05-04', 4, 'NRIGPP85D04H501W', NULL, NULL),
-('GLLMRC84E05H501E', 'Da migliorare', 'Orari poco flessibili', 'marco.g@email.it', '2025-05-05', 3, 'BNCNNA90E05H501V', NULL, NULL),
-('VLNSFN85F06H501F', 'Molto professionale', 'Consigliato', 'stefano.v@email.it', '2025-05-06', 5, NULL, '2025-04-06', 'Sicurezza stradale'),
-('RSSMRA86G07H501G', 'Corso eccellente', 'Ottima preparazione', 'maria.r@email.it', '2025-05-07', 5, 'VRDPLA80G07H501T', NULL, NULL),
-('CNTLCA87H08H501H', 'Buon corso', 'Istruttori pazienti', 'luca.c@email.it', '2025-05-08', 4, 'NRILCU85H08H501S', NULL, NULL),
-('FRRPLA88I09H501I', 'Esperienza ok', 'Corso nella media', 'paola.f@email.it', '2025-05-09', 3, NULL, '2025-04-09', 'Guida notturna'),
-('MRTGNN89L10H501L', 'Molto soddisfatta', 'Ottima scuola', 'gianna.m@email.it', '2025-05-10', 5, NULL, '2025-04-10', 'Emergenze'),
-('BRNGPP90M11H501M', 'Corso completo', 'Ben organizzato', 'giuseppe@email.it', '2025-05-11', 4, NULL, '2025-04-11', 'Autostrada'),
-('RMNNNA91N12H501N', 'Esperienza positiva', 'Consigliato', 'anna.rom@email.it', '2025-05-12', 4, NULL, '2025-04-12', 'Meccanica base'),
-('GLLCRL92P13H501P', 'Ottimo servizio', 'Personale competente', 'carlo.g@email.it', '2025-05-13', 5, 'VRDLCA80C03H501Z', NULL, NULL),
-('RSSLRA93Q14H501Q', 'Corso efficace', 'Preparazione completa', 'laura.r@email.it', '2025-05-14', 4, 'NRIGPP85D04H501W', NULL, NULL),
-('BNCFBA94R15H501R', 'Buona scuola', 'Ambiente professionale', 'fabio.b@email.it', '2025-05-15', 4, 'BNCNNA90E05H501V', NULL, NULL),
-('VLNLSA95S16H501S', 'Esperienza positiva', 'Consigliata', 'elisa.v@email.it', '2025-05-16', 5, 'RSSMRA75F06H501U', NULL, NULL),
-('RSSMTA96T17H501T', 'Corso valido', 'Ottimi istruttori', 'marta.r@email.it', '2025-05-17', 4, 'VRDPLA80G07H501T', NULL, NULL),
-('CNTDVD97U18H501U', 'Soddisfatto', 'Buon rapporto qualità/prezzo', 'davide.c@email.it', '2025-05-18', 4, NULL, '2025-04-18', 'Documenti auto'),
-('FRRSRA98V19H501V', 'Ottima scelta', 'Preparazione eccellente', 'sara.f@email.it', '2025-05-19', 5, NULL, '2025-04-19', 'Guida sportiva'),
-('MTTPLA99Z20H501Z', 'Corso consigliato', 'Esperienza positiva', 'paolo.m@email.it', '2025-05-20', 4, NULL, '2025-04-20', 'Manutenzione');
+INSERT INTO Recensione (CodiceFiscale, Oggetto, Commento, Data, Gradimento, CFIstruttore, DataLezione, ArgomentoLezione) VALUES
+('RSSMRA80A01H501A', 'Ottimo corso', 'Istruttori molto preparati', '2025-05-01', 5, 'BNCMRA70A01H501X', NULL, NULL),
+('VRDLCA81B02H501B', 'Buona esperienza', 'Corso ben strutturato', '2025-05-02', 4, NULL, '2025-04-02', 'Precedenze'), 
+('BNCGPP82C03H501C', 'Soddisfatto', 'Ottimo rapporto qualità/prezzo', '2025-05-03', 5, NULL, '2025-04-03', 'Parcheggio'),
+('NRENNA83D04H501D', 'Esperienza positiva', 'Personale disponibile', '2025-05-04', 4, 'NRIGPP85D04H501W', NULL, NULL),
+('GLLMRC84E05H501E', 'Da migliorare', 'Orari poco flessibili', '2025-05-05', 3, 'BNCNNA90E05H501V', NULL, NULL),
+('VLNSFN85F06H501F', 'Molto professionale', 'Consigliato', '2025-05-06', 5, NULL, '2025-04-06', 'Sicurezza stradale'),
+('RSSMRA86G07H501G', 'Corso eccellente', 'Ottima preparazione', '2025-05-07', 5, 'VRDPLA80G07H501T', NULL, NULL),
+('CNTLCA87H08H501H', 'Buon corso', 'Istruttori pazienti', '2025-05-08', 4, 'NRILCU85H08H501S', NULL, NULL),
+('FRRPLA88I09H501I', 'Esperienza ok', 'Corso nella media', '2025-05-09', 3, NULL, '2025-04-09', 'Guida notturna'),
+('MRTGNN89L10H501L', 'Molto soddisfatta', 'Ottima scuola', '2025-05-10', 5, NULL, '2025-04-10', 'Emergenze'),
+('BRNGPP90M11H501M', 'Corso completo', 'Ben organizzato', '2025-05-11', 4, NULL, '2025-04-11', 'Autostrada'),
+('RMNNNA91N12H501N', 'Esperienza positiva', 'Consigliato', '2025-05-12', 4, NULL, '2025-04-12', 'Meccanica base'),
+('GLLCRL92P13H501P', 'Ottimo servizio', 'Personale competente', '2025-05-13', 5, 'VRDLCA80C03H501Z', NULL, NULL),
+('RSSLRA93Q14H501Q', 'Corso efficace', 'Preparazione completa', '2025-05-14', 4, 'NRIGPP85D04H501W', NULL, NULL),
+('BNCFBA94R15H501R', 'Buona scuola', 'Ambiente professionale', '2025-05-15', 4, 'BNCNNA90E05H501V', NULL, NULL),
+('VLNLSA95S16H501S', 'Esperienza positiva', 'Consigliata', '2025-05-16', 5, 'RSSMRA75F06H501U', NULL, NULL),
+('RSSMTA96T17H501T', 'Corso valido', 'Ottimi istruttori', '2025-05-17', 4, 'VRDPLA80G07H501T', NULL, NULL),
+('CNTDVD97U18H501U', 'Soddisfatto', 'Buon rapporto qualità/prezzo', '2025-05-18', 4, NULL, '2025-04-18', 'Documenti auto'),
+('FRRSRA98V19H501V', 'Ottima scelta', 'Preparazione eccellente', '2025-05-19', 5, NULL, '2025-04-19', 'Guida sportiva'),
+('MTTPLA99Z20H501Z', 'Corso consigliato', 'Esperienza positiva', '2025-05-20', 4, NULL, '2025-04-20', 'Manutenzione');
 
 INSERT INTO Prenotazione (DataPrenotazione, CodiceFiscale, Ora, Stato, DataLezione, ArgomentoLezione) VALUES
 ('2025-03-30', 'RSSMRA80A01H501A', '09:00:00', 'Accettata', '2025-04-01', 'Segnaletica stradale'),
