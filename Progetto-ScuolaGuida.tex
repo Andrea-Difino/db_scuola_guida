@@ -304,9 +304,9 @@
     Il presente schema E-R non permette di rappresentare direttamente i seguenti vincoli:
 
     \begin{enumerate}
-        \item Un istruttore i non può tenere contemporaneamente più lezioni. Se un istruttore insegna due lezioni $l_1$ e $l_2$, allora le date e orari devono differire:
+        \item Un istruttore i non può tenere contemporaneamente più lezioni. Se un istruttore insegna due lezioni $l_1$ e $l_2$, allora le date devono differire:
         \vspace{-.1cm}
-        \[(l_1,i)\in Insegnamento\land (l_2 ,i)\in Insegnamento\Rightarrow(l_1.Data\neq l_2.Data \lor l_1.OraInizio \neq l_2.OraInizio)\]
+        \[(l_1,i)\in Insegnamento\land (l_2 ,i)\in Insegnamento\Rightarrow(l_1.Data\neq l_2.Data)\]
         \item Un iscritto s non può partecipare a due esami nello stesso momento. Un iscritto non può sostenere due esami $e_1$ ed $e_2$ nello stesso giorno e ora:
         \vspace{-.1cm}
         \[(e_1,s)\in Partecipazione\land (e_2,s)\in Partecipazione\Rightarrow(e_1.Data\neq e_2.Data)\]
