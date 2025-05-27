@@ -1,1 +1,10 @@
-Progetto-ScuolaGuida.aux
+# Ignora tutto
+*
+
+# Ma NON ignorare questi (usa il "!" per annullare l'ignoramento)
+!.gitignore
+!README.md
+!Progetto-ScuolaGuida.pdf
+!ScuolaGuida.sql
+!ScuolaGuidaQuery.c
+!img/
