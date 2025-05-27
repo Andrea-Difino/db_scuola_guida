@@ -304,7 +304,7 @@
     Il presente schema E-R non permette di rappresentare direttamente i seguenti vincoli:
 
     \begin{enumerate}
-        \item Un istruttore i non può tenere contemporaneamente più lezioni. Se un istruttore insegna due lezioni $l_1$ e $l_2$, allora le date e orari devono essere diversi:
+        \item Un istruttore i non può tenere contemporaneamente più lezioni. Se un istruttore insegna due lezioni $l_1$ e $l_2$, allora le date e orari devono differire:
         \vspace{-.1cm}
         \[(l_1,i)\in Insegnamento\land (l_2 ,i)\in Insegnamento\Rightarrow(l_1.Data\neq l_2.Data \lor l_1.OraInizio \neq l_2.OraInizio)\]
         \item Un iscritto s non può partecipare a due esami nello stesso momento. Un iscritto non può sostenere due esami $e_1$ ed $e_2$ nello stesso giorno e ora:
@@ -313,7 +313,7 @@
         \item Un iscritto può lasciare una recensione solo su una lezione a cui ha fatto prenotazione. Se un iscritto s scrive una recensione r relativa a una lezione l, allora s deve aver richiesto una prenotazione p per quella lezione:
         \vspace{-.1cm}
         \[(r,l)\in ValutazioneLezione \land (p,l)\in Appuntamento\Rightarrow \exists s((p,s)\in Richiesta\land (r,s)\in Feedback)\]
-        \item Un iscritto s non può partecipare lo stesso giorno sia ad un esame teorico $e_1$ e ad un esame pratico $e_2$ e la data dell'esame teorico deve obbligatoriamente precedere quella dell'esame pratico:
+        \item Un iscritto s non può partecipare lo stesso giorno sia ad un esame teorico $e_1$ sia ad un esame pratico $e_2$ e la data dell'esame teorico deve obbligatoriamente precedere quella dell'esame pratico:
         \vspace{-.1cm}
         \[(s,e_1)\in EsameTeorico \land (s,e_2)\in EsamePratico\Rightarrow (e_1.Data\neq e_2.Data \land e_1.Data < e_2.Data)\]
         \item La data di una prenotazione p deve essere antecedente alla data della lezione l prenotata.
@@ -341,7 +341,7 @@
     In questa sezione viene presentato lo schema logico relazionale derivato dal modello concettuale;
     
     Ciascuna entità concettuale è trasformata in una tabella, definendo attributi, chiavi primarie e chiavi esterne per rappresentare i legami. \\
-    Verrà effettuata una analisi degli attributi ridondanti per determinare la loro rimozione o mantenimento al fine per migliorare l’efficienza di archiviazione e accesso.
+    Verrà effettuata una analisi degli attributi ridondanti per determinare la loro rimozione o mantenimento al fine di migliorare l’efficienza di archiviazione e accesso.
     
     Le due generalizzazioni concettuali verranno risolte mediante l’introduzione di un attributo discriminante che distingue i tipi di istanza, con i campi specifici resi NULLABLE.
     L'attributo composto \textit{Città} viene reso una tabella a se stante e suddiviso in tre attributi distinti: CAP, Provincia e Nome, per facilitare la gestione dei dati. \\
@@ -673,7 +673,7 @@
         \textbf{Città }: alla nuova entitá Cittá viene aggiunto l’attributo \href{https://www.agenziaentrate.gov.it/portale/documents/20143/448384/Tabella+codici+catastali+comuni_T4_codicicatastali_comuni_24_05_2019.pdf/d4fa70bd-f4bd-caba-24cb-5cc3611237c0}{\textit{CodiceCatastale}} anche noto come “codice
         Belfiore” che identifica univocamente ogni comune nei registri catastali.
         
-        \textbf{Pagamento }: assumiamo che ogni Iscritto possa effetturare piu' di un pagamento in un giorno per cui, al fine di minimizzare le chiavi primarie ID abbiamo deciso di identificare ogni pagamento mediante una chiave primaria composta dall'attributo \textit{Data} e dall'attributo \textit{OraPagamento}. In questo modo evitiamo che ci possano essere due tuple uguali nel caso in cui un iscritto effettui piu' pagamenti nella stessa giornata.\\
+        \textbf{Pagamento }: assumiamo che ogni Iscritto possa effettuare piu' di un pagamento in un giorno per cui, al fine di minimizzare le chiavi primarie ID abbiamo deciso di identificare ogni pagamento mediante una chiave primaria composta dall'attributo \textit{Data} e dall'attributo \textit{OraPagamento}. In questo modo evitiamo che ci possano essere due tuple uguali nel caso in cui un iscritto effettui piu' pagamenti nella stessa giornata.\\
     }
 
     \subsection{Partizionamento/Accorpamento di Entitá e Relationships}{
@@ -712,7 +712,7 @@
             \item \textbf{Patente}(\underline{TipoPatente}, Descrizione)
             \item \textbf{Veicolo}(\underline{Targa}, Modello, Tipo, Stato, AnnoImmatricolazione)
             \item \textbf{Aula}(\underline{Nome}, Attrezzatura, Posti)
-            \item \textbf{Prenotazione}(\underline{DataPrenotazione, Iscritto}, Email, Ora, Stato, Data, ArgomentoLezione)
+            \item \textbf{Prenotazione}(\underline{DataPrenotazione, Iscritto}, Ora, Stato, Data, ArgomentoLezione)
             \begin{itemize}
                 \item Prenotazione.Iscritto → Iscritto.CF
                 \item Prenotazione.(Data, ArgomentoLezione) → Lezione.(Data, ArgomentoLezione)
