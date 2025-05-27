@@ -481,8 +481,12 @@ HAVING AVG(R.Gradimento) >= 4.0
 ORDER BY MediaGradimento DESC;
 
 --Indici
-CREATE INDEX idx_veicolo_stato 
-ON Veicolo USING hash(stato);
+CREATE INDEX idx_veicolo_stato_targa 
+ON Veicolo(Stato, Targa);
 
 CREATE INDEX idx_prenotazione_cf_stato_data_ora 
 ON Prenotazione(CodiceFiscale, Stato, DataPrenotazione, Ora);
+
+CREATE INDEX idx_prenotazione_data_argomento 
+ON Prenotazione(DataLezione, ArgomentoLezione);
+
