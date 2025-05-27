@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  27 MAY 2025 15:10
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  27 MAY 2025 15:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -677,9 +677,6 @@ File: img/risultati2.png Graphic file (type bmp)
 File: img/query3.png Graphic file (type bmp)
 <img/query3.png>
 
-Underfull \vbox (badness 2269) has occurred while \output is active []
-
-
 
 [12]
 File: img/risultati3.png Graphic file (type bmp)
@@ -690,12 +687,6 @@ File: img/risultati4.png Graphic file (type bmp)
 <img/risultati4.png>
 File: img/query5.png Graphic file (type bmp)
 <img/query5.png>
-
-Underfull \vbox (badness 1616) has occurred while \output is active []
-
-
-
-[13]
 File: img/risultati5.png Graphic file (type bmp)
 <img/risultati5.png>
 
@@ -703,6 +694,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 815--817
 
  []
 
+
+
+[13]
 File: img/indici.png Graphic file (type bmp)
 <img/indici.png>
 
@@ -733,4 +727,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  79i,12n,93p,1248b,1359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Progetto-ScuolaGuida.xdv (17 pages, 308676 bytes).
+Output written on Progetto-ScuolaGuida.xdv (17 pages, 308672 bytes).

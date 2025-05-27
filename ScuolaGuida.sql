@@ -452,11 +452,12 @@ SELECT
     i.Nome,
     i.Cognome
 FROM Veicolo v
-JOIN Prenotazione p ON v.Stato = 'Disponibile'
+JOIN Lezione l ON v.Targa = l.VeicoloUsato
+JOIN Prenotazione p ON l.Data = p.DataLezione AND l.ArgomentoLezione = p.ArgomentoLezione
 JOIN Iscritto i ON p.CodiceFiscale = i.CodiceFiscale
 WHERE v.Stato = 'Disponibile'
     AND p.Stato = 'Accettata'
-ORDER BY p.DataPrenotazione, p.Ora;
+ORDER BY (p.DataPrenotazione, p.Ora) DESC;
 
 
 --Query 4
