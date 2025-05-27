@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1748350295.9587 "Progetto-ScuolaGuida.xdv" "Progetto-ScuolaGuida.pdf" "Progetto-ScuolaGuida" 1748350297.37793 0
-  "Progetto-ScuolaGuida.xdv" 1748350295 307912 1a485e1f07243cee988731889bfe11a1 "xelatex"
+["xdvipdfmx"] 1748350378.68366 "Progetto-ScuolaGuida.xdv" "Progetto-ScuolaGuida.pdf" "Progetto-ScuolaGuida" 1748350380.16582 0
+  "Progetto-ScuolaGuida.xdv" 1748350378 307908 bae8397224655efdc8f42a3fe35c2593 "xelatex"
   (generated)
   "Progetto-ScuolaGuida.pdf"
   (rewritten before read)
-["xelatex"] 1748350294.47462 "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" "Progetto-ScuolaGuida.xdv" "Progetto-ScuolaGuida" 1748350297.37128 0
+["xelatex"] 1748350377.10333 "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" "Progetto-ScuolaGuida.xdv" "Progetto-ScuolaGuida" 1748350380.15899 0
   "C:/Users/colag/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1748080182 26864628 cb3f29f9ed645e8636f462128b5d280f ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768654 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -113,11 +113,11 @@
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1730400552 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/colag/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Progetto-ScuolaGuida.aux" 1748350295 4199 891f3e0ae7808a43fcb0356b61dd6c23 "xelatex"
-  "Progetto-ScuolaGuida.out" 1748350295 2535 7792ed036636b9667b30ee9a21375d9a "xelatex"
-  "Progetto-ScuolaGuida.tex" 1748350293 43811 026cd77a7e76c38ba726b838f2b33153 ""
-  "Progetto-ScuolaGuida.toc" 1748350295 1681 770aeea32399c1b11764056ab87608c4 "xelatex"
-  "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" 1748350293 43811 026cd77a7e76c38ba726b838f2b33153 ""
+  "Progetto-ScuolaGuida.aux" 1748350378 4199 891f3e0ae7808a43fcb0356b61dd6c23 "xelatex"
+  "Progetto-ScuolaGuida.out" 1748350378 2535 7792ed036636b9667b30ee9a21375d9a "xelatex"
+  "Progetto-ScuolaGuida.tex" 1748350376 43809 84c5c7e86b0e7b0b1ec3201141f7f702 ""
+  "Progetto-ScuolaGuida.toc" 1748350378 1681 770aeea32399c1b11764056ab87608c4 "xelatex"
+  "c:/Users/colag/Desktop/Basi-Merda/Progetto-ScuolaGuida.tex" 1748350376 43809 84c5c7e86b0e7b0b1ec3201141f7f702 ""
   "img/CfileExecution.png" 1748079809 14785 fa88fc4a0238ff2b2b1169b82ed2923c ""
   "img/ER_ScuolaGuida.drawio.png" 1748079809 322684 5695e64b978247bfb41cc4f70a259566 ""
   "img/ER_ScuolaGuidaRistrutturato.drawio.png" 1748080237 318156 8522779959d5edbf1fab295555ff7ce8 ""
