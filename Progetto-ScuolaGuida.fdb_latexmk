@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1748353648.56656 "Progetto-ScuolaGuida.xdv" "Progetto-ScuolaGuida.pdf" "Progetto-ScuolaGuida" 1748353650.61586 0
-  "Progetto-ScuolaGuida.xdv" 1748353648 306508 123e25252ea7d894a8bc13813be891d4 "xelatex"
+["xdvipdfmx"] 1748353816.56896 "Progetto-ScuolaGuida.xdv" "Progetto-ScuolaGuida.pdf" "Progetto-ScuolaGuida" 1748353818.53868 0
+  "Progetto-ScuolaGuida.xdv" 1748353816 306520 3a57576b0b60001c763c2844b9e71548 "xelatex"
   (generated)
   "Progetto-ScuolaGuida.pdf"
   (rewritten before read)
-["xelatex"] 1748353646.40759 "c:/Users/adifi/Desktop/db_scuola_guida/Progetto-ScuolaGuida.tex" "Progetto-ScuolaGuida.xdv" "Progetto-ScuolaGuida" 1748353650.60413 0
+["xelatex"] 1748353814.28483 "c:/Users/adifi/Desktop/db_scuola_guida/Progetto-ScuolaGuida.tex" "Progetto-ScuolaGuida.xdv" "Progetto-ScuolaGuida" 1748353818.52668 0
   "C:/Users/adifi/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1747907485 25448752 268ec6f612257afbfc92f40884035c3f ""
   "C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768654 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "C:/Users/adifi/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -113,11 +113,11 @@
   "C:/Users/adifi/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1730400552 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/adifi/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/adifi/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "Progetto-ScuolaGuida.aux" 1748353648 4201 ac66cb770ce242c9a8951230aa6fd648 "xelatex"
-  "Progetto-ScuolaGuida.out" 1748353648 2535 7792ed036636b9667b30ee9a21375d9a "xelatex"
-  "Progetto-ScuolaGuida.tex" 1748353643 43691 b8c434a55406d6816114b74116cd7c71 ""
-  "Progetto-ScuolaGuida.toc" 1748353648 1683 8aeaf5003be00545ba3ed16e35b8da80 "xelatex"
-  "c:/Users/adifi/Desktop/db_scuola_guida/Progetto-ScuolaGuida.tex" 1748353643 43691 b8c434a55406d6816114b74116cd7c71 ""
+  "Progetto-ScuolaGuida.aux" 1748353816 4201 ac66cb770ce242c9a8951230aa6fd648 "xelatex"
+  "Progetto-ScuolaGuida.out" 1748353816 2535 7792ed036636b9667b30ee9a21375d9a "xelatex"
+  "Progetto-ScuolaGuida.tex" 1748353813 43690 4bc3589c6ceecf84b5dcf30e3c09e1cc ""
+  "Progetto-ScuolaGuida.toc" 1748353816 1683 8aeaf5003be00545ba3ed16e35b8da80 "xelatex"
+  "c:/Users/adifi/Desktop/db_scuola_guida/Progetto-ScuolaGuida.tex" 1748353813 43690 4bc3589c6ceecf84b5dcf30e3c09e1cc ""
   "img/ER_ScuolaGuida.drawio.png" 1748077656 322684 5695e64b978247bfb41cc4f70a259566 ""
   "img/ER_ScuolaGuidaRistrutturato.drawio.png" 1748080311 318156 8522779959d5edbf1fab295555ff7ce8 ""
   "img/indici.png" 1747128336 13503 64b5b95dadb1e7b11b91e69dfbee1ed8 ""
