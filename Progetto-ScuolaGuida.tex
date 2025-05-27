@@ -748,7 +748,7 @@
 \section{Implementazione in PostgreSQL e Definizione
 delle Query}{
     \label{sec:ImplementazionePostreSQL}
-    Il file ScuolaGuida.sql contiene il codice SQL necessario per la creazione e il popolamento delle tabelle del database. Questo file include inoltre una serie di query per l’estrazione dei dati e un indice creato specificamente per migliorare le prestazioni
+    Il file \texttt{ScuolaGuida.sql} contiene il codice SQL necessario per la creazione e il popolamento delle tabelle del database. Questo file include inoltre una serie di query per l’estrazione dei dati e un indice creato specificamente per migliorare le prestazioni
     di una di queste interrogazioni.
 
     \subsection{Definizione delle query}{
@@ -813,37 +813,42 @@ delle Query}{
         $$
             \includegraphics[width=.65\linewidth]{img/risultati5.png}
         $$
-    } \\
+    }
 
     \subsection{Creazione degli indici}{
         Si suppone di voler ottimizzare la query 3, per la quale occorre considerare:
 
-        \begin{enumerate}
-            \item Condizione di Join tra le tabelle Veicolo, Prenotazione e Iscritto, in particolare:
-            \begin{itemize}
-                \item p.CodiceFiscale = i.CodiceFiscale
-            \end{itemize}
-            \item Condizioni di filtro su:
-            \begin{itemize}
-                \item v.Stato = 'Disponibile'
-                \item p.Stato = 'Accettata'
-            \end{itemize}
-            \item Ordinamento finale sui campi DataPrenotazione e Ora.
-        \end{enumerate}
+    \begin{enumerate}
+        \item Condizione di Join tra le tabelle Veicolo, Lezione, Prenotazione e Iscritto, in particolare:
+        \begin{itemize}
+            \item v.Targa = l.VeicoloUsato
+            \item l.Data = p.DataLezione
+            \item l.ArgomentoLezione = p.ArgomentoLezione
+            \item p.CodiceFiscale = i.CodiceFiscale
+        \end{itemize}
+        \item Condizioni di filtro su:
+        \begin{itemize}
+            \item v.Stato = 'Disponibile'
+            \item p.Stato = 'Accettata'
+        \end{itemize}
+        \item Ordinamento finale sui campi DataPrenotazione e Ora.
+    \end{enumerate}
 
-        Per ottimizzare il punto 1 e 2, è opportuno creare due indici:
+    Per ottimizzare i punti precedenti, si propongono i seguenti indici:
 
-        $$
+        $
             \includegraphics[width=1\linewidth]{img/indici.png}
-        $$
+        $
 
         L'indice \textbf{idx\_veicolo\_stato} permette di cercare rapidamente tutti i veicoli con stato Disponibile, utilizzando una struttura hash, particolarmente efficiente per confronti di uguaglianza.
 
         L'indice \textbf{idx\_prenotazione\_cf\_stato\_data\_ora}, invece, migliora l'accesso alla tabella Prenotazione in fase di join con la tabella Iscritto (tramite CodiceFiscale) e consente un accesso ordinato sui campi DataPrenotazione e Ora, riducendo i costi di ordinamento nel risultato finale.
+
+        L'indice \textbf{idx\_prenotazione\_data\_argomento} su Prenotazione (DataLezione, ArgomentoLezione): ottimizza la join tra Prenotazione e Lezione tramite i campi DataLezione e ArgomentoLezione.
     }
 
     \section{Applicazione Software}{
-        Il file ScuolaGuidaQuery.c contiene il codice C necessario per connettersi al database e 
+        Il file \texttt{ScuolaGuidaQuery.c} contiene il codice C necessario per connettersi al database e 
         visualizzare a schermo i risultati delle query presentate nella \hyperref[sec:ImplementazionePostreSQL]{Sezione~\ref*{sec:ImplementazionePostreSQL}}.
         
         \vspace{.2em}
