@@ -81,8 +81,8 @@ CREATE TABLE Lezione (
 );
 
 CREATE TABLE Recensione (
-    CodiceFiscale CHAR(16) NOT NULL,
-    Oggetto VARCHAR(50) NOT NULL,
+    CodiceFiscale CHAR(16),
+    Oggetto VARCHAR(50),
     Commento TEXT NOT NULL,
     Data DATE NOT NULL,
     Gradimento INTEGER CHECK(Gradimento BETWEEN 1 AND 5) NOT NULL,
@@ -100,9 +100,9 @@ CREATE TABLE Recensione (
 CREATE TABLE Prenotazione (
     DataPrenotazione DATE,
     CodiceFiscale CHAR(16),
-    Ora TIME,
-    Stato TEXT CHECK(Stato IN ('Accettata', 'Rifiutata', 'In attesa')),
-    DataLezione DATE,
+    Ora TIME NOT NULL,
+    Stato TEXT CHECK(Stato IN ('Accettata', 'Rifiutata', 'In attesa')) NOT NULL,
+    DataLezione DATE NOT NULL,
     ArgomentoLezione VARCHAR(30) NOT NULL,
     PRIMARY KEY (DataPrenotazione, CodiceFiscale),
     FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale),
@@ -110,12 +110,12 @@ CREATE TABLE Prenotazione (
 );
 
 CREATE TABLE Pagamento (
-    Importo DECIMAL(10, 2),
+    Importo DECIMAL(10, 2) NOT NULL,
     Data DATE,
     OraPagamento TIME,
     CodiceFiscale CHAR(16),
-    Stato TEXT CHECK(Stato IN ('Accettata', 'Rifiutata', 'In attesa')),
-    MetodoPagamento TEXT CHECK(MetodoPagamento IN ('carta', 'contanti', 'bonifico')),
+    Stato TEXT CHECK(Stato IN ('Accettata', 'Rifiutata', 'In attesa')) NOT NULL,
+    MetodoPagamento TEXT CHECK(MetodoPagamento IN ('carta', 'contanti', 'bonifico')) NOT NULL,
     PRIMARY KEY (Data, OraPagamento, CodiceFiscale),
     FOREIGN KEY (CodiceFiscale) REFERENCES Iscritto(CodiceFiscale)
 );
