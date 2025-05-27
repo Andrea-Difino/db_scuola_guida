@@ -45,13 +45,13 @@ void runQuery(const char *query) {
     for (int i = 0; i < cols; i++) {
         char header[256];
         upperText(header, PQfname(res, i));
-        printf("%-30s", header);
+        printf("%-25s", header);
     }
     printf("\n");
 
     for (int i = 0; i < PQntuples(res); i++) {
         for (int j = 0; j < cols; j++) {
-            printf("%-30s", PQgetvalue(res, i, j));
+            printf("%-25s", PQgetvalue(res, i, j));
         }
         printf("\n");
     }
@@ -62,7 +62,7 @@ void runQuery(const char *query) {
 const char *queries[] = {
     NULL,
     "SELECT v.TipoVeicolo, COUNT(*) as NumeroVeicoli, COUNT(CASE WHEN v.Stato = 'Disponibile' THEN 1 END) as VeicoliDisponibili, COUNT(DISTINCT i.TipoPatente) as TipiPatentiNecessarie, COUNT(DISTINCT p.DataPrenotazione) as NumeroPrenotazioni FROM Veicolo v JOIN Iscritto i ON ((v.TipoVeicolo = 'Auto' AND i.TipoPatente = 'B') OR (v.TipoVeicolo = 'Moto' AND i.TipoPatente = 'A') OR (v.TipoVeicolo = 'Camion' AND i.TipoPatente = 'C')) LEFT JOIN Prenotazione p ON i.CodiceFiscale = p.CodiceFiscale GROUP BY v.TipoVeicolo ORDER BY NumeroVeicoli DESC;",
-    "SELECT v.TipoVeicolo, v.Modello, v.Stato, p.DataPrenotazione, p.Ora, i.Nome, i.Cognome FROM Veicolo v JOIN Prenotazione p ON v.Stato = 'Disponibile' JOIN Iscritto i ON p.CodiceFiscale = i.CodiceFiscale WHERE v.Stato = 'Disponibile' AND p.Stato = 'Accettata' ORDER BY p.DataPrenotazione, p.Ora;",
+    "SELECT v.TipoVeicolo, v.Modello, v.Stato, p.DataPrenotazione, p.Ora, i.Nome, i.Cognome FROM Veicolo v JOIN Lezione l ON v.Targa = l.VeicoloUsato JOIN Prenotazione p ON l.Data = p.DataLezione AND l.ArgomentoLezione = p.ArgomentoLezione JOIN Iscritto i ON p.CodiceFiscale = i.CodiceFiscale WHERE v.Stato = 'Disponibile' AND p.Stato = 'Accettata' ORDER BY (p.DataPrenotazione, p.Ora) DESC;",
     NULL, 
     NULL  
 };
@@ -114,7 +114,7 @@ int main() {
 
         } else if (option == 4) {
             double importo;
-            printf("Inserisci l'importo minimo pagato (es. 0): ");
+            printf("Inserisci l'importo minimo pagato (es. 300): ");
             if (scanf("%lf", &importo) != 1) {
                 while (getchar() != '\n');
                 printf("Input non valido.\n");
