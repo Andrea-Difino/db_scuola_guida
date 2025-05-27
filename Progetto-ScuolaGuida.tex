@@ -319,7 +319,7 @@
         \item La data di una prenotazione p deve essere antecedente alla data della lezione l prenotata.
         \vspace{-.1cm}
         \[(p,l)\in Appuntamento \Rightarrow (p.DataPrenotazione < l.Data)\]
-        \item Una recensione non può essere riferita contemporaneamente ad una lezione e ad un istruttore. 
+        \item Una recensione non può riferirsi contemporaneamente ad una lezione e ad un istruttore. 
         \item Se un veicolo v è in manutenzione o non disponibile allora non può essere usato per una lezione pratica.
         \[(v,l)\in Utilizzo \Rightarrow (v.Stato \neq \text{"In Manutenzione"} \land v.Stato \neq \text{"Non Disponibile"})\] 
         \item Il numero di partecipanti a una lezione teorica deve essere minore o uguale al numero di posti disponibili per l'aula assegnata:
@@ -344,7 +344,7 @@
     Verrà effettuata una analisi degli attributi ridondanti per determinare la loro rimozione o mantenimento al fine di migliorare l’efficienza di archiviazione e accesso.
     
     Le due generalizzazioni concettuali verranno risolte mediante l’introduzione di un attributo discriminante che distingue i tipi di istanza, con i campi specifici resi NULLABLE.
-    L'attributo composto \textit{Città} viene reso una tabella a se stante e suddiviso in tre attributi distinti: CAP, Provincia e Nome, per facilitare la gestione dei dati. \\
+    L'attributo composto \textit{Città} viene reso una tabella a sè stante e suddiviso in tre attributi distinti: CAP, Provincia e Nome, per facilitare la gestione dei dati. \\
     Tale modifica sarà rappresentata in \hyperref[fig:diagrammaERristrutturato]{Figura~\ref*{fig:diagrammaERristrutturato}}.
 
 
