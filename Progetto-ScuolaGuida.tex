@@ -96,13 +96,13 @@
 \title{\fontsize{12}{12}\selectfont \textbf{A.A. 2024/25} \\ Corso di Laurea in Scienze e Tecnologie Informatiche SC1167}
 \date{}
 \maketitle
-
+\pagenumbering{arabic}
 
 \renewcommand{\contentsname}{Indice}
 \tableofcontents
 
 \newpage
-\pagenumbering{arabic}
+
 
 \section{Abstract}{
     Questo lavoro sviluppa una base di dati progettata per gestire in modo strutturato e coerente le informazioni relative alle scuole guida, agli istruttori, agli iscritti ai corsi e agli esami sostenuti dagli allievi. 
@@ -843,11 +843,11 @@ delle Query}{
         L'indice \textbf{idx\_prenotazione\_cf\_stato\_data\_ora}, invece, migliora l'accesso alla tabella Prenotazione in fase di join con la tabella Iscritto (tramite CodiceFiscale) e consente un accesso ordinato sui campi DataPrenotazione e Ora, riducendo i costi di ordinamento nel risultato finale.
     }
 
-    \newpage
-
     \section{Applicazione Software}{
         Il file ScuolaGuidaQuery.c contiene il codice C necessario per connettersi al database e 
-        visualizzare a schermo i risultati delle query presentate nella \hyperref[sec:ImplementazionePostreSQL]{Sezione~\ref*{sec:ImplementazionePostreSQL}}. \\
+        visualizzare a schermo i risultati delle query presentate nella \hyperref[sec:ImplementazionePostreSQL]{Sezione~\ref*{sec:ImplementazionePostreSQL}}.
+        
+        \vspace{.2em}
         
         Una volta compilato ed eseguito il programma, verrà mostrato all’utente un menu con la seguente lista di interrogazioni disponibili:
         \begin{itemize}
@@ -858,12 +858,6 @@ delle Query}{
             \item 5. Calcolo della media di gradimento ricevuta da un istruttore e del numero di recensioni scritte da iscritti per ogni istruttore.
         \end{itemize}
          L’utente potrà selezionare la query da eseguire digitando il numero corrispondente. Le query 1,4 e 5 sono state rese parametriche: al momento della selezione, il programma richiederà l’inserimento di un valore a partire dalla quale visualizzare i dati delle tabelle. 
-
-         A seguito un esempio di esecuzione del programma, in cui l’utente ha selezionato la query 1:
-
-        $$
-        \includegraphics[width=1\linewidth]{img/CfileExecution.png}
-        $$
     }
         
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  27 MAY 2025 15:31
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.4) (preloaded format=xelatex 2025.5.22)  27 MAY 2025 15:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -597,15 +597,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 
-[2
+[1
 
 ]
-
-[1]
 
 [2]
 
 [3]
+
+[4]
 File: img/ER_ScuolaGuida.drawio.png Graphic file (type bmp)
 <img/ER_ScuolaGuida.drawio.png>
 
@@ -614,12 +614,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-[4]
+[5]
 Underfull \vbox (badness 2103) has occurred while \output is active []
 
 
 
-[5] [6]
+[6] [7]
 Underfull \hbox (badness 10000) in paragraph at lines 476--477
 
  []
@@ -631,7 +631,7 @@ Overfull \hbox (71.97122pt too wide) in paragraph at lines 482--508
 
 
 
-[7] (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[8] (C:\Users\adifi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 Overfull \hbox (71.97122pt too wide) in paragraph at lines 558--580
@@ -640,7 +640,7 @@ Overfull \hbox (71.97122pt too wide) in paragraph at lines 558--580
 
 
 
-[8]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 676--678
 
  []
@@ -652,7 +652,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 684--687
 
 
 
-[9]
+[10]
 File: img/ER_ScuolaGuidaRistrutturato.drawio.png Graphic file (type bmp)
 <img/ER_ScuolaGuidaRistrutturato.drawio.png>
 
@@ -662,12 +662,12 @@ Overfull \hbox (6.17046pt too wide) in paragraph at lines 700--701
 
 
 
-[10]
+[11]
 File: img/query1.png Graphic file (type bmp)
 <img/query1.png>
 
 
-[11]
+[12]
 File: img/risultati1.png Graphic file (type bmp)
 <img/risultati1.png>
 File: img/query2.png Graphic file (type bmp)
@@ -678,7 +678,7 @@ File: img/query3.png Graphic file (type bmp)
 <img/query3.png>
 
 
-[12]
+[13]
 File: img/risultati3.png Graphic file (type bmp)
 <img/risultati3.png>
 File: img/query4.png Graphic file (type bmp)
@@ -696,18 +696,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 815--817
 
 
 
-[13]
+[14]
 File: img/indici.png Graphic file (type bmp)
 <img/indici.png>
-
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 849--851
-
- []
-
-File: img/CfileExecution.png Graphic file (type bmp)
-<img/CfileExecution.png>
 
 
 [15] (Progetto-ScuolaGuida.aux)
@@ -719,12 +710,12 @@ Package rerunfilecheck Info: File `Progetto-ScuolaGuida.out' has not changed.
 (rerunfilecheck)             Checksum: 7792ED036636B9667B30EE9A21375D9A;2535.
  ) 
 Here is how much of TeX's memory you used:
- 16912 strings out of 408650
- 312399 string characters out of 5745055
+ 16903 strings out of 408650
+ 312157 string characters out of 5745055
  969707 words of memory out of 5000000
- 39720 multiletter control sequences out of 15000+600000
+ 39712 multiletter control sequences out of 15000+600000
  583720 words of font info for 97 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  79i,12n,93p,1248b,1359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Progetto-ScuolaGuida.xdv (17 pages, 308672 bytes).
+Output written on Progetto-ScuolaGuida.xdv (16 pages, 306476 bytes).
